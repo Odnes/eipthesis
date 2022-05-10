@@ -7,6 +7,7 @@
 \textclass article
 \begin_preamble
 \DeclareMathSizes{10}{12}{7}{5}
+\usepackage{url}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -466,20 +467,43 @@ from:
 \end_layout
 
 \begin_layout Standard
+Multiple task scheduling components are available.
+ They produce timer events that can be used to trigger recurring camel routes
+ via consumer EIPs, or otherwise provide a means of time tracking for local
+ or distributed tasks.
+ The primary ones are scheduler (or it's simpler variant, timer) and quartz.
+ 
+\end_layout
+
+\begin_layout Standard
+The scheduler component utilizes the host jdk's timer and is intended for
+ locally tracked tasks that have no need for accuracy, as no provision is
+ made against downtime.
+\end_layout
+
+\begin_layout Standard
+The quartz component uses a database to store timer events and supports
+ distributed timers, and is therefore fault tolerant and suitable for scheduling
+ distributed tasks.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
 
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-2"
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "references"
+options "plain"
 
 \end_inset
 
-bibtex bibliography goes here
+
 \end_layout
 
 \end_body
