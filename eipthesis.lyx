@@ -300,7 +300,120 @@ ive technologies.
 \end_layout
 
 \begin_layout Part
+Integration in a Service-Oriented Architecture
+\end_layout
+
+\begin_layout Standard
+Service Oriented Architecture (SOA) is an evolution of predecessors such
+ as component-based architecture and Object Oriented Analysis and Design
+ of remote objects e.g.
+ CORBA.
+ 
+\end_layout
+
+\begin_layout Standard
+(TODO write about older approaches: https://en.wikipedia.org/wiki/Service-oriented
+_architecture#Organizational benefits )
+\end_layout
+
+\begin_layout Standard
+The related buzzword 
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Service-oriented_architecture#Defining%20concepts
+\end_layout
+
+\begin_layout Standard
+service-orientation promotes is loose coupling between services.
+ SaaS can be considered to have evolved from SOA.
+\end_layout
+
+\begin_layout Standard
+Loose coupling, in addition to enabling the development of distributed architect
+ures composed of programs developed by different teams at different times,
+ allows for domain-driven design to be observed in its constituent parts,
+ which is claimed to increase maintainability and creative cross-domain
+ collaboration.
+\end_layout
+
+\begin_layout Standard
+Domain-Specific-Langueges and Aspect-Oriented Programming can be used to
+ manage the complexity produced by the increased need for isolation and
+ encapsulation that Domain-Driven design necessitates.
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Domain-driven_design
+\end_layout
+
+\begin_layout Standard
+Loose coupling is achieved through transactions, queues provided by message-orie
+nted middleware, and interoperability standards.
+\end_layout
+
+\begin_layout Standard
+Transactions help ensure validity of exchanges, queues enable asynchronicity
+ and load balancing in distributed systems, and interoperability standards
+ provide a common target for the integration of legacy systems (often rendering
+ them network-enabled in the process) and newly implemented services alike.
+\end_layout
+
+\begin_layout Standard
+(TODO benefits of SOA https://en.wikipedia.org/wiki/Service-oriented_architecture#
+Organizational benefits )
+\end_layout
+
+\begin_layout Standard
+In the messaging approach, provisions for asynchronicity (message buffers,
+ brokers) and arbitrary consumer scaling are made.
+\end_layout
+
+\begin_layout Standard
+(TODO Pure Messaging Integration approach https://en.wikipedia.org/wiki/Apache_Act
+iveMQ#Usage )
+\end_layout
+
+\begin_layout Standard
+Service-oriented architecture can be implemented with web services or Microservi
+ces.
+ This is done to make the functional building-blocks accessible over standard
+ Internet protocols that are independent of platforms and programming languages.
+ 
+\end_layout
+
+\begin_layout Standard
+Hybrid Web Service - Messaging SOAs using MOMs is common practice.
+\end_layout
+
+\begin_layout Standard
+(TODO benefits with Microservice-based SOA https://en.wikipedia.org/wiki/Service-o
+riented_architecture#Implementation approaches)
+\end_layout
+
+\begin_layout Standard
+Microservices is a novel, implementation agnostic approach to SOA, that
+ allows for domain-driven design to be observed 
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Service-oriented_architecture#Microservices
+\end_layout
+
+\begin_layout Part
 Messaging and Message Oriented middleware
+\end_layout
+
+\begin_layout Standard
+Apache Camel is a framework for building MOM middleware.
+ More generally, it aspires to enable integrations designed around the Enterpris
+e Integration Pattern (EIP) vocabulary.
+ In addition to native support for ActiveMQ and other message brokers via
+ JMS, it provides features that enable most common SOA architectures, modern
+ and legacy alike.
+ Standard SOAP Web Services, RESTful http Web Services and more are natively
+ supported, with Amazon Web Services, Graphql and other modern technologies
+ supported as Extensions.
 \end_layout
 
 \begin_layout Standard
