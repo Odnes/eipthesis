@@ -277,6 +277,90 @@ LatexCommand tableofcontents
 Introduction
 \end_layout
 
+\begin_layout Standard
+Enterprise Application Software (EAS) is the term for computer prorams used
+ to satisfy the needs of an organization rather than individual users.
+ Almost all business operations, at different points in time, have come
+ to benefit from the proliferation of software in this space.
+ Commonly used acronyms used to categorize such software include ERP (Enteprise
+ Resource Planning), CRM (Customer Relationship Management), CMS (Content
+ Management System), BI (Business Intelligence), WMS (Warehouse Management
+ System) and serve to automate every business need of modern enteprises,
+ from it's customer facing operations, to keeping track of warehouse inventory,
+ calculating billing and taxes, observing regulations, and much more.
+\end_layout
+
+\begin_layout Section
+Islands of automation and the advent of Enterprise Application Integration
+\end_layout
+
+\begin_layout Standard
+The term 
+\begin_inset Quotes eld
+\end_inset
+
+Islands of automation
+\begin_inset Quotes erd
+\end_inset
+
+ was a popular term intoduced in the 1980s to describe the status quo of
+ automation systems existing within information silos.
+ The rapid development and adoption of enterprise software systems during
+ this time came to pass with little regard for the ability of those systems
+ to communicate with one another.
+ 
+\end_layout
+
+\begin_layout Standard
+(TODO INNEFICIENCIES )
+\end_layout
+
+\begin_layout Standard
+The field of Enterprise Application Integration is a field of study aiming
+ to refine a framework for rectifying these inefficiencies.
+ The shifting nature of the business landscape and of enterprises that operate
+ within it, together with the continued innovation in, and expansion of,
+ the EAS space, has resulted in it being a complicated problem to tackle.
+ 
+\end_layout
+
+\begin_layout Standard
+Enterprise software is adopted at different times, it is developed from
+ different vendors, at different points in time, oriented towards different
+ business needs.
+ 
+\end_layout
+
+\begin_layout Standard
+The employment of Domain-driven design, in recognition of the maintainability
+ and extensibility benefits domain-expert input in the refining of the software'
+s domain model confers, is a fact further complicating the effort of business
+ software consolidation.
+ 
+\end_layout
+
+\begin_layout Standard
+To this day, the introduction of a (TODO define middleware) middleware stack
+ remains a very common business need.
+ 
+\end_layout
+
+\begin_layout Standard
+Comprehensive enterprise software suites offering differing degrees of customiza
+bility have come to exist, owing to the organisational similarity of enterprises
+ above a certain scale.
+ Switching costs, as well as other (TODO ΣΧΕΤΙΚΕΣ, ΠΟΥ ΑΚΟΥΜΠΟΥΝ) business
+ considerations.
+\end_layout
+
+\begin_layout Standard
+TODO
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Enterprise_application_integration
+\end_layout
+
 \begin_layout Itemize
 A few words on the problem domain
 \end_layout
@@ -530,25 +614,12 @@ Machine readable markup vs the DSL hack.
 Camel in Action
 \end_layout
 
-\begin_layout Itemize
-Server as persistence hub, interacting with client services via library
- calls with 
-\begin_inset Quotes eld
-\end_inset
-
-direct:
-\begin_inset Quotes erd
-\end_inset
-
- route chaining.
+\begin_layout Section
+Terminology
 \end_layout
 
-\begin_layout Itemize
-Split, choice and aggregator branching and joining.
-\end_layout
-
-\begin_layout Itemize
-Processors vs services, proper use of each.
+\begin_layout Standard
+A Component is a factory for creating Endpoint instances.
 \end_layout
 
 \begin_layout Standard
@@ -565,6 +636,23 @@ This makes services the proper abstraction for program-wide configuration
  PartnerManagementService) and a feasible one for utilities for which there
  is no expected need for integration with remote components (e.g.
  RequestHandlingService).
+\end_layout
+
+\begin_layout Itemize
+Server as persistence hub, interacting with client services via library
+ calls with 
+\begin_inset Quotes eld
+\end_inset
+
+direct:
+\begin_inset Quotes erd
+\end_inset
+
+ route chaining.
+\end_layout
+
+\begin_layout Itemize
+Split, choice and aggregator branching and joining.
 \end_layout
 
 \begin_layout Itemize
