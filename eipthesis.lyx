@@ -285,9 +285,18 @@ Enterprise Application Software (EAS) is the term for computer prorams used
  Commonly used acronyms used to categorize such software include ERP (Enteprise
  Resource Planning), CRM (Customer Relationship Management), CMS (Content
  Management System), BI (Business Intelligence), WMS (Warehouse Management
- System) and serve to automate every business need of modern enteprises,
- from it's customer facing operations, to keeping track of warehouse inventory,
+ System) (TODO Streamline acronyms: some are software-specific, others not
+ so) and serve to automate every business need of modern enteprises, from
+ it's customer facing operations, to keeping track of warehouse inventory,
  calculating billing and taxes, observing regulations, and much more.
+ While comprehensive enterprise software suites offering differing degrees
+ of customizability have come to exist, owing to the organisational similarity
+ of enterprises above a certain scale, switching costs (TODO add footnote),
+ as well as other adjoining business considerations have hindered their
+ more widespread adoption.
+ This has necessitated the systematic study and development of solutions
+ for Enterprise Application Integration, among which message-oriented middleware
+ has stood out as one the most promising.
 \end_layout
 
 \begin_layout Section
@@ -312,7 +321,8 @@ Islands of automation
 \end_layout
 
 \begin_layout Standard
-(TODO INNEFICIENCIES )
+(TODO INNEFICIENCIES of isolation and drawbacks of adhoc point2point solutions
+ )
 \end_layout
 
 \begin_layout Standard
@@ -346,45 +356,38 @@ To this day, the introduction of a (TODO define middleware) middleware stack
 \end_layout
 
 \begin_layout Standard
-Comprehensive enterprise software suites offering differing degrees of customiza
-bility have come to exist, owing to the organisational similarity of enterprises
- above a certain scale.
- Switching costs, as well as other (TODO ΣΧΕΤΙΚΕΣ, ΠΟΥ ΑΚΟΥΜΠΟΥΝ) business
- considerations.
+(TODO read EIPbook forewords on SOA, asynchronous messaging of self reliant
+ systems being the point of integrated systems as opposed to n-tier codependent
+ distributed systems, conferring benefits of request throttling and load
+ balancing but increasing complexity; this fact makes asynchronous messaging
+ a promising approach)
 \end_layout
 
 \begin_layout Standard
-TODO
-\end_layout
-
-\begin_layout Standard
-https://en.wikipedia.org/wiki/Enterprise_application_integration
-\end_layout
-
-\begin_layout Itemize
-A few words on the problem domain
-\end_layout
-
-\begin_layout Itemize
-Introduction of the term 
-\begin_inset Quotes eld
-\end_inset
-
-middleware
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-High level considerations when opting for middleware, approaches and representat
-ive technologies.
- Camel is introduced here.
+)
 \end_layout
 
 \begin_layout Part
 Integration in a Service-Oriented Architecture
+\end_layout
+
+\begin_layout Standard
+(TODO p34 on SOA and other types of integration, p37 Distributed business
+ process vs SOA is the existence in the first case of a business process
+ management component that manages the execution of a business function
+ across multiple existing systems, has the business process encoded inside
+ of it, e.g.
+ serverx.
+ ServerX in turn communicates in a soa manner with the exn_api (exn_db),
+ lv_api and odoo api services.
+ Also, since the introduction of courier service accessed directly from
+ clients we have no longer a single process business process management
+ service, so perhaps it could again be called SOA.) 
+\end_layout
+
+\begin_layout Standard
+(TODO EIPbook p64 on Integration Approaches, with messaging as the most
+ promising one)
 \end_layout
 
 \begin_layout Standard
@@ -486,6 +489,11 @@ https://en.wikipedia.org/wiki/Service-oriented_architecture#Microservices
 
 \begin_layout Part
 Messaging and Message Oriented middleware
+\end_layout
+
+\begin_layout Standard
+(TODO SOA is enabled via messaging.
+ Time to get deep into it)
 \end_layout
 
 \begin_layout Standard
@@ -686,6 +694,10 @@ The scheduler component utilizes the host jdk's timer and is intended for
 The quartz component uses a database to store timer events and supports
  distributed timers, and is therefore fault tolerant and suitable for scheduling
  distributed tasks.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
