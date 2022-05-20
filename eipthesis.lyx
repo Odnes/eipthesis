@@ -189,7 +189,7 @@ In this thesis production deployments of Java Spring middleware utilizing
 \begin_layout Standard
 
 \series bold
-This thesis was approved by a 3 person examination committee.
+This thesis was approved by a three-person examination committee.
 \end_layout
 
 \begin_layout Standard
@@ -274,6 +274,10 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Part
+The language of Enterprise Application Integration (EAI)
+\end_layout
+
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -292,15 +296,16 @@ Enterprise Application Software (EAS) is the term for computer prorams used
  While comprehensive enterprise software suites offering differing degrees
  of customizability have come to exist, owing to the organisational similarity
  of enterprises above a certain scale, switching costs (TODO add footnote),
- as well as other adjoining business considerations have hindered their
- more widespread adoption.
+ preservation of optionality in partnering with software vendors (EIPbook
+ p32), as well as other adjoining business considerations, have hindered
+ their more widespread adoption.
  This has necessitated the systematic study and development of solutions
  for Enterprise Application Integration, among which message-oriented middleware
  has stood out as one the most promising.
 \end_layout
 
 \begin_layout Section
-Islands of automation and the advent of Enterprise Application Integration
+Islands of automation and the advent of EAI
 \end_layout
 
 \begin_layout Standard
@@ -326,8 +331,8 @@ Islands of automation
 \end_layout
 
 \begin_layout Standard
-The field of Enterprise Application Integration is a field of study aiming
- to refine a framework for rectifying these inefficiencies.
+The field of Enterprise Application Integration (EAI) is a field of study
+ aiming to refine a framework for rectifying these inefficiencies.
  The shifting nature of the business landscape and of enterprises that operate
  within it, together with the continued innovation in, and expansion of,
  the EAS space, has resulted in it being a complicated problem to tackle.
@@ -355,19 +360,90 @@ To this day, the introduction of a (TODO define middleware) middleware stack
  
 \end_layout
 
+\begin_layout Section
+Challenges and approaches to integration
+\end_layout
+
+\begin_layout Standard
+Prior to engaging with the technical aspects of Enterprise Application Integrati
+on, it is necessary to consider a set of social, organizational and [TODO]
+ that the development and adoption of such a solution might necessitate
+ or bring about.
+\end_layout
+
+\begin_layout Standard
+Enterprise Application Integration often requires a significant shift in
+ corporate politics.
+ By extension of Conway's law that postulates that 
+\begin_inset Quotes eld
+\end_inset
+
+Organizations which design systems are constrained to produce designs which
+ are copies of the communication structures of these organizations.
+\begin_inset Quotes erd
+\end_inset
+
+, it appears that the consolidation of enterprise software tools serving
+ business processes often necessitates a consolidation of the business units
+ and IT departments involved in those same processes.
+ (EIPbook p32)
+\end_layout
+
+\begin_layout Standard
+Furthermore, owing to the wide scope of a middleware integration solution
+ bringing together critical business functions, the novel risk of failure
+ or misbehavior of such a system has to be internalized.
+ The risk profile and magnitude of reorganization around such a single point
+ of failure ought to be carefully considered.
+\end_layout
+
+\begin_layout Standard
+Bordering the technical side, the feasibility of integrating systems by
+ modifying them to better fit the integration architecture, rather than
+ by having to design the integration architecture to work around the various
+ systems' limitations and deficiencies, also often depends on political
+ factors.
+ In that vein, unsupported legacy systems still in operation, systems under
+ proprietary licenses, and systems whose support is outsourced under more
+ or less stringent long-term agreements can adversely influence the complexity
+ of the final product.
+\end_layout
+
+\begin_layout Standard
+In terms of standardization, it bears mentioning that despite the benefit
+ of convergence around Web Services and a Service Oriented approach to middlewar
+e architecture (which will be expounded upon in later chapters), the proliferati
+on of new extensions or interpretations of the standard, and most significantly
+ the shift towards REST (and, more recently GraphQL) in lockstep with the
+ mobile revolution, has created new challenges for integration engineers.
+ REST, in particular, owing to it being an architectural style for software
+ that expose http APIs rather than a protocol for web services per se, is
+ frequently implemented partially and/or wrongly, often necessitating ad-hoc
+ code for the consumption of APIs exposed in this manner.
+\end_layout
+
+\begin_layout Standard
+(Integration challenges p.32)
+\end_layout
+
+\begin_layout Standard
+(TODO resolve fuzziness of the term integration as described in the EIPbook)
+\end_layout
+
 \begin_layout Standard
 (TODO read EIPbook forewords on SOA, asynchronous messaging of self reliant
  systems being the point of integrated systems as opposed to n-tier codependent
  distributed systems, conferring benefits of request throttling and load
  balancing but increasing complexity; this fact makes asynchronous messaging
- a promising approach)
+ a promising approach, and this has informed the direction of this thesis)
 \end_layout
 
 \begin_layout Standard
-)
+(TODO EIPbook p64 on Integration Approaches, with messaging as the most
+ promising one)
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Integration in a Service-Oriented Architecture
 \end_layout
 
@@ -383,11 +459,6 @@ Integration in a Service-Oriented Architecture
  Also, since the introduction of courier service accessed directly from
  clients we have no longer a single process business process management
  service, so perhaps it could again be called SOA.) 
-\end_layout
-
-\begin_layout Standard
-(TODO EIPbook p64 on Integration Approaches, with messaging as the most
- promising one)
 \end_layout
 
 \begin_layout Standard
@@ -409,6 +480,10 @@ The related buzzword
 
 \begin_layout Standard
 https://en.wikipedia.org/wiki/Service-oriented_architecture#Defining%20concepts
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Enterprise_service_bus
 \end_layout
 
 \begin_layout Standard
@@ -487,8 +562,8 @@ Microservices is a novel, implementation agnostic approach to SOA, that
 https://en.wikipedia.org/wiki/Service-oriented_architecture#Microservices
 \end_layout
 
-\begin_layout Part
-Messaging and Message Oriented middleware
+\begin_layout Section
+Messaging in practice: Message Oriented Middleware
 \end_layout
 
 \begin_layout Standard
@@ -578,48 +653,24 @@ https://en.wikipedia.org/wiki/Message_passing#Distributed_objects
 \end_layout
 
 \end_deeper
-\begin_layout Part
-Flow-based programming, declarative DSLs/xml
+\begin_layout Section
+Enterprise Integration Patterns
 \end_layout
 
 \begin_layout Standard
-Examples from declarative vs procedural DSLs (e.g.
- shell vs guile scripts), Spring traditional remoting vs Camel, timer/from
- components introduced here.
-\end_layout
-
-\begin_layout Itemize
-Producer, consumer properties per component.
-\end_layout
-
-\begin_layout Itemize
-Seamless remoting via 
-\begin_inset Quotes eld
-\end_inset
-
-.to()
-\begin_inset Quotes erd
-\end_inset
-
- chaining.
- Direct ProducerTemplate calls.
-\end_layout
-
-\begin_layout Itemize
-Other flow-based programming advantages.
-\end_layout
-
-\begin_layout Itemize
-Declarative programming advantages, mention drag-and-drop services (e.g.
- redhat's integration product).
-\end_layout
-
-\begin_layout Itemize
-Machine readable markup vs the DSL hack.
+le jus de cette affaire
 \end_layout
 
 \begin_layout Part
-Camel in Action
+Apache Camel: EIPs in action
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+not again!
 \end_layout
 
 \begin_layout Section
@@ -694,6 +745,58 @@ The scheduler component utilizes the host jdk's timer and is intended for
 The quartz component uses a database to store timer events and supports
  distributed timers, and is therefore fault tolerant and suitable for scheduling
  distributed tasks.
+\end_layout
+
+\begin_layout Subsection
+Flow-based programming, 
+\end_layout
+
+\begin_layout Subsection
+declarative DSLs/xml
+\end_layout
+
+\begin_layout Standard
+Examples from declarative vs procedural DSLs (e.g.
+ shell vs guile scripts), Spring traditional remoting vs Camel, timer/from
+ components introduced here.
+\end_layout
+
+\begin_layout Itemize
+Producer, consumer properties per component.
+\end_layout
+
+\begin_layout Itemize
+Seamless remoting via 
+\begin_inset Quotes eld
+\end_inset
+
+.to()
+\begin_inset Quotes erd
+\end_inset
+
+ chaining.
+ Direct ProducerTemplate calls.
+\end_layout
+
+\begin_layout Itemize
+Other flow-based programming advantages.
+\end_layout
+
+\begin_layout Itemize
+Declarative programming advantages, mention drag-and-drop services (e.g.
+ redhat's integration product).
+\end_layout
+
+\begin_layout Itemize
+Machine readable markup vs the DSL hack.
+\end_layout
+
+\begin_layout Section
+Apache Camel field study
+\end_layout
+
+\begin_layout Standard
+Examining a 3PL logistic company's middleware stack
 \end_layout
 
 \begin_layout Standard
