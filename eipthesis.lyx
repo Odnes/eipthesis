@@ -361,7 +361,11 @@ To this day, the introduction of a (TODO define middleware) middleware stack
 \end_layout
 
 \begin_layout Section
-Challenges and approaches to integration
+Introducing EAI in a organization
+\end_layout
+
+\begin_layout Subsection
+General challenges
 \end_layout
 
 \begin_layout Standard
@@ -423,11 +427,45 @@ on of new extensions or interpretations of the standard, and most significantly
 \end_layout
 
 \begin_layout Standard
-(Integration challenges p.32)
+Finally, the operations aspect of utilizing middleware solutions presents
+ a unique challenge, as maintenance, deployment, monitoring and troubleshooting
+ of such heterogeneous, distributed systems commonly require mixes of skills
+ which are not par for the course to be found in single individuals.(EIPbook
+ p32)]
+\end_layout
+
+\begin_layout Subsection
+Types of integration
 \end_layout
 
 \begin_layout Standard
-(TODO resolve fuzziness of the term integration as described in the EIPbook)
+While the above challenges generally apply to every approach in the broader
+ category of integration, many further issues have to be considered depending
+ on the business aims that dictate, and the technical aspects tha come as
+ a consequence of, the prospective type of integration solution.
+ The following categorization has been proposed:
+\end_layout
+
+\begin_layout Subsubsection
+Information Portals 
+\end_layout
+
+\begin_layout Subsubsection
+Data Replication 
+\end_layout
+
+\begin_layout Subsubsection
+Shared Business Functions, Service-Oriented Architectures and Distributed
+ Business Processes 
+\end_layout
+
+\begin_layout Subsubsection
+Business-to-Business Integration
+\end_layout
+
+\begin_layout Standard
+(TODO resolve fuzziness of the term integration as described in the EIPbook,
+ p34)
 \end_layout
 
 \begin_layout Standard
