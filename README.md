@@ -1,1 +1,1 @@
-Related project: [weatherReport](github.com/odnes/weatherReport.git)
+Related project: [weatherReport](https://github.com/Odnes/weatherReport)
