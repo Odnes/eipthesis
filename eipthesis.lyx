@@ -370,7 +370,7 @@ General challenges
 
 \begin_layout Standard
 Prior to engaging with the technical aspects of Enterprise Application Integrati
-on, it is necessary to consider a set of social, organizational and [TODO]
+on, it is necessary to consider a set of social and organizational challenges
  that the development and adoption of such a solution might necessitate
  or bring about.
 \end_layout
@@ -430,8 +430,11 @@ on of new extensions or interpretations of the standard, and most significantly
 Finally, the operations aspect of utilizing middleware solutions presents
  a unique challenge, as maintenance, deployment, monitoring and troubleshooting
  of such heterogeneous, distributed systems commonly require mixes of skills
- which are not par for the course to be found in single individuals.(EIPbook
- p32)]
+ which are not par for the course to be found in single individuals.
+ To companies or organizations of sufficient scale as to already necessitate
+ a formalized employee training regime, the overhead for the maintenance
+ of such human capital might be lower.
+ (EIPbook p32)
 \end_layout
 
 \begin_layout Subsection
@@ -447,16 +450,120 @@ While the above challenges generally apply to every approach in the broader
 \end_layout
 
 \begin_layout Subsubsection
-Information Portals 
+Information Portals
+\end_layout
+
+\begin_layout Standard
+Information portals serve to aggregate information from disparate systems
+ within an organization with the aim of making it more accesible to humans.
+ They often facilitate the collaboration between different departments and
+ physical locations.
+ They are also commonly used in business decision processing and data analysis.
+ Common features include multi-window views serving information from different
+ sources with automatic refresh of related windows during navigation, search,
+ tagging and other categorization schemes.
+ 
+\end_layout
+
+\begin_layout Standard
+Various other more advanced features are common, but being as they cater
+ to particular business functions, employees roles or departments, no account
+ of those will be attempted.
+ Indeed, one of the common abstract features, or aims, of such systems,
+ is the personalization of the displayed information, achieved through the
+ profiling of users based on role, experience, competencies, habits and
+ expressed preferences.
+ 
 \end_layout
 
 \begin_layout Subsubsection
 Data Replication 
 \end_layout
 
+\begin_layout Standard
+Many business systems require access to the same data, but are designed
+ to utilize their own, separate datastores.
+ The resulting data replication necessitates provisions for maintaining
+ the data synchronized.
+ Commonly utilized for those purposes are the replication features built
+ into modern Database Management Systems, the file export and import functions
+ supported by many Enterprise Software Systems, and message-oriented middleware
+ automating transport of data via messages between arbitrary datastore solutions.
+\end_layout
+
 \begin_layout Subsubsection
-Shared Business Functions, Service-Oriented Architectures and Distributed
- Business Processes 
+Shared Business Functions
+\end_layout
+
+\begin_layout Standard
+Needless duplication can exist in code serving business functions as well
+ as in data.
+ Were supported, invocation of shared business functions implemented as
+ services (A service is a well-defined function that is universally available
+ and responds to requests from “service consumers
+\begin_inset Quotes erd
+\end_inset
+
+) can help avoid the native implementation of redundant functionality.
+\end_layout
+
+\begin_layout Standard
+Were feasible, the need for data replication can also be circumvented via
+ this approach by serving shared data as a service.
+ In that vein, some criteria to be considered include the amount of control
+ that is had over the systems (calling a shared function is usually more
+ intrusive than loading data into the database) and the rate of change of
+ the relevant data (service invocation is costlier than data access, therefore
+ is less efficient for relatively frequently accessed, relatively static
+ data).
+\end_layout
+
+\begin_layout Subsubsection
+Service-Oriented Architectures and Distributed Business Processes
+\end_layout
+
+\begin_layout Standard
+Once an enterprise assembles a collection of useful services, managing the
+ services becomes an important function.
+ 
+\end_layout
+
+\begin_layout Standard
+Service Oriented Architecture is a proposed style of service design and
+ orchestration that incorporates the best industry practices in structuring
+ middleware solutions around services that correspond to business functions.
+ A distinctive feature of this style is the aforementioned business centeredness
+ with, for example, components matching business functions, interfaces matching
+ business processes, rules, or goals etc
+\end_layout
+
+\begin_layout Standard
+Each SOA system defines it's own environment, by which every service implementat
+ion must abide.
+ This is ensured through the provision of a “Litmus Test”, that determines
+ whether a given service implementation is correct in it's particular SOA
+ system's context.
+ 
+\end_layout
+
+\begin_layout Standard
+A further recommendation of the SOA style is that open standards be used,
+ their use being instrumental in realizing interoperability with different
+ consumer implementations and location transparency.
+\end_layout
+
+\begin_layout Standard
+(TODO p34 on SOA and other types of integration, p37 Distributed business
+ process vs SOA is the existence in the first case of a business process
+ management component that manages the execution of a business function
+ across multiple existing systems, has the business process encoded inside
+ of it, e.g.
+ serverx.
+ ServerX in turn communicates in a soa manner with the exn_api (exn_db),
+ lv_api and odoo api services.
+ Also, since the introduction of courier service accessed directly from
+ clients we have no longer a single process business process management
+ service, so perhaps it could again be called SOA.) 
 \end_layout
 
 \begin_layout Subsubsection
@@ -483,20 +590,6 @@ Business-to-Business Integration
 
 \begin_layout Section
 Integration in a Service-Oriented Architecture
-\end_layout
-
-\begin_layout Standard
-(TODO p34 on SOA and other types of integration, p37 Distributed business
- process vs SOA is the existence in the first case of a business process
- management component that manages the execution of a business function
- across multiple existing systems, has the business process encoded inside
- of it, e.g.
- serverx.
- ServerX in turn communicates in a soa manner with the exn_api (exn_db),
- lv_api and odoo api services.
- Also, since the introduction of courier service accessed directly from
- clients we have no longer a single process business process management
- service, so perhaps it could again be called SOA.) 
 \end_layout
 
 \begin_layout Standard
