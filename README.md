@@ -1,1 +1,2 @@
-Related project: [weatherReport](github.com/odnes/weatherReport.git)
+A boring old thesis, currently in draft state.
+No guarantees of pdf freshness, mind you!
