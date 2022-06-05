@@ -532,9 +532,78 @@ Once an enterprise assembles a collection of useful services, managing the
 Service Oriented Architecture is a proposed style of service design and
  orchestration that incorporates the best industry practices in structuring
  middleware solutions around services that correspond to business functions.
- A distinctive feature of this style is the aforementioned business centeredness
- with, for example, components matching business functions, interfaces matching
- business processes, rules, or goals etc
+ This paricular approach to middleware architecture shall be expounded upon
+ in a later chapter.
+\end_layout
+
+\begin_layout Standard
+A variant dubbed 
+\begin_inset Quotes eld
+\end_inset
+
+Distributed Business Process
+\begin_inset Quotes erd
+\end_inset
+
+, is also to be found in the bibliography.
+ It concerns the design of management services that serve to coordinate
+ the execution of the relevant business functions that are implemented natively
+ in an integrated system's constituent applications, in order to achieve
+ every particular business process.
+ Such schemes can exist within larger SOA-abiding systems, and the lines
+ between the two terms often blur.
+\end_layout
+
+\begin_layout Subsubsection
+Business-to-Business Integration
+\end_layout
+
+\begin_layout Standard
+In many cases, business functions may be available from outside suppliers
+ or business partners.
+ Business to Business (B2B) integration software provides the architecture
+ needed to digitize information and route it through an organization’s trading
+ ecosystem (usually online platforms) using the Electronic Data Exchange
+ (EDI) format appropriate for the application.
+\end_layout
+
+\begin_layout Section
+Integration in a Service-Oriented Architecture
+\end_layout
+
+\begin_layout Standard
+Service Oriented Architecture (SOA) is an evolution of predecessors such
+ as component-based architecture and Object Oriented Analysis and Design
+ of remote objects e.g.
+ CORBA.
+ 
+\end_layout
+
+\begin_layout Standard
+Component-based architecture, or component-based software engineering, emphasize
+s separation of concerns with respect to the wide-ranging functionality
+ available throughout a given software system.
+ Components are commonly implemented around interfaces, that encapsulate
+ the particulars of the components' implementation, and narrow the available
+ surface-area for wiring together the various functionally autonomous modules.
+ Cohesion is maintained by fitting additional modules onto the interfaces.
+ The modules, which can be of arbitrary origin, are rendered into components
+ by implementing their respective interfaces.
+ The modules can exist as components locally within the same virtual or
+ physical machine, or in the context of distributed systems such as networks
+ (e.g.
+ as web services or web resources)
+\end_layout
+
+\begin_layout Standard
+In the SOA evolution of this approach, a Domain-driven design is upheld.
+ TODO link with CORBA and OOP's adoption of DDD.
+\end_layout
+
+\begin_layout Standard
+A distinctive feature of this achitectural style is business centeredness,
+ with components or interfaces aimed at fitting business functions, rules,
+ or goals.
 \end_layout
 
 \begin_layout Standard
@@ -549,55 +618,7 @@ ion must abide.
 \begin_layout Standard
 A further recommendation of the SOA style is that open standards be used,
  their use being instrumental in realizing interoperability with different
- consumer implementations and location transparency.
-\end_layout
-
-\begin_layout Standard
-(TODO p34 on SOA and other types of integration, p37 Distributed business
- process vs SOA is the existence in the first case of a business process
- management component that manages the execution of a business function
- across multiple existing systems, has the business process encoded inside
- of it, e.g.
- serverx.
- ServerX in turn communicates in a soa manner with the exn_api (exn_db),
- lv_api and odoo api services.
- Also, since the introduction of courier service accessed directly from
- clients we have no longer a single process business process management
- service, so perhaps it could again be called SOA.) 
-\end_layout
-
-\begin_layout Subsubsection
-Business-to-Business Integration
-\end_layout
-
-\begin_layout Standard
-(TODO resolve fuzziness of the term integration as described in the EIPbook,
- p34)
-\end_layout
-
-\begin_layout Standard
-(TODO read EIPbook forewords on SOA, asynchronous messaging of self reliant
- systems being the point of integrated systems as opposed to n-tier codependent
- distributed systems, conferring benefits of request throttling and load
- balancing but increasing complexity; this fact makes asynchronous messaging
- a promising approach, and this has informed the direction of this thesis)
-\end_layout
-
-\begin_layout Standard
-(TODO EIPbook p64 on Integration Approaches, with messaging as the most
- promising one)
-\end_layout
-
-\begin_layout Section
-Integration in a Service-Oriented Architecture
-\end_layout
-
-\begin_layout Standard
-Service Oriented Architecture (SOA) is an evolution of predecessors such
- as component-based architecture and Object Oriented Analysis and Design
- of remote objects e.g.
- CORBA.
- 
+ consumer implementations, and location transparency.
 \end_layout
 
 \begin_layout Standard
@@ -698,6 +719,19 @@ Messaging in practice: Message Oriented Middleware
 \end_layout
 
 \begin_layout Standard
+(TODO read EIPbook forewords on SOA, asynchronous messaging of self reliant
+ systems being the point of integrated systems as opposed to n-tier codependent
+ distributed systems, conferring benefits of request throttling and load
+ balancing but increasing complexity; this fact makes asynchronous messaging
+ a promising approach, and this has informed the direction of this thesis)
+\end_layout
+
+\begin_layout Standard
+(TODO EIPbook p64 on Integration Approaches, with messaging as the most
+ promising one)
+\end_layout
+
+\begin_layout Standard
 (TODO SOA is enabled via messaging.
  Time to get deep into it)
 \end_layout
@@ -788,8 +822,36 @@ https://en.wikipedia.org/wiki/Message_passing#Distributed_objects
 Enterprise Integration Patterns
 \end_layout
 
+\begin_layout Subsection
+Messaging
+\end_layout
+
 \begin_layout Standard
-le jus de cette affaire
+Message (and exchange), pipes and filters, router, translator, endpoint
+\end_layout
+
+\begin_layout Subsubsection
+Message channel
+\end_layout
+
+\begin_layout Standard
+point2point, publish-subscribe, channel adapter, message bus
+\end_layout
+
+\begin_layout Subsubsection
+Router
+\end_layout
+
+\begin_layout Standard
+filter, splitter, aggregator, broker
+\end_layout
+
+\begin_layout Subsubsection
+Message endpoint
+\end_layout
+
+\begin_layout Standard
+consumers: polling, event-driven, message dispatcher
 \end_layout
 
 \begin_layout Part
@@ -801,7 +863,7 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-not again!
+Perhaps EIP chapter just belongs here
 \end_layout
 
 \begin_layout Section
