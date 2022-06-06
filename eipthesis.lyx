@@ -575,14 +575,14 @@ Integration in a Service-Oriented Architecture
 Service Oriented Architecture (SOA) is an evolution of predecessors such
  as component-based architecture and Object Oriented Analysis and Design
  of remote objects e.g.
- CORBA.
+ the CORBA standard.
  
 \end_layout
 
 \begin_layout Standard
 Component-based architecture, or component-based software engineering, emphasize
-s separation of concerns with respect to the wide-ranging functionality
- available throughout a given software system.
+s separation of concerns with respect to the various functions provided
+ in a given software system.
  Components are commonly implemented around interfaces, that encapsulate
  the particulars of the components' implementation, and narrow the available
  surface-area for wiring together the various functionally autonomous modules.
@@ -597,13 +597,18 @@ s separation of concerns with respect to the wide-ranging functionality
 
 \begin_layout Standard
 In the SOA evolution of this approach, a Domain-driven design is upheld.
- TODO link with CORBA and OOP's adoption of DDD.
+ It's central idea is the creation of a Ubiquitous Language with the assistance
+ of domain experts, that embeds domain terminology into the software components'
+ naming and structure.
+ This approach is suitable for the design of middleware as it helps confer
+ flexibility and extensibility to the resulting system, and reduces friction
+ in the operations side, which, as mentioned previously, is an important
+ factor when considering the adoption of integration solutions.
 \end_layout
 
 \begin_layout Standard
-A distinctive feature of this achitectural style is business centeredness,
- with components or interfaces aimed at fitting business functions, rules,
- or goals.
+A distinctive feature of the SOA style is business centeredness, with components
+ or interfaces aimed at fitting business functions, rules, or goals.
 \end_layout
 
 \begin_layout Standard
@@ -619,11 +624,6 @@ ion must abide.
 A further recommendation of the SOA style is that open standards be used,
  their use being instrumental in realizing interoperability with different
  consumer implementations, and location transparency.
-\end_layout
-
-\begin_layout Standard
-(TODO write about older approaches: https://en.wikipedia.org/wiki/Service-oriented
-_architecture#Organizational benefits )
 \end_layout
 
 \begin_layout Standard
