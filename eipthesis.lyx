@@ -598,8 +598,8 @@ s separation of concerns with respect to the various functions provided
 \begin_layout Standard
 In the SOA evolution of this approach, reusability and use in the context
  of distributed systems is emphasised.
- To realize this architectural style's potential, the proliferation of common
- Web Service standards becomes instrumental.
+ To realize this architectural style's potential, the promulgation of Web
+ Service standards becomes instrumental.
  In this way it is ensured that networked software components can be developed
  as generic 
 \begin_inset Quotes eld
@@ -609,10 +609,27 @@ Web Services
 \begin_inset Quotes erd
 \end_inset
 
-, or business function-matched components that are implemented without knowledge
- or regard for the multitude of systems in which they may be utilized.
- The effort towards this end has borne results through the W3C Web Services
- specification and (TODO litmus is about 
+, or business function-specific components that are implemented without
+ knowledge or regard for the multitude of systems in which they may be utilized.
+ 
+\begin_inset Newline newline
+\end_inset
+
+The effort towards this end has borne results through the W3C Web Services
+ specification, though nowadays the emergence of alternatives and the REST
+ architectural style in particular has created a rift in the SOA ecosystem,
+ which is nevertheless efficiently bridged by another core feature of SOA,
+ the Enterprise Service Bus.
+\begin_inset Newline newline
+\end_inset
+
+-TODO LITMUS
+\end_layout
+
+\begin_layout Standard
+and the establishment of the practice of environment definition via Web
+ Service Litmus tests.
+ (TODO litmus is about 
 \end_layout
 
 \begin_layout Standard
@@ -620,10 +637,14 @@ http://deg.egov.bg/LP/soa.rup_soma/tasks/soa_service_qualification_E0D920A6.html
 \end_layout
 
 \begin_layout Standard
-constraining the potential business-function centered components to a subset
- that is reusable in the environment in which it is initially developed),
- , the establishment of the practice of environment definition via Web Service
- Litmus tests.
+constraining the potential services to a subset that is reusable in the
+ environment in which it is initially developed),
+\end_layout
+
+\begin_layout Standard
+As mentioned previously, a distinctive feature of the SOA style is business
+ centeredness, with components or interfaces aimed at fitting business functions
+, rules, or goals.
 \end_layout
 
 \begin_layout Standard
@@ -636,7 +657,7 @@ ces.
 
 \begin_layout Standard
 (TODO domain driven design and microservices after loose coupling, reusability
- emphasis) .
+ emphasis, ESBs) .
  It's central idea is the creation of a Ubiquitous Language with the assistance
  of domain experts, that embeds domain terminology into the software components'
  naming and structure.
@@ -644,11 +665,6 @@ ces.
  flexibility and extensibility to the resulting system, and reduces friction
  in the operations side, which, as mentioned previously, is an important
  factor when considering the adoption of integration solutions.
-\end_layout
-
-\begin_layout Standard
-A distinctive feature of the SOA style is business centeredness, with components
- or interfaces aimed at fitting business functions, rules, or goals.
 \end_layout
 
 \begin_layout Standard
@@ -679,7 +695,8 @@ https://en.wikipedia.org/wiki/Enterprise_service_bus
 \end_layout
 
 \begin_layout Standard
-service-orientation promotes is loose coupling between services.
+A further property service-orientation promotes is loose coupling between
+ services.
  SaaS can be considered to have evolved from SOA.
 \end_layout
 
@@ -739,7 +756,13 @@ riented_architecture#Implementation approaches)
 
 \begin_layout Standard
 Microservices is a novel, implementation agnostic approach to SOA, that
- allows for domain-driven design to be observed 
+ allows for domain-driven design to be observed (actually they are only
+ loosely related and, in fact, operate at different scopes, as discussed
+ here
+\end_layout
+
+\begin_layout Standard
+https://www.ibm.com/cloud/learn/soa)
 \end_layout
 
 \begin_layout Standard
