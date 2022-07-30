@@ -592,11 +592,51 @@ s separation of concerns with respect to the various functions provided
  The modules can exist as components locally within the same virtual or
  physical machine, or in the context of distributed systems such as networks
  (e.g.
- as web services or web resources)
+ as web services or web resources).
 \end_layout
 
 \begin_layout Standard
-In the SOA evolution of this approach, a Domain-driven design is upheld.
+In the SOA evolution of this approach, reusability and use in the context
+ of distributed systems is emphasised.
+ To realize this architectural style's potential, the proliferation of common
+ Web Service standards becomes instrumental.
+ In this way it is ensured that networked software components can be developed
+ as generic 
+\begin_inset Quotes eld
+\end_inset
+
+Web Services
+\begin_inset Quotes erd
+\end_inset
+
+, or business function-matched components that are implemented without knowledge
+ or regard for the multitude of systems in which they may be utilized.
+ The effort towards this end has borne results through the W3C Web Services
+ specification and (TODO litmus is about 
+\end_layout
+
+\begin_layout Standard
+http://deg.egov.bg/LP/soa.rup_soma/tasks/soa_service_qualification_E0D920A6.html
+\end_layout
+
+\begin_layout Standard
+constraining the potential business-function centered components to a subset
+ that is reusable in the environment in which it is initially developed),
+ , the establishment of the practice of environment definition via Web Service
+ Litmus tests.
+\end_layout
+
+\begin_layout Standard
+Service-oriented architecture can be implemented with web services or Microservi
+ces.
+ This is done to make the functional building-blocks accessible over standard
+ Internet protocols that are independent of platforms and programming languages.
+ 
+\end_layout
+
+\begin_layout Standard
+(TODO domain driven design and microservices after loose coupling, reusability
+ emphasis) .
  It's central idea is the creation of a Ubiquitous Language with the assistance
  of domain experts, that embeds domain terminology into the software components'
  naming and structure.
@@ -686,14 +726,6 @@ In the messaging approach, provisions for asynchronicity (message buffers,
 \begin_layout Standard
 (TODO Pure Messaging Integration approach https://en.wikipedia.org/wiki/Apache_Act
 iveMQ#Usage )
-\end_layout
-
-\begin_layout Standard
-Service-oriented architecture can be implemented with web services or Microservi
-ces.
- This is done to make the functional building-blocks accessible over standard
- Internet protocols that are independent of platforms and programming languages.
- 
 \end_layout
 
 \begin_layout Standard
