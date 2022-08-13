@@ -282,23 +282,23 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Enterprise Application Software (EAS) is the term for computer prorams used
- to satisfy the needs of an organization rather than individual users.
+Enterprise Application Software (EAS) is the term for computer programs
+ used to satisfy the needs of an organization rather than individual users.
  Almost all business operations, at different points in time, have come
  to benefit from the proliferation of software in this space.
  Commonly used acronyms used to categorize such software include ERP (Enteprise
- Resource Planning), CRM (Customer Relationship Management), CMS (Content
- Management System), BI (Business Intelligence), WMS (Warehouse Management
- System) (TODO Streamline acronyms: some are software-specific, others not
- so) and serve to automate every business need of modern enteprises, from
- it's customer facing operations, to keeping track of warehouse inventory,
- calculating billing and taxes, observing regulations, and much more.
+ Resource Planning), CRM (Customer Relationship Management), BI (Business
+ Intelligence), CMS (Content Management System), WMS (Warehouse Management
+ System).
+ They serve to automate every business need of modern enteprises, from it's
+ customer facing operations, to keeping track of warehouse inventory, calculatin
+g billing and taxes, observing regulations, and much more.
  While comprehensive enterprise software suites offering differing degrees
  of customizability have come to exist, owing to the organisational similarity
- of enterprises above a certain scale, switching costs (TODO add footnote),
- preservation of optionality in partnering with software vendors (EIPbook
- p32), as well as other adjoining business considerations, have hindered
- their more widespread adoption.
+ of enterprises above a certain scale, switching costs (CITE ), preservation
+ of optionality in partnering with software vendors (CITE EIPbook p32),
+ as well as other adjoining business considerations, have hindered their
+ more widespread adoption.
  This has necessitated the systematic study and development of solutions
  for Enterprise Application Integration, among which message-oriented middleware
  has stood out as one the most promising.
@@ -327,7 +327,7 @@ Islands of automation
 
 \begin_layout Standard
 (TODO INNEFICIENCIES of isolation and drawbacks of adhoc point2point solutions
- )
+ , see archpatbook p25, 351, 252)
 \end_layout
 
 \begin_layout Standard
@@ -390,7 +390,7 @@ Organizations which design systems are constrained to produce designs which
 , it appears that the consolidation of enterprise software tools serving
  business processes often necessitates a consolidation of the business units
  and IT departments involved in those same processes.
- (EIPbook p32)
+ (CITE EIPbook p32)
 \end_layout
 
 \begin_layout Standard
@@ -434,7 +434,7 @@ Finally, the operations aspect of utilizing middleware solutions presents
  To companies or organizations of sufficient scale as to already necessitate
  a formalized employee training regime, the overhead for the maintenance
  of such human capital might be lower.
- (EIPbook p32)
+ (CITE EIPbook p32)
 \end_layout
 
 \begin_layout Subsection
@@ -999,6 +999,10 @@ The quartz component uses a database to store timer events and supports
 
 \begin_layout Subsection*
 declarative DSLs/xml
+\end_layout
+
+\begin_layout Standard
+(TODO https://martinfowler.com/dsl.html )
 \end_layout
 
 \begin_layout Standard
