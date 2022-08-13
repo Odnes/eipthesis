@@ -918,7 +918,9 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Perhaps EIP chapter just belongs here
+Talk about Camel being a tool for working with EIPs, what it's built on,
+ tooling eg IDEs and frameworks that support it, companies that invest on
+ it and custom products eg JBoss
 \end_layout
 
 \begin_layout Section
@@ -995,18 +997,15 @@ The quartz component uses a database to store timer events and supports
  distributed tasks.
 \end_layout
 
-\begin_layout Subsection
-Flow-based programming, 
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Subsection*
 declarative DSLs/xml
 \end_layout
 
 \begin_layout Standard
 Examples from declarative vs procedural DSLs (e.g.
  shell vs guile scripts), Spring traditional remoting vs Camel, timer/from
- components introduced here.
+ components introduced here, as an example of how Camel departs from older
+ integration methods..
 \end_layout
 
 \begin_layout Itemize
@@ -1027,16 +1026,12 @@ Seamless remoting via
 \end_layout
 
 \begin_layout Itemize
-Other flow-based programming advantages.
-\end_layout
-
-\begin_layout Itemize
 Declarative programming advantages, mention drag-and-drop services (e.g.
  redhat's integration product).
 \end_layout
 
 \begin_layout Itemize
-Machine readable markup vs the DSL hack.
+Machine readable markup vs Camel's DSL hack.
 \end_layout
 
 \begin_layout Section
@@ -1045,10 +1040,6 @@ Apache Camel field study
 
 \begin_layout Standard
 Examining a 3PL logistic company's middleware stack
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Standard
