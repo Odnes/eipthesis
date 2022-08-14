@@ -327,7 +327,68 @@ Islands of automation
 
 \begin_layout Standard
 (TODO INNEFICIENCIES of isolation and drawbacks of adhoc point2point solutions
- , see archpatbook p25, 351, 252)
+ , see archpatbook p25, 351, 252
+\end_layout
+
+\begin_layout Standard
+p2p being massively complex, only suitable for asynchronous solutions
+\end_layout
+
+\begin_layout Standard
+hubnspoke helping reduce complexity by providin a common integration platform.
+ event-driven
+\end_layout
+
+\begin_layout Standard
+service exposure enabling synchronous communication.
+ daemon/service listener driven (request-response)
+\end_layout
+
+\begin_layout Standard
+the two above, combined in an integration runtime, with added logic for
+ mediation/obscuring between the uniform exposure protocols and data formats,
+ and the legacy formats and protocols (or informal specs) of the integrated
+ applications, constitute an ESB.
+\end_layout
+
+\begin_layout Standard
+integration engines of today allow for the implementation of different patterns
+ that are more lightweight and decentralized.
+ no longer is runtime cloning of the entire integration engine required
+ for scaling infrastructure, nor is there hard need for a dedicated team
+ with deep expertise in the particular SOA solution.
+ how this is achieved:
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Standard
+an essential addition to the ESB pattern were the service registry capabilities
+ of modern integration runtimes, as relying on interface documentation e.g.
+ swagger or human2human interaction erodes reusability, which was the initial
+ promise of hubnspoke and SOA in general.
+ 
+\end_layout
+
+\begin_layout Standard
+TODOservice exposure gateway vs service registry.
+ where does oauth fit?
+\end_layout
+
+\begin_layout Standard
+API restrictions such as traffic control and security model (api key) are
+ other important things missing from from plain ESB.
+\end_layout
+
+\begin_layout Standard
+TODO continue studying after figure3 https://developer.ibm.com/articles/cl-lightwe
+ight-integration-1/
+\end_layout
+
+\begin_layout Standard
+)
 \end_layout
 
 \begin_layout Standard
