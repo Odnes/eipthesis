@@ -373,18 +373,77 @@ an essential addition to the ESB pattern were the service registry capabilities
 \end_layout
 
 \begin_layout Standard
-TODOservice exposure gateway vs service registry.
- where does oauth fit?
+TODO where does oauth fit?
 \end_layout
 
 \begin_layout Standard
-API restrictions such as traffic control and security model (api key) are
- other important things missing from from plain ESB.
+service exposure gateways sometimes take up the role of service registries
+ and also often implement other API management capabilities, such as encryption/
+redaction, traffic control, a security model with patterns for access control,
+ e.g.
+ with user roles/permission schemes etc.
 \end_layout
 
 \begin_layout Standard
-TODO continue studying after figure3 https://developer.ibm.com/articles/cl-lightwe
-ight-integration-1/
+The gateways can be supplemented with web portals that describe the available
+ APIs, enable potential users to issue keys automatically (self-subscribe)
+ in order to use the APIs, and provision analytics for both users and providers
+ of the APIs.
+\end_layout
+
+\begin_layout Standard
+TODO 
+\begin_inset Quotes eld
+\end_inset
+
+Increasingly, more modern systems of record already provided an HTTP-based
+ interface that only needed controlled exposure using the exposure gateway.
+ The integration runtime was only required when more complex integration
+ took place, such as more unusual protocols, data formats, compositions
+ of multiple requests—or perhaps in cases where transactionality was needed.
+\end_layout
+
+\begin_layout Standard
+The introduction of an API management layer led to the obvious question:
+ What now is the ESB? Many had come to see the integration runtime and the
+ ESB pattern as one and the same.
+ But in fact, if the ESB pattern is all about exposing services and APIs,
+ then the boundaries of the pattern really include both the integration
+ runtime and the exposure gateway, and in some cases just the gateway.
+ However, due to the ESB's incorrect association with the integration runtime,
+ we have to accept that this is not how the ESB term is typically used.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+back-end-for-front-end (BFF) pattern (present in mobile apps/ SPAs) was
+ the first foray outside enterprise: APIs perfectly suited to the needs
+ of a prospective frontend, with rationalized data models, ideal granularity
+ of operations, specialized security models etc
+\end_layout
+
+\begin_layout Standard
+from then on, public exposure of partner APIs has steadily become more common,
+ providing the opportunity for collaboration among loosely parties.
+ The resultant market-like ecosystem has been dubbed the 
+\begin_inset Quotes eld
+\end_inset
+
+API Economy
+\begin_inset Quotes erd
+\end_inset
+
+ TODO speak about it, check 2 ebooks .
+ The emergence of this developmental trend arguably does credit to the promise
+ of reusability the idea of web service orientation has borne since it's
+ inception.
+\end_layout
+
+\begin_layout Standard
+TODO SaaS perhaps deserves a mention here
 \end_layout
 
 \begin_layout Standard
