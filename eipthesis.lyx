@@ -422,7 +422,11 @@ The introduction of an API management layer led to the obvious question:
 back-end-for-front-end (BFF) pattern (present in mobile apps/ SPAs) was
  the first foray outside enterprise: APIs perfectly suited to the needs
  of a prospective frontend, with rationalized data models, ideal granularity
- of operations, specialized security models etc
+ of operations, specialized security models etc.
+ This developer-orientation also marked a wholesale departure from the idea
+ of achieving API reusability through stability, a development that goes
+ hand in hand with a bigger investment in API management to lower the maintenanc
+e overhead this new stance would entail.
 \end_layout
 
 \begin_layout Standard
@@ -436,10 +440,97 @@ API Economy
 \begin_inset Quotes erd
 \end_inset
 
- TODO speak about it, check 2 ebooks .
- The emergence of this developmental trend arguably does credit to the promise
- of reusability the idea of web service orientation has borne since it's
- inception.
+
+\end_layout
+
+\begin_layout Subsection
+The API economy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+lightweight and decentralized.
+ no longer is runtime cloning of the entire integration engine required
+ for scaling infrastructure,
+\begin_inset Quotes erd
+\end_inset
+
+ and integration can be performed wihout 
+\begin_inset Quotes eld
+\end_inset
+
+hard need for a dedicated team with deep expertise in the particular SOA
+ solution
+\begin_inset Quotes erd
+\end_inset
+
+.
+ APIs are no longer archaic hieroglyphs exposed by monolithic cobweb-ridden
+ integration runtimes, left to accrue technical debt, they are part of outward
+ facing platform offerings (API productization), that along with the -necessary
+ to reduce maintenance complexity in todays's Agile software delivery model
+ - API management capabilities, are core to the business strategy of many
+ enterprises instead.
+ orchestrated microservices and consumer-oriented partner APIs aimed at
+ 3d party developers are the enablers of today's API economy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The API economy emerges when APIs become part of the business model.
+ Public and partner APIs have been strategic enablers for sev- eral online
+ business models.
+ For example, Twitter APIs easily have ten times more traffic than the Twitter
+ website does.
+ The com- pany’s business model deliberately focuses on Tweet mediation,
+ letting anyone who wants to do so provide the end-user experience.
+ CHAPTER 1 Introducing APIs 7 These materials are © 2018 John Wiley & Sons,
+ Inc.
+ Any dissemination, distribution, or unauthorized use is strictly prohibited.Anot
+her example, Amazon, from the get-go, chose to be not only just an Internet
+ retailer but also a ubiquitous merchant portal.
+ Amazon’s merchant platform is deliberately built on APIs that allow easy
+ onboarding of new merchants.
+ APIs as business network enablers aren’t new.
+ Banks have built payment infrastructures and clearinghouses based on well-defin
+ed APIs for decades.
+ Modern APIs, however, are built explicitly for an open ecosystem (internal
+ or external), not for closed private net- works.
+ Furthermore, the consumption models for APIs are standardized with a focus
+ on ease of consumption rather than ease of creation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO MENTION paypal, stripe as examples of API productization, Uber as example
+ of basing a business on partner APIs
+\end_layout
+
+\begin_layout Standard
+API layers (mentioned in us-fsi-api-economy.pdf): APIs exposed to accelerate
+ new service development built upon them
+\end_layout
+
+\begin_layout Standard
+The emergence of this last developmental trend arguably does credit to the
+ promise of reusability the idea of web service orientation has borne since
+ it's inception.
+ TODO democratisation of industry, heightened pace of disruption (CITE forbes
+ article)
 \end_layout
 
 \begin_layout Standard
