@@ -430,6 +430,70 @@ e overhead this new stance would entail.
 \end_layout
 
 \begin_layout Standard
+Modern API management solutions create APIs via configuration rather than
+ coding, and the task of creating or changing an API usually takes only
+ minutes.
+ The nature of an easily managed API is simply that it is both defined and
+ controlled by configuration.
+ API management solutions, while complex in their implementation and often
+ costly as proprietary offerings, render the maintenance of non-stable consumer-
+oriented APIs practical.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+APIs are always designed to be attractive to the intended consumer, and
+ they change as the needs of the consumer change.
+ Services, in contrast, are generally designed with global cost and stability
+ as the most important concerns.
+ In the car analogy, the API is the race car designed for looks and consumption,
+ but the service is the regular car designed for cost and mass production.
+\end_layout
+
+\begin_layout Standard
+, a mobile developer just wants it to be simple for her particular app.
+ On the other side, the back-end team wants everyone to use the same standardize
+d service and data model.
+\end_layout
+
+\begin_layout Standard
+APIs are controlled (proxy) views of the data and capabilities of a domain,
+ optimized for the needs of API consumers.
+ As long as it’s dirt cheap to create and maintain proxy APIs, you can use
+ them to render a domain in multiple forms, optimized for each group of
+ API consumers.
+ (After all, you probably want to give external partners a different view
+ of your capabilities from the view your internal developers have
+\end_layout
+
+\begin_layout Standard
+SOA emerged as a means of shielding service consumers from changes in the
+ back end.
+ But who protects the service provid- ers from the churn of changing needs
+ in omni-channel front-end solutions?
+\end_layout
+
+\begin_layout Standard
+Services are the means by which providers codify the base capabilities of
+ their domains.
+ APIs are the way in which those capabilities (services) are repackaged,
+ productized, and shared in an easy-to-use form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 from then on, public exposure of partner APIs has steadily become more common,
  providing the opportunity for collaboration among loosely parties.
  The resultant market-like ecosystem has been dubbed the 
