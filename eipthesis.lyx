@@ -327,11 +327,71 @@ Islands of automation
 
 \begin_layout Standard
 (TODO INNEFICIENCIES of isolation and drawbacks of adhoc point2point solutions
- , see archpatbook p25, 351, 252
+ , see mulesoft article
 \end_layout
 
 \begin_layout Standard
-p2p being massively complex, only suitable for asynchronous solutions
+This model generally works well when the software entities in the integrated
+ system are relatively few, and the interactions are simple.
+ It is in cases when there are many entities, which need to interact in
+ multiple ways and in particular sequences, e.g.
+ when the interactions are stateful, that the software's requisite topological
+ complexity can become onerous.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Additionally, the tight coupling makes reliability a challenge, especially
+ for real-time applications.
+ For example, if the connection between two parties in a client-server connectio
+n is interrupted, the data supposed to be received by the client will be
+ lost during this interruption, unless complex logic to deal with caching,
+ session management and error recovery on the server side is implemented.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Moreover, the synchronous nature of the communication ties up resources
+ to handle the interaction, which presents a bottleneck as the system scales
+ both in service load and complexity.
+\end_layout
+
+\begin_layout Standard
+The field of Enterprise Application Integration (EAI) is a field of study
+ aiming to refine a framework for rectifying these inefficiencies.
+ The shifting nature of the business landscape and of enterprises that operate
+ within it, together with the continued innovation in, and expansion of,
+ the EAS space, has resulted in it being a complicated problem to tackle.
+ 
+\end_layout
+
+\begin_layout Standard
+Enterprise software is adopted at different times, it is developed from
+ different vendors, at different points in time, oriented towards different
+ business needs.
+ 
+\end_layout
+
+\begin_layout Standard
+The employment of Domain-driven design, in recognition of the maintainability
+ and extensibility benefits domain-expert input in the refining of the software'
+s domain model confers, is a fact further complicating the effort of business
+ software consolidation.
+ 
+\end_layout
+
+\begin_layout Standard
+To this end, the introduction of a middleware stack remains a very common
+ business need.
+ This is a term reserved for software designed to facilitate communication
+ or connectivity between applications through channels beyond those available
+ from the operating system serving as the platform, or across distributed
+ networks.
+ (CITE IBM, wikipedia) in 
+\end_layout
+
+\begin_layout Standard
+TODO integrate notes below
 \end_layout
 
 \begin_layout Standard
@@ -345,10 +405,24 @@ service exposure enabling synchronous communication.
 \end_layout
 
 \begin_layout Standard
+TODO For ESB, see archpatbook p25, 351, 252
+\end_layout
+
+\begin_layout Standard
 the two above, combined in an integration runtime, with added logic for
  mediation/obscuring between the uniform exposure protocols and data formats,
  and the legacy formats and protocols (or informal specs) of the integrated
  applications, constitute an ESB.
+\end_layout
+
+\begin_layout Standard
+The ESB is the integration middleware for any service environment, where
+ the message is the basic unit of interaction between services.
+ An ESB is lightweight compared with previous middleware solutions, such
+ as the EAI hub.
+ The ESB is lightweight because it obviates the need of using custom-made
+ connectors, drivers, and adapters for integrating processes/applications,
+ data sources, and UIs.
 \end_layout
 
 \begin_layout Standard
@@ -605,36 +679,6 @@ TODO SaaS perhaps deserves a mention here
 )
 \end_layout
 
-\begin_layout Standard
-The field of Enterprise Application Integration (EAI) is a field of study
- aiming to refine a framework for rectifying these inefficiencies.
- The shifting nature of the business landscape and of enterprises that operate
- within it, together with the continued innovation in, and expansion of,
- the EAS space, has resulted in it being a complicated problem to tackle.
- 
-\end_layout
-
-\begin_layout Standard
-Enterprise software is adopted at different times, it is developed from
- different vendors, at different points in time, oriented towards different
- business needs.
- 
-\end_layout
-
-\begin_layout Standard
-The employment of Domain-driven design, in recognition of the maintainability
- and extensibility benefits domain-expert input in the refining of the software'
-s domain model confers, is a fact further complicating the effort of business
- software consolidation.
- 
-\end_layout
-
-\begin_layout Standard
-To this day, the introduction of a (TODO define middleware) middleware stack
- remains a very common business need.
- 
-\end_layout
-
 \begin_layout Section
 Introducing EAI in a organization
 \end_layout
@@ -887,9 +931,19 @@ Web Services
 , or business function-specific components that are implemented without
  knowledge or regard for the multitude of systems in which they may be utilized.
  
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
+TODO archpatbook p25
+\end_layout
+
+\begin_layout Standard
+SOA differs from the client/server architecture in the sense that services
+ are universally available and stateless, while client/server architecture
+ requires tight coupling among the participants.
+\end_layout
+
+\begin_layout Standard
 The effort towards this end has borne results through the W3C Web Services
  specification, though nowadays the emergence of alternatives and the REST
  architectural style in particular has created a rift in the SOA ecosystem,
