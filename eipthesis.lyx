@@ -326,38 +326,19 @@ Islands of automation
 \end_layout
 
 \begin_layout Standard
-(TODO INNEFICIENCIES of isolation and drawbacks of adhoc point2point solutions
- , see mulesoft article
-\end_layout
-
-\begin_layout Standard
-This model generally works well when the software entities in the integrated
- system are relatively few, and the interactions are simple.
- It is in cases when there are many entities, which need to interact in
- multiple ways and in particular sequences, e.g.
- when the interactions are stateful, that the software's requisite topological
- complexity can become onerous.
- 
+Such fragmentation of automation systems turned out to significantly increase
+ the cost of operations within organisations, and contribute to a higher
+ barrier of transactional cost for cooperation across different enterprises.
+ A major part of business operations requires coordination between multiple
+ departments/organisations, each with their own system of automation.
+ In this state of affairs, manual intervention is required to keep information
+ systems updated, human effort, data, infrastructure are often duplicated
+ needlessly, and the risk of costly human error is introduced at multiple
+ points.
 \begin_inset Newline newline
 \end_inset
 
-Additionally, the tight coupling makes reliability a challenge, especially
- for real-time applications.
- For example, if the connection between two parties in a client-server connectio
-n is interrupted, the data supposed to be received by the client will be
- lost during this interruption, unless complex logic to deal with caching,
- session management and error recovery on the server side is implemented.
- 
-\begin_inset Newline newline
-\end_inset
-
-Moreover, the synchronous nature of the communication ties up resources
- to handle the interaction, which presents a bottleneck as the system scales
- both in service load and complexity.
-\end_layout
-
-\begin_layout Standard
-The field of Enterprise Application Integration (EAI) is a field of study
+ The field of Enterprise Application Integration (EAI) is a field of study
  aiming to refine a framework for rectifying these inefficiencies.
  The shifting nature of the business landscape and of enterprises that operate
  within it, together with the continued innovation in, and expansion of,
@@ -377,17 +358,95 @@ The employment of Domain-driven design, in recognition of the maintainability
  and extensibility benefits domain-expert input in the refining of the software'
 s domain model confers, is a fact further complicating the effort of business
  software consolidation.
+ To this end, the introduction of a 
+\begin_inset Quotes eld
+\end_inset
+
+software glue
+\begin_inset Quotes erd
+\end_inset
+
+ stack remains a very common business need, and much research in the space
+ of EAI is aimed at providing insight for the development of better solutions
+ in this class of software.
+ The established term for such software is 
+\begin_inset Quotes eld
+\end_inset
+
+middleware
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+As previously noted, the role of middleware is to to facilitate communication
+ or connectivity between applications that were developed without such provision
+s, often through channels beyond those available from the operating system
+ serving as the platform, or across distributed networks.
+ (CITE IBM, wikipedia).
  
 \end_layout
 
 \begin_layout Standard
-To this end, the introduction of a middleware stack remains a very common
- business need.
- This is a term reserved for software designed to facilitate communication
- or connectivity between applications through channels beyond those available
- from the operating system serving as the platform, or across distributed
- networks.
- (CITE IBM, wikipedia) in 
+In the early days of EAI, the development of custom middleware solutions
+ begun spreading as a practice.
+\begin_inset Newline newline
+\end_inset
+
+TODO better segue to p2p from custom middleware 
+\end_layout
+
+\begin_layout Standard
+The conceptually simplest way to perform integration is by connecting informatio
+n systems directly in a point-to-point paradigm.
+ In a common implementation, custom procedures are called on both ends targeting
+ the native filesystem as the locus of communication between the systems,
+ often in conjuction with a network file transfer protocol such as FTP.
+ A system assuming the client role executes a reporting routine to extract
+ data to a text file in a specified format.
+ A routine is then run by the receiving application to import and process
+ the data.
+\end_layout
+
+\begin_layout Standard
+As similar point-to-point solutions begun to emerge, it nevertheless became
+ apparent that the net cost of development and maintenance of such solutions
+ stood high, and steeply increased with scale.
+ This came as a result of the fact that in the point-to-point approach,
+ the introduction of one new system typically requires many specialized
+ connections to the existing systems, which in turn impose additional maintenanc
+e burden, reduce agility, and constitute additional potential points of
+ failure.
+\begin_inset Newline newline
+\end_inset
+
+Additionally, the tight coupling makes reliability a challenge, especially
+ for real-time applications.
+ For example, if the connection between two parties in a client-server connectio
+n is interrupted, the data supposed to be received by the client will be
+ lost during this interruption, unless complex logic to deal with caching,
+ session management and error recovery on the server side is implemented.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Moreover, the synchronous nature of the communication ties up resources
+ to handle the interaction, which presents a bottleneck as the system scales
+ both in service load and complexity.
+\begin_inset Newline newline
+\end_inset
+
+ In retrospect, this model of integration remains suitable when the software
+ entities in the integrated system are relatively few, and/or the interactions
+ are simple.
+ It is in cases when there are many entities, which need to interact in
+ multiple ways and in particular sequences, e.g.
+ when the interactions are stateful, that the software's requisite topological
+ complexity can become onerous.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -673,6 +732,14 @@ The emergence of this last developmental trend arguably does credit to the
 
 \begin_layout Standard
 TODO SaaS perhaps deserves a mention here
+\end_layout
+
+\begin_layout Standard
+TODO check esiarchapproach As a technology, EAI typically refers to non-intrusiv
+e application integration techniques aimed at creating loosely coupled enterpris
+e software systems.
+ Message brokers, adapters, process automation tools, and similar modern
+ products are hallmarks of the EAI technology.
 \end_layout
 
 \begin_layout Standard
@@ -1204,6 +1271,15 @@ https://en.wikipedia.org/wiki/Message_passing#Distributed_objects
 \end_deeper
 \begin_layout Section
 Enterprise Integration Patterns
+\end_layout
+
+\begin_layout Standard
+TODO esiarchapproach p23 on essential EAI technologies
+\end_layout
+
+\begin_layout Standard
+TODO archpatbook p350 Intermediate routing pattern as an alternative to
+ embedding routing logic in chained services
 \end_layout
 
 \begin_layout Subsection
