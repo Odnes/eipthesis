@@ -450,12 +450,183 @@ Moreover, the synchronous nature of the communication ties up resources
 \end_layout
 
 \begin_layout Standard
-TODO integrate notes below
+One notable alternative architectural approach that serves to address the
+ downsides of the P2P model first came to prominence as the hub-and-spoke
+ pattern.
+ Based on the concept of 
+\begin_inset Quotes eld
+\end_inset
+
+events
+\begin_inset Quotes erd
+\end_inset
+
+, this system is built around a 
+\begin_inset Quotes eld
+\end_inset
+
+hub
+\begin_inset Quotes erd
+\end_inset
+
+, that serves as the common target for the systems on either side, each
+ assuming the role of either a 
+\begin_inset Quotes eld
+\end_inset
+
+producer
+\begin_inset Quotes erd
+\end_inset
+
+, or a 
+\begin_inset Quotes eld
+\end_inset
+
+consumer
+\begin_inset Quotes erd
+\end_inset
+
+ of events.
+ In the simplest implementation of the hub, which makes no provision for
+ central orchestration of the events in transit, the hub's role is described
+ as that of an 
+\begin_inset Quotes eld
+\end_inset
+
+event broker
+\begin_inset Quotes erd
+\end_inset
+
+.
+ the communication is multicast, with each event produced being 
+\begin_inset Quotes eld
+\end_inset
+
+published
+\begin_inset Quotes erd
+\end_inset
+
+ to the broker, and received by all consumers who have 
+\begin_inset Quotes eld
+\end_inset
+
+subscribed
+\begin_inset Quotes erd
+\end_inset
+
+ to this event, dubbed 
+\begin_inset Quotes eld
+\end_inset
+
+topic
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-hubnspoke helping reduce complexity by providin a common integration platform.
- event-driven
+In a somewhat different topology, that requires a more complex hub implementatio
+n, the hub is meant to act as an 
+\begin_inset Quotes eld
+\end_inset
+
+event mediator
+\begin_inset Quotes erd
+\end_inset
+
+, centrally maintaining state regarding the event notifications.
+ This positions the hub as the programmable orchestrator of the communication
+ between systems, making more complex interactions possible and enabling
+ it to act as a 
+\begin_inset Quotes eld
+\end_inset
+
+load balancer
+\begin_inset Quotes erd
+\end_inset
+
+, by allowing events to be directed towards exactly one consumer, and to
+ be kept to be resent in case there is no consumer available (
+\begin_inset Quotes eld
+\end_inset
+
+event queue
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The above variations of the same pattern, utilize, as they may, different
+ semantics to describe their operation, evident in the terminology-laden
+ paragraph above, they do nevertheless share a set of essential characteristics
+ to differentiate them from the previously mentioned poin-to-point pattern:
+\end_layout
+
+\begin_layout Itemize
+Multicast communication: Each event can have more than one possible recipient-su
+bscriber.
+\end_layout
+
+\begin_layout Itemize
+Asynchronous communication: The publisher does not wait for the subscriber
+ to process an event before sending the next one.
+\end_layout
+
+\begin_layout Itemize
+Loose coupling: Event publishers are not aware of how many, if any, subscribers
+ to the event there are, nor are they informed of how any particular event's
+ processing proceeds.
+ Publishers may yet be built to facilitate a stateful sequence of events,
+ though it is often preferable for such sequences to be mediated centrally,
+ by the hub, rather than by the participating applications.
+ (CITE wp Event-driven architecture)
+\end_layout
+
+\begin_layout Itemize
+Ontology: Event-driven systems commonly adopt a system-wide convention for
+ prioritization and grouping of events.
+ This allows subscribers to subscribe to entire categories of events or
+ events that fall at some particular point in the hierarchical sequence
+ of events regulating a business process.
+ To indicate the distinction, events in this paradigm are properly called
+ 
+\begin_inset Quotes eld
+\end_inset
+
+topics
+\begin_inset Quotes erd
+\end_inset
+
+.(CITE archpat p245).
+\begin_inset Newline newline
+\end_inset
+
+A further point to be made on this property of hub-and-spoke, and event-driven
+ architectures in general, is that ontologies produce what is called 
+\begin_inset Quotes eld
+\end_inset
+
+semantic coupling
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Events groups/hierarchies are only meaningful within the context of a system
+ adopting the particular ontology within which they are represented.
+ This makes communication between systems implemented with different ontologies
+ impossible, unless an intermediate semantic matching of events is performed.
+ (CITE Hasan_DEBS_2012) 
+\end_layout
+
+\begin_layout Standard
+TODO archpat p238 soa vs eda
+\end_layout
+
+\begin_layout Standard
+TODO integrate notes below
 \end_layout
 
 \begin_layout Standard
