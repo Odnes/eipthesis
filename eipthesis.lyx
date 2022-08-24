@@ -514,15 +514,7 @@ subscribed
 \begin_inset Quotes erd
 \end_inset
 
- to this event, dubbed 
-\begin_inset Quotes eld
-\end_inset
-
-topic
-\begin_inset Quotes erd
-\end_inset
-
-.
+ for receiving this event.
 \end_layout
 
 \begin_layout Standard
@@ -591,8 +583,8 @@ Ontology: Event-driven systems commonly adopt a system-wide convention for
  This allows subscribers to subscribe to entire categories of events or
  events that fall at some particular point in the hierarchical sequence
  of events regulating a business process.
- To indicate the distinction, events in this paradigm are properly called
- 
+ To indicate the distinction, subscribers are properly said to subscribe
+ to 
 \begin_inset Quotes eld
 \end_inset
 
@@ -600,7 +592,8 @@ topics
 \begin_inset Quotes erd
 \end_inset
 
-.(CITE archpat p245).
+, which can correspond to either particular events or categories thereof.(CITE
+ archpat p245).
 \begin_inset Newline newline
 \end_inset
 
@@ -617,12 +610,60 @@ semantic coupling
  Events groups/hierarchies are only meaningful within the context of a system
  adopting the particular ontology within which they are represented.
  This makes communication between systems implemented with different ontologies
- impossible, unless an intermediate semantic matching of events is performed.
+ impossible, unless an intermediate semantic matching technique is employed.
+ Research is currently active in this area.
  (CITE Hasan_DEBS_2012) 
 \end_layout
 
 \begin_layout Standard
-TODO archpat p238 soa vs eda
+(TODO archpat p238 soa vs eda
+\end_layout
+
+\begin_layout Standard
+it says SOA is good for 
+\end_layout
+
+\begin_layout Standard
+-interaction between vertical hierarchical layers of functions; makes some
+ sense
+\end_layout
+
+\begin_layout Standard
+-request-reply: send question wait for answer; synchronicity; makes sense
+\end_layout
+
+\begin_layout Standard
+-transactionality; why is it handled any better by SOA?
+\end_layout
+
+\begin_layout Standard
+-yada yada
+\end_layout
+
+\begin_layout Standard
+EDA is good for
+\end_layout
+
+\begin_layout Standard
+-workflow types of processes (?)
+\end_layout
+
+\begin_layout Standard
+-business to business; makes sense, though there's still the semantic coupling
+ issue and APIs rule the world now.
+\end_layout
+
+\begin_layout Standard
+EDAs proper use is with publishers and subscribers that are both stateless
+ and context-free ie trigger loosely coupled components or services)
+\end_layout
+
+\begin_layout Standard
+TODO define stateless and context-free
+\end_layout
+
+\begin_layout Standard
+TODO keep on studying eda vs soa.pdf
 \end_layout
 
 \begin_layout Standard
@@ -1177,8 +1218,8 @@ TODO archpatbook p25
 
 \begin_layout Standard
 SOA differs from the client/server architecture in the sense that services
- are universally available and stateless, while client/server architecture
- requires tight coupling among the participants.
+ are universally available, stateless and context-free, while client/server
+ architecture requires tight coupling among the participants.
 \end_layout
 
 \begin_layout Standard
