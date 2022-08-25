@@ -629,11 +629,12 @@ it says SOA is good for
 \end_layout
 
 \begin_layout Standard
--request-reply: send question wait for answer; synchronicity; makes sense
+-request-reply: send question wait for answer; human-computer interface;
+ synchronicity; makes sense
 \end_layout
 
 \begin_layout Standard
--transactionality; why is it handled any better by SOA?
+-transactionality; because information is passed through the response
 \end_layout
 
 \begin_layout Standard
@@ -651,15 +652,38 @@ EDA is good for
 \begin_layout Standard
 -business to business; makes sense, though there's still the semantic coupling
  issue and APIs rule the world now.
+ but apis are not even SOA-conforming services (e.g.
+ ignore Service statelessness principle)
 \end_layout
 
 \begin_layout Standard
-EDAs proper use is with publishers and subscribers that are both stateless
- and context-free ie trigger loosely coupled components or services)
+EDAs proper use is with subscribers that are both stateless and context-free
+ ie trigger loosely coupled components or services)
 \end_layout
 
 \begin_layout Standard
-TODO define stateless and context-free
+soa: synchronous request-response.
+ the client has control: selects exactly which services to invoke, waits
+ for response, uses response.
+ 
+\end_layout
+
+\begin_layout Standard
+(TODO why? easier to chain service invocations hierarchically.
+ this produces systems with business process-coupled sequences that are
+ not really meant to be accessible by B2B partners)
+\end_layout
+
+\begin_layout Standard
+eda: the client is less involved: sends event, which trigger different servies
+ based on which handler catches them, the operation is asynchronous; good
+ for operations where human workflow is involved, 
+\end_layout
+
+\begin_layout Standard
+event mediator (queue) allows for hierarchical operations, but this is less
+ inherent in architecture's design, better for b2b as it's inherently loosely
+ coupled, clients need only act as emitters
 \end_layout
 
 \begin_layout Standard
@@ -1194,7 +1218,7 @@ s separation of concerns with respect to the various functions provided
 \end_layout
 
 \begin_layout Standard
-In the SOA evolution of this approach, reusability and use in the context
+In the SOA evolution aof this approach, reusability and use in the context
  of distributed systems is emphasised.
  To realize this architectural style's potential, the promulgation of Web
  Service standards becomes instrumental.
@@ -1217,9 +1241,10 @@ TODO archpatbook p25
 \end_layout
 
 \begin_layout Standard
-SOA differs from the client/server architecture in the sense that services
- are universally available, stateless and context-free, while client/server
- architecture requires tight coupling among the participants.
+SOA is the client/server architecture in which the server is a service:
+ universally available, stateless and context-free, while traditionally
+ in the client/server architecture the participants can be tightly coupled
+ and maintain state.
 \end_layout
 
 \begin_layout Standard
