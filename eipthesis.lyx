@@ -620,25 +620,35 @@ semantic coupling
 \end_layout
 
 \begin_layout Standard
-it says SOA is good for 
+it says SOA is about:
 \end_layout
 
 \begin_layout Standard
--interaction between vertical hierarchical layers of functions; makes some
- sense
+-hierarchy, sequences, chaining: interaction between vertical hierarchical
+ layers of functions (synchronicity makes contract specification possible,
+ and contracts are nice for that sort of thing)
 \end_layout
 
 \begin_layout Standard
--request-reply: send question wait for answer; human-computer interface;
- synchronicity; makes sense
+(Definition: A contract bounds the service with schemas, a clear message
+ exchange pattern, and policies.
+ Policies define the QoS attributes, such as scalability, sustainability,
+ security and so on.)
 \end_layout
 
 \begin_layout Standard
--transactionality; because information is passed through the response
+-request-reply: send question wait for answer; suitable for human-computer
+ interfaces; made possible for reasons above
 \end_layout
 
 \begin_layout Standard
--yada yada
+-transactionality; because information is passed through the response, transacti
+on atomicity can be ensured through tracking the sequence of events
+\end_layout
+
+\begin_layout Standard
+-testing: merely a matter of ensuring each chained interaction is performed
+ successfully within contract's policy boundaries.
 \end_layout
 
 \begin_layout Standard
@@ -646,14 +656,25 @@ EDA is good for
 \end_layout
 
 \begin_layout Standard
--workflow types of processes (?)
+-operations where human workflow is involved, as it's async and contract-free
 \end_layout
 
 \begin_layout Standard
--business to business; makes sense, though there's still the semantic coupling
- issue and APIs rule the world now.
- but apis are not even SOA-conforming services (e.g.
- ignore Service statelessness principle)
+-B2B: shifts much of the responsibility of control-flow away from the event
+ source, distributes/delegates it to event handlers.
+ have them possibly trigger a service and voila! you get a decoupled architectur
+e, fit for B2B meddling and hybridizable with SOAs within (say, triggered
+ service acts as a SOA client, sends callback/event notification when completed
+ to event broker).
+ Though there's still the semantic coupling issue and APIs rule the world
+ now.
+ but apis are not SOA-conforming services either (e.g.
+ ignore Service statelessness principle).
+\end_layout
+
+\begin_layout Standard
+-Testing of the systems with EDA is not easy due to the asynchronous nature
+ of the processing (and lack of concommitant contracts).
 \end_layout
 
 \begin_layout Standard
@@ -662,22 +683,51 @@ EDAs proper use is with subscribers that are both stateless and context-free
 \end_layout
 
 \begin_layout Standard
-soa: synchronous request-response.
- the client has control: selects exactly which services to invoke, waits
- for response, uses response.
- 
+(TODO add to EDA pros: archpatbook p29
 \end_layout
 
 \begin_layout Standard
-(TODO why? easier to chain service invocations hierarchically.
- this produces systems with business process-coupled sequences that are
- not really meant to be accessible by B2B partners)
+-the partitioning of an application into a collection of dynamic application
+ services facilitates the choice and the replication of one or more application
+ components/services for scaling.
+ divide-and-conquer
 \end_layout
 
 \begin_layout Standard
-eda: the client is less involved: sends event, which trigger different servies
- based on which handler catches them, the operation is asynchronous; good
- for operations where human workflow is involved, 
+)
+\end_layout
+
+\begin_layout Standard
+SOA is synchronous request-response as opposed to asynchronous fire-and-forget:
+ pull information via request and demand their reception as opposed to push
+ information and go home.
+ SOA is puller-driven, client is a control-freak: selects exactly which
+ services to invoke, waits for response, uses response 
+\end_layout
+
+\begin_layout Standard
+EDA is driven by each handler to whom the event notifications are unidirectional
+ly distributed/delegated: trigger a service or choice, or do nothing: the
+ B2B partner (perhaps) gets to decide.
+\end_layout
+
+\begin_layout Standard
+there does exist async request-response, but is beyond the soa convention
+\end_layout
+
+\begin_layout Standard
+SOA: easier to chain service invocations hierarchically.
+ this produces systems with chained service sequences that are not really
+ meant to be accessible by B2B partners as they forfeit much control, having
+ to abide by contract-specified policies that are business-coupled and conceived
+ to support the synchronous paradigm.
+ QoS attributes, such as scalability, sustainability, security and so on.).
+ it's also good for testing, as it's a matter of meeting the contract.
+\end_layout
+
+\begin_layout Standard
+eda: the client is less involved: sends event, which trigger different services
+ based on which handler catches them, the operation is asynchronous 
 \end_layout
 
 \begin_layout Standard
@@ -692,11 +742,6 @@ TODO keep on studying eda vs soa.pdf
 
 \begin_layout Standard
 TODO integrate notes below
-\end_layout
-
-\begin_layout Standard
-service exposure enabling synchronous communication.
- daemon/service listener driven (request-response)
 \end_layout
 
 \begin_layout Standard
@@ -1237,14 +1282,10 @@ Web Services
 \end_layout
 
 \begin_layout Standard
-TODO archpatbook p25
-\end_layout
-
-\begin_layout Standard
-SOA is the client/server architecture in which the server is a service:
- universally available, stateless and context-free, while traditionally
- in the client/server architecture the participants can be tightly coupled
- and maintain state.
+(CITE archpatbook 25: SOA is the client/server architecture in which the
+ server is a service: universally available, stateless and context-free,
+ while traditionally in the client/server architecture the participants
+ can be tightly coupled and maintain state.)
 \end_layout
 
 \begin_layout Standard
@@ -1290,7 +1331,8 @@ ces.
 
 \begin_layout Standard
 (TODO domain driven design and microservices after loose coupling, reusability
- emphasis, ESBs) .
+ emphasis, ESBs.
+ archpatbook p.32) .
  It's central idea is the creation of a Ubiquitous Language with the assistance
  of domain experts, that embeds domain terminology into the software components'
  naming and structure.
