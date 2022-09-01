@@ -274,7 +274,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Part
-The language of Enterprise Application Integration (EAI)
+Enterprise Application Integration (EAI): the why and the how
 \end_layout
 
 \begin_layout Section
@@ -305,6 +305,10 @@ g billing and taxes, observing regulations, and much more.
 \end_layout
 
 \begin_layout Section
+The Evolution of Enterprise Application Integration
+\end_layout
+
+\begin_layout Subsection
 Islands of automation and the advent of EAI
 \end_layout
 
@@ -399,6 +403,10 @@ In the early days of EAI, the development of custom middleware solutions
 TODO better segue to p2p from custom middleware 
 \end_layout
 
+\begin_layout Subsection
+Point to point integration
+\end_layout
+
 \begin_layout Standard
 The conceptually simplest way to perform integration is by connecting informatio
 n systems directly in a point-to-point paradigm.
@@ -447,6 +455,10 @@ Moreover, the synchronous nature of the communication ties up resources
  when the interactions are stateful, that the software's requisite topological
  complexity can become onerous.
  
+\end_layout
+
+\begin_layout Subsection
+Event-Driven Architecture and the hub-and-spoke pattern
 \end_layout
 
 \begin_layout Standard
@@ -554,7 +566,7 @@ event queue
 The above variations of the same pattern, utilize, as they may, different
  semantics to describe their operation, evident in the terminology-laden
  paragraph above, they do nevertheless share a set of essential characteristics
- to differentiate them from the previously mentioned poin-to-point pattern:
+ to differentiate them from the previously mentioned point-to-point pattern:
 \end_layout
 
 \begin_layout Itemize
@@ -615,18 +627,22 @@ semantic coupling
  (CITE Hasan_DEBS_2012) 
 \end_layout
 
-\begin_layout Standard
-(TODO archpat p238 soa vs eda
+\begin_layout Subsection
+Service Oriented architecture and the Enterprise Service Bus
 \end_layout
 
 \begin_layout Standard
-it says SOA is about:
+(TODO archpat p238 soa vs eda and b2b
+\end_layout
+
+\begin_layout Standard
+SOA is about:
 \end_layout
 
 \begin_layout Standard
 -hierarchy, sequences, chaining: interaction between vertical hierarchical
- layers of functions (synchronicity makes contract specification possible,
- and contracts are nice for that sort of thing)
+ layers of functions packaged as services (synchronicity makes contract
+ specification possible, and contracts are nice for that sort of thing)
 \end_layout
 
 \begin_layout Standard
@@ -678,8 +694,71 @@ e, fit for B2B meddling and hybridizable with SOAs within (say, triggered
 \end_layout
 
 \begin_layout Standard
+-
+\begin_inset Quotes erd
+\end_inset
+
+Ease of deployment: The EDA pattern is characterized by loose coupling which
+ allows independent deployment and unhindered horizontal scalability, as
+ there are no dependencies among the participating components.
+ For solutions that require maximum ease of deployment, event broker topology
+ is a better option than event mediator topology.
+ This is due to the fact that in event mediator topology, there exists a
+ relatively tight coupling between the event mediator and event processor.
+\end_layout
+
+\begin_layout Standard
+-performance: asynchronicity makes data parallelism-process cloning possible
+\end_layout
+
+\begin_layout Standard
+-scalability: due to both of the above
+\end_layout
+
+\begin_layout Standard
+BOTH EDA and SOA ensure agility, are meant to shield handlers/consumers
+ from changes in the producer backend.
+ EDA through thorough loose-coupling with event mediator-processor coupling
+ being the limiting factor, SOA conditional on honoring the contract-specified
+ QoS policies.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+So, the rule of thumb to be followed while designing architectures for organizat
+ions is use loose coupling whenever possible and use tightly coupled architectur
+al options only if required.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 EDAs proper use is with subscribers that are both stateless and context-free
- ie trigger loosely coupled components or services)
+ ie trigger loosely coupled components or services) 
+\begin_inset Quotes eld
+\end_inset
+
+each message contains just enough details to represent a unit of work and
+ this provides the decision-enablement capability for notification receivers.
+ Event messages should not require any additional context.
+ Also, they should not require any kind of dependencies on the in-memory
+ session state of the connected applications.
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+TODO archpatbook p199 SOA
 \end_layout
 
 \begin_layout Standard
@@ -737,15 +816,7 @@ event mediator (queue) allows for hierarchical operations, but this is less
 \end_layout
 
 \begin_layout Standard
-TODO keep on studying eda vs soa.pdf
-\end_layout
-
-\begin_layout Standard
-TODO integrate notes below
-\end_layout
-
-\begin_layout Standard
-TODO For ESB, see archpatbook p25, 351, 252
+TODO For ESB, see archpatbook p25, 351, 252, eda vs soa.pdf
 \end_layout
 
 \begin_layout Standard
@@ -788,6 +859,19 @@ an essential addition to the ESB pattern were the service registry capabilities
 
 \begin_layout Standard
 TODO where does oauth fit?
+\end_layout
+
+\begin_layout Standard
+service management aspects:
+\end_layout
+
+\begin_layout Standard
+-service discovery (registry)
+\end_layout
+
+\begin_layout Standard
+-service negotiation: ability to set up a communication contract/connection
+ with services
 \end_layout
 
 \begin_layout Standard
@@ -887,10 +971,17 @@ APIs are controlled (proxy) views of the data and capabilities of a domain,
 \end_layout
 
 \begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
 SOA emerged as a means of shielding service consumers from changes in the
  back end.
- But who protects the service provid- ers from the churn of changing needs
+ But who protects the service providers from the churn of changing needs
  in omni-channel front-end solutions?
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -909,7 +1000,7 @@ Services are the means by which providers codify the base capabilities of
 
 \begin_layout Standard
 from then on, public exposure of partner APIs has steadily become more common,
- providing the opportunity for collaboration among loosely parties.
+ providing the opportunity for collaboration among loosely related parties.
  The resultant market-like ecosystem has been dubbed the 
 \begin_inset Quotes eld
 \end_inset
@@ -1548,8 +1639,8 @@ https://en.wikipedia.org/wiki/Message_passing#Distributed_objects
 \end_layout
 
 \end_deeper
-\begin_layout Section
-Enterprise Integration Patterns
+\begin_layout Part
+The Enterprise Integration Patterns (EIP) vocabulary
 \end_layout
 
 \begin_layout Standard
@@ -1563,6 +1654,10 @@ TODO archpatbook p350 Intermediate routing pattern as an alternative to
 
 \begin_layout Subsection
 Messaging
+\end_layout
+
+\begin_layout Standard
+TODO archpatbook p125
 \end_layout
 
 \begin_layout Standard
