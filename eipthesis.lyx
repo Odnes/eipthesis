@@ -627,6 +627,70 @@ semantic coupling
  (CITE Hasan_DEBS_2012) 
 \end_layout
 
+\begin_layout Standard
+Enterprise-driven architecture is properly constructed with subscribers
+ that are both stateless and context-free.
+ Each event notification ought to contain just enough details to enable
+ the event handlers to guide the business flow in the intended direction
+ e.g.
+ selecting among running one of several stateless components, that may or
+ may not be event emitters themselves, or halting.
+ 
+\end_layout
+
+\begin_layout Standard
+Event notifications should not provide any additional context.
+ Also, they should not require any kind of dependencies on the in-memory
+ session state of the connected applications.
+\end_layout
+
+\begin_layout Standard
+All things considered, the Event-driven Architecture paradigm, confer as
+ it may several benefits over the point–to-point model in integrations of
+ scale, is nevertheless ill-suited to certain specifications commonly required
+ of enterprise systems.
+ 
+\begin_inset Newline newline
+\end_inset
+
+First of all, the ability to chain interactions between components in vertical
+ hierarchies, is only possible through defining routing rules at the event
+ mediator.
+ While the convenience aspect of this method due to the centralization of
+ the more complex parts of the system is not to be discounted, the degree
+ of control over such interactions, in particular with regards to Quality
+ of Service considerations such as time-sensitivity, reliability etc is
+ rather low.
+ Also, event mediation adoption comes at the price of relatively tight coupling
+ between the prospective event handlers and the mediation-capable hub.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Ultimately, event mediation can be an appropriate solution for a number
+ of edge-cases in the context of loosely-coupled IT infrastructure mirroring
+ diffuse business process environments, but is far from a satisfactory way
+ to handle vertical interactions among components.
+\begin_inset Newline newline
+\end_inset
+
+For the reasons referenced above, event-driven systems, while highly performant,
+ are not suitable ways to integrate applications with time-sensitive interaction
+s, e.g.
+ Human-Computer Interfaces in banking applications.
+\begin_inset Newline newline
+\end_inset
+
+It is also a point worth making separately, that provisions for reliability
+ such as delivery acknowledgement, transaction atomicity, security etc are
+ not formally suited to EDA systems' design, and ad-hoc interventions towards
+ these ends can diminish EDA's inherent benefits.
+\end_layout
+
+\begin_layout Standard
+TODO write about hard to test
+\end_layout
+
 \begin_layout Subsection
 Service Oriented architecture and the Enterprise Service Bus
 \end_layout
@@ -659,7 +723,8 @@ SOA is about:
 
 \begin_layout Standard
 -transactionality; because information is passed through the response, transacti
-on atomicity can be ensured through tracking the sequence of events
+on atomicity (complete in it's entirety or having no effect) can be ensured
+ through tracking the sequence of changes
 \end_layout
 
 \begin_layout Standard
@@ -737,16 +802,6 @@ al options only if required.
 \end_layout
 
 \begin_layout Standard
-EDAs proper use is with subscribers that are both stateless and context-free
- ie trigger loosely coupled components or services) 
-\begin_inset Quotes eld
-\end_inset
-
-each message contains just enough details to represent a unit of work and
- this provides the decision-enablement capability for notification receivers.
- Event messages should not require any additional context.
- Also, they should not require any kind of dependencies on the in-memory
- session state of the connected applications.
 \begin_inset Quotes erd
 \end_inset
 
