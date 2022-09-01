@@ -683,16 +683,26 @@ s, e.g.
 
 It is also a point worth making separately, that provisions for reliability
  such as delivery acknowledgement, transaction atomicity, security etc are
- not formally suited to EDA systems' design, and ad-hoc interventions towards
+ formally unsuited to EDA systems' design, and ad-hoc interventions towards
  these ends can diminish EDA's inherent benefits.
 \end_layout
 
 \begin_layout Standard
-TODO write about hard to test
+Finally, the asynchronicity of EDA systems makes them more complex and harder
+ to test, owing to the introduction of event messaging infrastructure such
+ as the hub and event channel implementations, and the non-deterministic
+ nature of parallel computation.
+ (CITE archpat p.24, eipbook p.18)
 \end_layout
 
 \begin_layout Subsection
 Service Oriented architecture and the Enterprise Service Bus
+\end_layout
+
+\begin_layout Standard
+SOA is essentially a dynamic collection of services which communicate with
+ each other.
+ CITE archpatbook p.28
 \end_layout
 
 \begin_layout Standard
