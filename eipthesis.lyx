@@ -577,6 +577,15 @@ bscriber.
 \begin_layout Itemize
 Asynchronous communication: The publisher does not wait for the subscriber
  to process an event before sending the next one.
+ Also called 
+\begin_inset Quotes eld
+\end_inset
+
+fire-and-forget
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
@@ -700,9 +709,51 @@ Service Oriented architecture and the Enterprise Service Bus
 \end_layout
 
 \begin_layout Standard
-SOA is essentially a dynamic collection of services which communicate with
- each other.
- CITE archpatbook p.28
+A synchronous architecture meant to address the point-to-point paradigm's
+ numerous drawbacks in terms of technical debt accretion, agility and complexity
+, all the while factoring in reliability provisions, is termed Service-Oriented
+ Architecture, SOA for short.
+\begin_inset Newline newline
+\end_inset
+
+TODO describe SOA 
+\begin_inset Newline newline
+\end_inset
+
+While taking an antidiametrical approach to communication with regards to
+ EDA (pull vs push - soliciting a response as opposed to publishing an event
+ notification), thus evading many of it's shortfalls, in practice it has
+ come to serve as an essential complement in many EDA-stuctured enterprise
+ systems, with SOA services commonly being wrapped as components triggered
+ by event handlers.
+ This fact, combined with the convenience (TODO duties of integration engines
+ and convenience of them being centralized), has brought about a state of
+ affairs where most productized ESB implementations have come to rely on
+ distributed integration engines (often themselves confusingly being marketed
+ as 
+\begin_inset Quotes eld
+\end_inset
+
+ESBs
+\begin_inset Quotes erd
+\end_inset
+
+), introducing a federated hub as a common feature of present-day SOA systems.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+SOA is essentially a dynamic (in the sense that adding is easy due to the
+ SOA service specs and the ESB) collection of services which communicate
+ with each other.
+ A service consumer invokes a service provider through the network and has
+ to wait until the completion of the operation on the provider's side.
+\begin_inset Quotes erd
+\end_inset
+
+ CITE, TODO archpatbook p.28
 \end_layout
 
 \begin_layout Standard
