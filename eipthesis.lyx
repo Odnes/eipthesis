@@ -299,13 +299,271 @@ g billing and taxes, observing regulations, and much more.
  of optionality in partnering with software vendors (CITE EIPbook p32),
  as well as other adjoining business considerations, have hindered their
  more widespread adoption.
- This has necessitated the systematic study and development of solutions
- for Enterprise Application Integration, among which message-oriented middleware
- has stood out as one the most promising.
+ Added to that, the employment of Domain-driven design, in recognition of
+ the maintainability and extensibility benefits domain-expert input in the
+ refining of an applications's domain model confers, is a fact that has
+ further complicated the effort of business software consolidation.
+\end_layout
+
+\begin_layout Standard
+In this setting, the introduction of a 
+\begin_inset Quotes eld
+\end_inset
+
+software glue
+\begin_inset Quotes erd
+\end_inset
+
+ stack has come to be a very common business need, and much research in
+ the space of EAI is aimed at providing insight for the development of better
+ solutions in this class of software.
+ The established term for such software is 
+\begin_inset Quotes eld
+\end_inset
+
+middleware
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+From the systematic study and development of solutions in this space, a
+ particular subtype termed Message-Oriented Middleware, or MOM, has emerged
+ as one the most promising.
+ A vocabulary and a framework implementation for describing and building
+ such middleware constitute the main topic of this thesis.
+ 
+\end_layout
+
+\begin_layout Section
+Introducing EAI in a organization
+\end_layout
+
+\begin_layout Subsection
+General challenges
+\end_layout
+
+\begin_layout Standard
+Prior to engaging with the path-dependent and hard technical aspects of
+ Enterprise Application Integration, it is necessary to consider a set of
+ social and organizational features that the development and adoption of
+ such solutions typically necessitate or bring about.
+\end_layout
+
+\begin_layout Standard
+Enterprise Application Integration often requires a significant shift in
+ corporate politics.
+ By extension of Conway's law that postulates that 
+\begin_inset Quotes eld
+\end_inset
+
+Organizations which design systems are constrained to produce designs which
+ are copies of the communication structures of these organizations.
+\begin_inset Quotes erd
+\end_inset
+
+, it appears that the consolidation of enterprise software tools serving
+ business processes often necessitates a consolidation of the business units
+ and IT departments involved in those same processes.
+ (CITE EIPbook p32)
+\end_layout
+
+\begin_layout Standard
+Furthermore, owing to the wide scope of a middleware integration solution
+ bringing together critical business functions, the novel risk of failure
+ or misbehavior of such a system has to be internalized.
+ The risk profile and magnitude of reorganization around such a single point
+ of failure ought to be carefully considered.
+\end_layout
+
+\begin_layout Standard
+Bordering the technical side, the feasibility of integrating systems by
+ modifying them to better fit the integration architecture, rather than
+ by having to design the integration architecture to work around the various
+ systems' limitations and deficiencies, also often depends on political
+ factors.
+ In that vein, unsupported legacy systems still in operation, systems under
+ proprietary licenses, and systems whose support is outsourced under more
+ or less stringent long-term agreements can adversely influence the complexity
+ of the final product.
+\end_layout
+
+\begin_layout Standard
+In terms of standardization, it bears mentioning that despite the benefit
+ of convergence around Web Services and a Service Oriented approach to middlewar
+e architecture (which will be expounded upon in later chapters), the proliferati
+on of new extensions or interpretations of the standard, and most significantly
+ the shift towards REST (and, more recently GraphQL) in lockstep with the
+ mobile revolution, has created new challenges for integration engineers.
+ REST, in particular, owing to it being an architectural style for software
+ that expose http APIs rather than a protocol for web services per se, is
+ frequently implemented partially and/or wrongly, often necessitating ad-hoc
+ code for the consumption of APIs exposed in this manner.
+\end_layout
+
+\begin_layout Standard
+Finally, the operations aspect of utilizing middleware solutions presents
+ a unique challenge, as maintenance, deployment, monitoring and troubleshooting
+ of such heterogeneous, distributed systems commonly require mixes of skills
+ which are not, as a matter of course, to be found in single individuals.
+ To companies or organizations of sufficient scale as to already necessitate
+ a formalized employee training regime, the overhead for the maintenance
+ of such human capital might be lower.
+ (CITE EIPbook p32)
+\end_layout
+
+\begin_layout Subsection
+Types of integration
+\end_layout
+
+\begin_layout Standard
+While the above challenges generally apply to every approach in the broader
+ category of integration, many further issues have to be considered depending
+ on the business aims that dictate, and the technical aspects tha come as
+ a consequence of, the prospective type of integration solution.
+ The following categorization has been proposed:
+\end_layout
+
+\begin_layout Subsubsection
+Information Portals
+\end_layout
+
+\begin_layout Standard
+Information portals serve to aggregate information from disparate systems
+ within an organization with the aim of making it more accesible to humans.
+ They often facilitate the collaboration between different departments and
+ physical locations.
+ They are also commonly used in business decision processing and data analysis.
+ Common features include multi-window views serving information from different
+ sources with automatic refresh of related windows during navigation, search,
+ tagging and other categorization schemes.
+ 
+\end_layout
+
+\begin_layout Standard
+Various other more advanced features are common, but being as they cater
+ to particular business functions, employees roles or departments, no account
+ of those will be attempted.
+ Indeed, one of the common abstract features, or aims, of such systems,
+ is the personalization of the displayed information, achieved through the
+ profiling of users based on role, experience, competencies, habits and
+ expressed preferences.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Data Replication 
+\end_layout
+
+\begin_layout Standard
+Many business systems require access to the same data, but are designed
+ to utilize their own, separate datastores.
+ The resulting data replication necessitates provisions for maintaining
+ the data synchronized.
+ Commonly utilized for those purposes are the replication features built
+ into modern Database Management Systems, the file export and import functions
+ supported by many Enterprise Software Systems, and message-oriented middleware
+ automating transport of data via messages between arbitrary datastore solutions.
+\end_layout
+
+\begin_layout Subsubsection
+Shared Business Functions
+\end_layout
+
+\begin_layout Standard
+Needless duplication can exist in code serving business functions as well
+ as in data.
+ Were supported, invocation of shared business functions implemented as
+ services (A service is a well-defined function that is universally available
+ and responds to requests from “service consumers
+\begin_inset Quotes erd
+\end_inset
+
+) can help avoid the native implementation of redundant functionality.
+\end_layout
+
+\begin_layout Standard
+Were feasible, the need for data replication can also be circumvented via
+ this approach by serving shared data as a service.
+ In that vein, some criteria to be considered include the amount of control
+ that is had over the systems (calling a shared function is usually more
+ intrusive than loading data into the database) and the rate of change of
+ the relevant data (service invocation is costlier than data access, therefore
+ is less efficient for relatively frequently accessed, relatively static
+ data).
+\end_layout
+
+\begin_layout Subsubsection
+Service-Oriented Architectures and Distributed Business Processes
+\end_layout
+
+\begin_layout Standard
+Once an enterprise assembles a collection of useful services, managing the
+ services becomes an important function.
+ 
+\end_layout
+
+\begin_layout Standard
+Service Oriented Architecture is a proposed style of service design and
+ orchestration that incorporates the best industry practices in structuring
+ middleware solutions around services that correspond to business functions.
+ This paricular approach to middleware architecture shall be expounded upon
+ in a later chapter.
+\end_layout
+
+\begin_layout Standard
+A variant dubbed 
+\begin_inset Quotes eld
+\end_inset
+
+Distributed Business Process
+\begin_inset Quotes erd
+\end_inset
+
+, is also to be found in the bibliography.
+ It concerns the design of management services that serve to coordinate
+ the execution of the relevant business functions that are implemented natively
+ in an integrated system's constituent applications, in order to achieve
+ each and every particular business process.
+ Such schemes can exist within larger SOA-abiding systems, and the lines
+ between the two terms often blur.
+\end_layout
+
+\begin_layout Subsubsection
+Business-to-Business Integration
+\end_layout
+
+\begin_layout Standard
+In many cases, business functions may be available from outside suppliers
+ or business partners.
+ Business to Business (B2B) integration software provides the architecture
+ needed to digitize information and route it through an organization’s trading
+ ecosystem (usually online platforms) using the Electronic Data Exchange
+ (EDI) format appropriate for the application.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+In the following chapter, the various technical approaches to Enterprise
+ Application Integration will be discussed, beginning by retracing the historica
+l contingencies defining the evolution of the EAI field, and culminating
+ with a direction of focus towards the widely successful SOA approach and
+ the message-oriented middleware used to facilitate it, a particular implementat
+ion of which will be the topic of the rest of this thesis.
 \end_layout
 
 \begin_layout Section
 The Evolution of Enterprise Application Integration
+\end_layout
+
+\begin_layout Standard
+TODO: put definition of middleware higher up
 \end_layout
 
 \begin_layout Subsection
@@ -358,34 +616,6 @@ Enterprise software is adopted at different times, it is developed from
 \end_layout
 
 \begin_layout Standard
-The employment of Domain-driven design, in recognition of the maintainability
- and extensibility benefits domain-expert input in the refining of the software'
-s domain model confers, is a fact further complicating the effort of business
- software consolidation.
- To this end, the introduction of a 
-\begin_inset Quotes eld
-\end_inset
-
-software glue
-\begin_inset Quotes erd
-\end_inset
-
- stack remains a very common business need, and much research in the space
- of EAI is aimed at providing insight for the development of better solutions
- in this class of software.
- The established term for such software is 
-\begin_inset Quotes eld
-\end_inset
-
-middleware
-\begin_inset Quotes erd
-\end_inset
-
-.
- 
-\begin_inset Newline newline
-\end_inset
-
 As previously noted, the role of middleware is to to facilitate communication
  or connectivity between applications that were developed without such provision
 s, often through channels beyond those available from the operating system
@@ -397,10 +627,6 @@ s, often through channels beyond those available from the operating system
 \begin_layout Standard
 In the early days of EAI, the development of custom middleware solutions
  begun spreading as a practice.
-\begin_inset Newline newline
-\end_inset
-
-TODO better segue to p2p from custom middleware 
 \end_layout
 
 \begin_layout Subsection
@@ -711,11 +937,28 @@ Service Oriented architecture and the Enterprise Service Bus
 \begin_layout Standard
 A synchronous architecture meant to address the point-to-point paradigm's
  numerous drawbacks in terms of technical debt accretion, agility and complexity
-, all the while factoring in reliability provisions, is termed Service-Oriented
- Architecture, SOA for short.
-\begin_inset Newline newline
-\end_inset
+, all the while factoring in reliability provisions, is referred to as Service-O
+riented Architecture, SOA for short.
+\end_layout
 
+\begin_layout Standard
+A service is defined TODO stability and reusability (time investment vs
+ reusability, agility; lowers global cost by shielding consumer from changes
+ to the backend)
+\end_layout
+
+\begin_layout Standard
+services communicate via messages
+\end_layout
+
+\begin_layout Standard
+-the partitioning of an application into a collection of dynamic application
+ services facilitates the choice and the replication of one or more application
+ components/services for scaling.
+ divide-and-conquer
+\end_layout
+
+\begin_layout Standard
 TODO describe SOA 
 \begin_inset Newline newline
 \end_inset
@@ -846,7 +1089,7 @@ BOTH EDA and SOA ensure agility, are meant to shield handlers/consumers
  from changes in the producer backend.
  EDA through thorough loose-coupling with event mediator-processor coupling
  being the limiting factor, SOA conditional on honoring the contract-specified
- QoS policies.
+ QoS policies (stability).
 \end_layout
 
 \begin_layout Standard
@@ -879,13 +1122,6 @@ TODO archpatbook p199 SOA
 
 \begin_layout Standard
 (TODO add to EDA pros: archpatbook p29
-\end_layout
-
-\begin_layout Standard
--the partitioning of an application into a collection of dynamic application
- services facilitates the choice and the replication of one or more application
- components/services for scaling.
- divide-and-conquer
 \end_layout
 
 \begin_layout Standard
@@ -1232,213 +1468,6 @@ e software systems.
 
 \begin_layout Standard
 )
-\end_layout
-
-\begin_layout Section
-Introducing EAI in a organization
-\end_layout
-
-\begin_layout Subsection
-General challenges
-\end_layout
-
-\begin_layout Standard
-Prior to engaging with the technical aspects of Enterprise Application Integrati
-on, it is necessary to consider a set of social and organizational challenges
- that the development and adoption of such a solution might necessitate
- or bring about.
-\end_layout
-
-\begin_layout Standard
-Enterprise Application Integration often requires a significant shift in
- corporate politics.
- By extension of Conway's law that postulates that 
-\begin_inset Quotes eld
-\end_inset
-
-Organizations which design systems are constrained to produce designs which
- are copies of the communication structures of these organizations.
-\begin_inset Quotes erd
-\end_inset
-
-, it appears that the consolidation of enterprise software tools serving
- business processes often necessitates a consolidation of the business units
- and IT departments involved in those same processes.
- (CITE EIPbook p32)
-\end_layout
-
-\begin_layout Standard
-Furthermore, owing to the wide scope of a middleware integration solution
- bringing together critical business functions, the novel risk of failure
- or misbehavior of such a system has to be internalized.
- The risk profile and magnitude of reorganization around such a single point
- of failure ought to be carefully considered.
-\end_layout
-
-\begin_layout Standard
-Bordering the technical side, the feasibility of integrating systems by
- modifying them to better fit the integration architecture, rather than
- by having to design the integration architecture to work around the various
- systems' limitations and deficiencies, also often depends on political
- factors.
- In that vein, unsupported legacy systems still in operation, systems under
- proprietary licenses, and systems whose support is outsourced under more
- or less stringent long-term agreements can adversely influence the complexity
- of the final product.
-\end_layout
-
-\begin_layout Standard
-In terms of standardization, it bears mentioning that despite the benefit
- of convergence around Web Services and a Service Oriented approach to middlewar
-e architecture (which will be expounded upon in later chapters), the proliferati
-on of new extensions or interpretations of the standard, and most significantly
- the shift towards REST (and, more recently GraphQL) in lockstep with the
- mobile revolution, has created new challenges for integration engineers.
- REST, in particular, owing to it being an architectural style for software
- that expose http APIs rather than a protocol for web services per se, is
- frequently implemented partially and/or wrongly, often necessitating ad-hoc
- code for the consumption of APIs exposed in this manner.
-\end_layout
-
-\begin_layout Standard
-Finally, the operations aspect of utilizing middleware solutions presents
- a unique challenge, as maintenance, deployment, monitoring and troubleshooting
- of such heterogeneous, distributed systems commonly require mixes of skills
- which are not par for the course to be found in single individuals.
- To companies or organizations of sufficient scale as to already necessitate
- a formalized employee training regime, the overhead for the maintenance
- of such human capital might be lower.
- (CITE EIPbook p32)
-\end_layout
-
-\begin_layout Subsection
-Types of integration
-\end_layout
-
-\begin_layout Standard
-While the above challenges generally apply to every approach in the broader
- category of integration, many further issues have to be considered depending
- on the business aims that dictate, and the technical aspects tha come as
- a consequence of, the prospective type of integration solution.
- The following categorization has been proposed:
-\end_layout
-
-\begin_layout Subsubsection
-Information Portals
-\end_layout
-
-\begin_layout Standard
-Information portals serve to aggregate information from disparate systems
- within an organization with the aim of making it more accesible to humans.
- They often facilitate the collaboration between different departments and
- physical locations.
- They are also commonly used in business decision processing and data analysis.
- Common features include multi-window views serving information from different
- sources with automatic refresh of related windows during navigation, search,
- tagging and other categorization schemes.
- 
-\end_layout
-
-\begin_layout Standard
-Various other more advanced features are common, but being as they cater
- to particular business functions, employees roles or departments, no account
- of those will be attempted.
- Indeed, one of the common abstract features, or aims, of such systems,
- is the personalization of the displayed information, achieved through the
- profiling of users based on role, experience, competencies, habits and
- expressed preferences.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Data Replication 
-\end_layout
-
-\begin_layout Standard
-Many business systems require access to the same data, but are designed
- to utilize their own, separate datastores.
- The resulting data replication necessitates provisions for maintaining
- the data synchronized.
- Commonly utilized for those purposes are the replication features built
- into modern Database Management Systems, the file export and import functions
- supported by many Enterprise Software Systems, and message-oriented middleware
- automating transport of data via messages between arbitrary datastore solutions.
-\end_layout
-
-\begin_layout Subsubsection
-Shared Business Functions
-\end_layout
-
-\begin_layout Standard
-Needless duplication can exist in code serving business functions as well
- as in data.
- Were supported, invocation of shared business functions implemented as
- services (A service is a well-defined function that is universally available
- and responds to requests from “service consumers
-\begin_inset Quotes erd
-\end_inset
-
-) can help avoid the native implementation of redundant functionality.
-\end_layout
-
-\begin_layout Standard
-Were feasible, the need for data replication can also be circumvented via
- this approach by serving shared data as a service.
- In that vein, some criteria to be considered include the amount of control
- that is had over the systems (calling a shared function is usually more
- intrusive than loading data into the database) and the rate of change of
- the relevant data (service invocation is costlier than data access, therefore
- is less efficient for relatively frequently accessed, relatively static
- data).
-\end_layout
-
-\begin_layout Subsubsection
-Service-Oriented Architectures and Distributed Business Processes
-\end_layout
-
-\begin_layout Standard
-Once an enterprise assembles a collection of useful services, managing the
- services becomes an important function.
- 
-\end_layout
-
-\begin_layout Standard
-Service Oriented Architecture is a proposed style of service design and
- orchestration that incorporates the best industry practices in structuring
- middleware solutions around services that correspond to business functions.
- This paricular approach to middleware architecture shall be expounded upon
- in a later chapter.
-\end_layout
-
-\begin_layout Standard
-A variant dubbed 
-\begin_inset Quotes eld
-\end_inset
-
-Distributed Business Process
-\begin_inset Quotes erd
-\end_inset
-
-, is also to be found in the bibliography.
- It concerns the design of management services that serve to coordinate
- the execution of the relevant business functions that are implemented natively
- in an integrated system's constituent applications, in order to achieve
- every particular business process.
- Such schemes can exist within larger SOA-abiding systems, and the lines
- between the two terms often blur.
-\end_layout
-
-\begin_layout Subsubsection
-Business-to-Business Integration
-\end_layout
-
-\begin_layout Standard
-In many cases, business functions may be available from outside suppliers
- or business partners.
- Business to Business (B2B) integration software provides the architecture
- needed to digitize information and route it through an organization’s trading
- ecosystem (usually online platforms) using the Electronic Data Exchange
- (EDI) format appropriate for the application.
 \end_layout
 
 \begin_layout Section
