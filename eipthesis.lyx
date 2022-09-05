@@ -562,10 +562,6 @@ ion of which will be the topic of the rest of this thesis.
 The Evolution of Enterprise Application Integration
 \end_layout
 
-\begin_layout Standard
-TODO: put definition of middleware higher up
-\end_layout
-
 \begin_layout Subsection
 Islands of automation and the advent of EAI
 \end_layout
@@ -868,8 +864,8 @@ Enterprise-driven architecture is properly constructed with subscribers
  Each event notification ought to contain just enough details to enable
  the event handlers to guide the business flow in the intended direction
  e.g.
- selecting among running one of several stateless components, that may or
- may not be event emitters themselves, or halting.
+ by selecting among running one of several stateless, functionally autonomous
+ modules, that may or may not be event emitters themselves, or halting.
  
 \end_layout
 
@@ -888,7 +884,7 @@ All things considered, the Event-driven Architecture paradigm, confer as
 \begin_inset Newline newline
 \end_inset
 
-First of all, the ability to chain interactions between components in vertical
+First of all, the ability to chain interactions between modules in vertical
  hierarchies, is only possible through defining routing rules at the event
  mediator.
  While the convenience aspect of this method due to the centralization of
@@ -905,7 +901,7 @@ First of all, the ability to chain interactions between components in vertical
 Ultimately, event mediation can be an appropriate solution for a number
  of edge-cases in the context of loosely-coupled IT infrastructure mirroring
  diffuse business process environments, but is far from a satisfactory way
- to handle vertical interactions among components.
+ to handle vertical interactions among functionally autonomous modules.
 \begin_inset Newline newline
 \end_inset
 
@@ -939,6 +935,317 @@ A synchronous architecture meant to address the point-to-point paradigm's
  numerous drawbacks in terms of technical debt accretion, agility and complexity
 , all the while factoring in reliability provisions, is referred to as Service-O
 riented Architecture, SOA for short.
+\end_layout
+
+\begin_layout Standard
+Service Oriented Architecture (SOA) is an evolution of predecessors such
+ as component-based architecture and Object Oriented Analysis and Design
+ of remote objects e.g.
+ the CORBA standard.
+ 
+\end_layout
+
+\begin_layout Standard
+Component-based architecture, or component-based software engineering, emphasize
+s separation of concerns with respect to the various functions provided
+ in a given software system.
+ Components are commonly implemented around interfaces, that encapsulate
+ the particulars of the components' implementation, and narrow the available
+ surface-area for wiring together the various functionally autonomous modules.
+ Cohesion is maintained by fitting additional modules onto the interfaces.
+ The modules, which can be of arbitrary origin, are rendered into components
+ by implementing their respective interfaces.
+ The modules can exist as components locally within the same virtual or
+ physical machine, or in the context of distributed systems such as networks
+ (e.g.
+ as web services or web resources).
+ 
+\end_layout
+
+\begin_layout Standard
+In the SOA evolution of this approach, reusability and use in the context
+ of distributed systems is emphasised.
+ To realize this architectural style's potential, the promulgation of Web
+ Service standards becomes instrumental.
+ In this way it is ensured that networked software components can be developed
+ as generic 
+\begin_inset Quotes eld
+\end_inset
+
+Web Services
+\begin_inset Quotes erd
+\end_inset
+
+, or business function-specific components that are implemented without
+ knowledge or regard for the multitude of systems by which they may be invoked.
+ 
+\end_layout
+
+\begin_layout Standard
+Based on this, SOA can be defined as an architectural style that enables
+ a dynamic collection of services to communicate with one another.
+ If the conventions are observed dilligently, the need for an EAI hub and
+ it's accompanying module-specific connectors, database drivers and protocol
+ adapters is theoretically obviated.
+ In ubiquitous practice, however, and still in accordance with the loose
+ definition given above, a federated hub solution is adopted.
+\begin_inset Newline newline
+\end_inset
+
+The Enterprise Service Bus (ESB) is the architectural feature of SOA systems
+ enabling communication in a special variant of the more general client-server
+ model, wherein any which service may behave as server or client.
+ It is equivalent to the 
+\begin_inset Quotes eld
+\end_inset
+
+bus
+\begin_inset Quotes erd
+\end_inset
+
+ design concept found in computer hardware architecture, in this case used
+ to refer to the software infrastructure used to implement a model for communica
+tion among independent software services running within networks of disparate
+ and independent computers.
+ De facto, the term has come to refer to integration engine solutions adopting
+ the architectural approach of a hub, often federated, whose main purpose
+ is to facilitate a message-based communication model (termed Enterprise
+ Message Model) to be used within a particular SOA system's context.
+ Such integration engines, marketed as ESBs, commonly provide numerous auxillary
+ capabilities regarding service management and message routing, mediation,
+ transformation, enrichment, validation etc.
+ (TODO ESB)
+\end_layout
+
+\begin_layout Standard
+A service consumer invokes a service provider through the network and has
+ to wait until the completion of the operation on the provider's side.
+\begin_inset Quotes erd
+\end_inset
+
+ CITE, TODO archpatbook p.28
+\end_layout
+
+\begin_layout Standard
+Utilizing this approach, if the conventions are observed dilligently, the
+ need for an EAI hub and it's accompanying module-specific connectors, database
+ drivers and protocol adapters is theoretically obviated.
+ Provision still has to be taken service discovery and negotiation,  (TODO
+ ESB)
+\end_layout
+
+\begin_layout Standard
+(TODO eipbook p73, opengroup.org 
+\begin_inset Quotes eld
+\end_inset
+
+Having a central mechanism by which all messages are exchanged facilitates
+ monitoring, control, transformation, and security of messages.
+\begin_inset Quotes erd
+\end_inset
+
+ but why use messages/ asynchronous EDA features in soa in the first place?
+ perhaps keep them separate for now, or make the distinction clear.)
+\end_layout
+
+\begin_layout Standard
+(TODO eipbook p51 a Composed Message Processor is the combination of a Splitter,
+ a Router and an aggregator.
+ A router is a Camel Route, a thing that takes in an event notification
+ (from() and decides what service-server to invoke dynamically.
+ a router is therefore at once an EDA decoupler (an event handler), and
+ a chainer for SOA compliant message-interfaced services (with url() for
+ web services, being wrapped automatically by camel into message interfaces,
+ or with 
+\begin_inset Quotes eld
+\end_inset
+
+processor
+\begin_inset Quotes erd
+\end_inset
+
+ (CITE camelia p133) wrappers: esb-style connectors, a away to wrap multiple
+ generic java components into message-interfaced SOA-services.
+\end_layout
+
+\begin_layout Standard
+so camel routes expose event handler routing logic, see camelia p131
+\end_layout
+
+\begin_layout Standard
+a camel route is fire-and-forget if eg the timer event causes no message
+ to finally exit the route, the event handler run is just ineffectual)
+\end_layout
+
+\begin_layout Standard
+(CITE archpatbook 25: SOA is the client/server architecture in which the
+ server is a service: universally available, stateless and context-free,
+ while traditionally in the client/server architecture the participants
+ can be tightly coupled and maintain state.)
+\end_layout
+
+\begin_layout Standard
+The effort towards this end has borne results through the W3C Web Services
+ specification, though nowadays the emergence of alternatives and the REST
+ architectural style in particular has created a rift in the SOA ecosystem,
+ which is nevertheless efficiently bridged by another core feature of SOA,
+ the Enterprise Service Bus.
+\begin_inset Newline newline
+\end_inset
+
+-TODO LITMUS
+\end_layout
+
+\begin_layout Standard
+and the establishment of the practice of environment definition via Web
+ Service Litmus tests.
+ (TODO litmus is about 
+\end_layout
+
+\begin_layout Standard
+http://deg.egov.bg/LP/soa.rup_soma/tasks/soa_service_qualification_E0D920A6.html
+\end_layout
+
+\begin_layout Standard
+constraining the potential services to a subset that is reusable in the
+ environment in which it is initially developed),
+\end_layout
+
+\begin_layout Standard
+As mentioned previously, a distinctive feature of the SOA style is business
+ centeredness, with components or interfaces aimed at fitting business functions
+, rules, or goals.
+\end_layout
+
+\begin_layout Standard
+Service-oriented architecture can be implemented with web services or Microservi
+ces.
+ This is done to make the functional building-blocks accessible over standard
+ Internet protocols that are independent of platforms and programming languages.
+ 
+\end_layout
+
+\begin_layout Standard
+(TODO domain driven design and microservices after loose coupling, reusability
+ emphasis, ESBs.
+ archpatbook p.32) .
+ It's central idea is the creation of a Ubiquitous Language with the assistance
+ of domain experts, that embeds domain terminology into the software components'
+ naming and structure.
+ This approach is suitable for the design of middleware as it helps confer
+ flexibility and extensibility to the resulting system, and reduces friction
+ in the operations side, which, as mentioned previously, is an important
+ factor when considering the adoption of integration solutions.
+\end_layout
+
+\begin_layout Standard
+Each SOA system defines it's own environment, by which every service implementat
+ion must abide.
+ This is ensured through the provision of a “Litmus Test”, that determines
+ whether a given service implementation is correct in it's particular SOA
+ system's context.
+ 
+\end_layout
+
+\begin_layout Standard
+A further recommendation of the SOA style is that open standards be used,
+ their use being instrumental in realizing interoperability with different
+ consumer implementations, and location transparency.
+\end_layout
+
+\begin_layout Standard
+The related buzzword 
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Service-oriented_architecture#Defining%20concepts
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Enterprise_service_bus
+\end_layout
+
+\begin_layout Standard
+A further property service-orientation promotes is loose coupling between
+ services.
+ SaaS can be considered to have evolved from SOA.
+\end_layout
+
+\begin_layout Standard
+Loose coupling, in addition to enabling the development of distributed architect
+ures composed of programs developed by different teams at different times,
+ allows for domain-driven design to be observed in its constituent parts,
+ which is claimed to increase maintainability and creative cross-domain
+ collaboration.
+\end_layout
+
+\begin_layout Standard
+Domain-Specific-Langueges and Aspect-Oriented Programming can be used to
+ manage the complexity produced by the increased need for isolation and
+ encapsulation that Domain-Driven design necessitates.
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Domain-driven_design
+\end_layout
+
+\begin_layout Standard
+Loose coupling is achieved through transactions, queues provided by message-orie
+nted middleware, and interoperability standards.
+\end_layout
+
+\begin_layout Standard
+Transactions help ensure validity of exchanges, queues enable asynchronicity
+ and load balancing in distributed systems, and interoperability standards
+ provide a common target for the integration of legacy systems (often rendering
+ them network-enabled in the process) and newly implemented services alike.
+\end_layout
+
+\begin_layout Standard
+(TODO benefits of SOA https://en.wikipedia.org/wiki/Service-oriented_architecture#
+Organizational benefits )
+\end_layout
+
+\begin_layout Standard
+In the messaging approach, provisions for asynchronicity (message buffers,
+ brokers) and arbitrary consumer scaling are made.
+\end_layout
+
+\begin_layout Standard
+(TODO Pure Messaging Integration approach https://en.wikipedia.org/wiki/Apache_Act
+iveMQ#Usage )
+\end_layout
+
+\begin_layout Standard
+Hybrid Web Service - Messaging SOAs using MOMs is common practice.
+\end_layout
+
+\begin_layout Standard
+(TODO benefits with Microservice-based SOA https://en.wikipedia.org/wiki/Service-o
+riented_architecture#Implementation approaches)
+\end_layout
+
+\begin_layout Standard
+Microservices is a novel, implementation agnostic approach to SOA, that
+ allows for domain-driven design to be observed (actually they are only
+ loosely related and, in fact, operate at different scopes, as discussed
+ here
+\end_layout
+
+\begin_layout Standard
+https://www.ibm.com/cloud/learn/soa)
+\end_layout
+
+\begin_layout Standard
+https://en.wikipedia.org/wiki/Service-oriented_architecture#Microservices
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -982,21 +1289,6 @@ ESBs
 \end_inset
 
 ), introducing a federated hub as a common feature of present-day SOA systems.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Quotes eld
-\end_inset
-
-SOA is essentially a dynamic (in the sense that adding is easy due to the
- SOA service specs and the ESB) collection of services which communicate
- with each other.
- A service consumer invokes a service provider through the network and has
- to wait until the completion of the operation on the provider's side.
-\begin_inset Quotes erd
-\end_inset
-
- CITE, TODO archpatbook p.28
 \end_layout
 
 \begin_layout Standard
@@ -1162,9 +1454,8 @@ eda: the client is less involved: sends event, which trigger different services
 \end_layout
 
 \begin_layout Standard
-event mediator (queue) allows for hierarchical operations, but this is less
- inherent in architecture's design, better for b2b as it's inherently loosely
- coupled, clients need only act as emitters
+event mediator (queue) better for b2b as it's inherently loosely coupled,
+ clients need only act as emitters
 \end_layout
 
 \begin_layout Standard
@@ -1471,217 +1762,26 @@ e software systems.
 \end_layout
 
 \begin_layout Section
-Integration in a Service-Oriented Architecture
+Messaging in practice: Message Oriented Middleware
 \end_layout
 
 \begin_layout Standard
-Service Oriented Architecture (SOA) is an evolution of predecessors such
- as component-based architecture and Object Oriented Analysis and Design
- of remote objects e.g.
- the CORBA standard.
- 
-\end_layout
-
-\begin_layout Standard
-Component-based architecture, or component-based software engineering, emphasize
-s separation of concerns with respect to the various functions provided
- in a given software system.
- Components are commonly implemented around interfaces, that encapsulate
- the particulars of the components' implementation, and narrow the available
- surface-area for wiring together the various functionally autonomous modules.
- Cohesion is maintained by fitting additional modules onto the interfaces.
- The modules, which can be of arbitrary origin, are rendered into components
- by implementing their respective interfaces.
- The modules can exist as components locally within the same virtual or
- physical machine, or in the context of distributed systems such as networks
- (e.g.
- as web services or web resources).
-\end_layout
-
-\begin_layout Standard
-In the SOA evolution aof this approach, reusability and use in the context
- of distributed systems is emphasised.
- To realize this architectural style's potential, the promulgation of Web
- Service standards becomes instrumental.
- In this way it is ensured that networked software components can be developed
- as generic 
 \begin_inset Quotes eld
 \end_inset
 
-Web Services
+The Java EE programming environment provides a standard API called JMS (Java
+ Message Service), which is implemented by most MOM vendors and aims to
+ hide the particular MOM API implementations; however, JMS does not define
+ the format of the messages that are exchanged, so JMS systems are not interoper
+able.
 \begin_inset Quotes erd
 \end_inset
 
-, or business function-specific components that are implemented without
- knowledge or regard for the multitude of systems in which they may be utilized.
- 
+ (semantic coupling)
 \end_layout
 
 \begin_layout Standard
-(CITE archpatbook 25: SOA is the client/server architecture in which the
- server is a service: universally available, stateless and context-free,
- while traditionally in the client/server architecture the participants
- can be tightly coupled and maintain state.)
-\end_layout
-
-\begin_layout Standard
-The effort towards this end has borne results through the W3C Web Services
- specification, though nowadays the emergence of alternatives and the REST
- architectural style in particular has created a rift in the SOA ecosystem,
- which is nevertheless efficiently bridged by another core feature of SOA,
- the Enterprise Service Bus.
-\begin_inset Newline newline
-\end_inset
-
--TODO LITMUS
-\end_layout
-
-\begin_layout Standard
-and the establishment of the practice of environment definition via Web
- Service Litmus tests.
- (TODO litmus is about 
-\end_layout
-
-\begin_layout Standard
-http://deg.egov.bg/LP/soa.rup_soma/tasks/soa_service_qualification_E0D920A6.html
-\end_layout
-
-\begin_layout Standard
-constraining the potential services to a subset that is reusable in the
- environment in which it is initially developed),
-\end_layout
-
-\begin_layout Standard
-As mentioned previously, a distinctive feature of the SOA style is business
- centeredness, with components or interfaces aimed at fitting business functions
-, rules, or goals.
-\end_layout
-
-\begin_layout Standard
-Service-oriented architecture can be implemented with web services or Microservi
-ces.
- This is done to make the functional building-blocks accessible over standard
- Internet protocols that are independent of platforms and programming languages.
- 
-\end_layout
-
-\begin_layout Standard
-(TODO domain driven design and microservices after loose coupling, reusability
- emphasis, ESBs.
- archpatbook p.32) .
- It's central idea is the creation of a Ubiquitous Language with the assistance
- of domain experts, that embeds domain terminology into the software components'
- naming and structure.
- This approach is suitable for the design of middleware as it helps confer
- flexibility and extensibility to the resulting system, and reduces friction
- in the operations side, which, as mentioned previously, is an important
- factor when considering the adoption of integration solutions.
-\end_layout
-
-\begin_layout Standard
-Each SOA system defines it's own environment, by which every service implementat
-ion must abide.
- This is ensured through the provision of a “Litmus Test”, that determines
- whether a given service implementation is correct in it's particular SOA
- system's context.
- 
-\end_layout
-
-\begin_layout Standard
-A further recommendation of the SOA style is that open standards be used,
- their use being instrumental in realizing interoperability with different
- consumer implementations, and location transparency.
-\end_layout
-
-\begin_layout Standard
-The related buzzword 
-\end_layout
-
-\begin_layout Standard
-https://en.wikipedia.org/wiki/Service-oriented_architecture#Defining%20concepts
-\end_layout
-
-\begin_layout Standard
-https://en.wikipedia.org/wiki/Enterprise_service_bus
-\end_layout
-
-\begin_layout Standard
-A further property service-orientation promotes is loose coupling between
- services.
- SaaS can be considered to have evolved from SOA.
-\end_layout
-
-\begin_layout Standard
-Loose coupling, in addition to enabling the development of distributed architect
-ures composed of programs developed by different teams at different times,
- allows for domain-driven design to be observed in its constituent parts,
- which is claimed to increase maintainability and creative cross-domain
- collaboration.
-\end_layout
-
-\begin_layout Standard
-Domain-Specific-Langueges and Aspect-Oriented Programming can be used to
- manage the complexity produced by the increased need for isolation and
- encapsulation that Domain-Driven design necessitates.
-\end_layout
-
-\begin_layout Standard
-https://en.wikipedia.org/wiki/Domain-driven_design
-\end_layout
-
-\begin_layout Standard
-Loose coupling is achieved through transactions, queues provided by message-orie
-nted middleware, and interoperability standards.
-\end_layout
-
-\begin_layout Standard
-Transactions help ensure validity of exchanges, queues enable asynchronicity
- and load balancing in distributed systems, and interoperability standards
- provide a common target for the integration of legacy systems (often rendering
- them network-enabled in the process) and newly implemented services alike.
-\end_layout
-
-\begin_layout Standard
-(TODO benefits of SOA https://en.wikipedia.org/wiki/Service-oriented_architecture#
-Organizational benefits )
-\end_layout
-
-\begin_layout Standard
-In the messaging approach, provisions for asynchronicity (message buffers,
- brokers) and arbitrary consumer scaling are made.
-\end_layout
-
-\begin_layout Standard
-(TODO Pure Messaging Integration approach https://en.wikipedia.org/wiki/Apache_Act
-iveMQ#Usage )
-\end_layout
-
-\begin_layout Standard
-Hybrid Web Service - Messaging SOAs using MOMs is common practice.
-\end_layout
-
-\begin_layout Standard
-(TODO benefits with Microservice-based SOA https://en.wikipedia.org/wiki/Service-o
-riented_architecture#Implementation approaches)
-\end_layout
-
-\begin_layout Standard
-Microservices is a novel, implementation agnostic approach to SOA, that
- allows for domain-driven design to be observed (actually they are only
- loosely related and, in fact, operate at different scopes, as discussed
- here
-\end_layout
-
-\begin_layout Standard
-https://www.ibm.com/cloud/learn/soa)
-\end_layout
-
-\begin_layout Standard
-https://en.wikipedia.org/wiki/Service-oriented_architecture#Microservices
-\end_layout
-
-\begin_layout Section
-Messaging in practice: Message Oriented Middleware
+(TODO EIPBook p72 on why messaging)
 \end_layout
 
 \begin_layout Standard
@@ -1690,11 +1790,6 @@ Messaging in practice: Message Oriented Middleware
  distributed systems, conferring benefits of request throttling and load
  balancing but increasing complexity; this fact makes asynchronous messaging
  a promising approach, and this has informed the direction of this thesis)
-\end_layout
-
-\begin_layout Standard
-(TODO EIPbook p64 on Integration Approaches, with messaging as the most
- promising one)
 \end_layout
 
 \begin_layout Standard
@@ -1835,6 +1930,29 @@ consumers: polling, event-driven, message dispatcher
 
 \begin_layout Part
 Apache Camel: EIPs in action
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+In Camel, DSL means a fluent Java API that contains methods named for EIP
+ terms.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Camel isn’t an enterprise service bus (ESB
+\begin_inset Quotes erd
+\end_inset
+
+ ( CITE camelia p102)
 \end_layout
 
 \begin_layout Section
