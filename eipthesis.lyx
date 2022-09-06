@@ -987,8 +987,8 @@ Based on this, SOA can be defined as an architectural style that enables
  If the conventions are observed dilligently, the need for an EAI hub and
  it's accompanying module-specific connectors, database drivers and protocol
  adapters is theoretically obviated.
- In ubiquitous practice, however, and still in accordance with the loose
- definition given above, a federated hub solution is adopted.
+ In common practice, however, and still in accordance with the loose definition
+ given above, a federated hub solution is adopted.
 \begin_inset Newline newline
 \end_inset
 
@@ -1007,14 +1007,75 @@ bus
  to refer to the software infrastructure used to implement a model for communica
 tion among independent software services running within networks of disparate
  and independent computers.
- De facto, the term has come to refer to integration engine solutions adopting
- the architectural approach of a hub, often federated, whose main purpose
- is to facilitate a message-based communication model (termed Enterprise
- Message Model) to be used within a particular SOA system's context.
- Such integration engines, marketed as ESBs, commonly provide numerous auxillary
- capabilities regarding service management and message routing, mediation,
- transformation, enrichment, validation etc.
- (TODO ESB)
+ 
+\begin_inset Newline newline
+\end_inset
+
+In more modern Enterprise systems, which provide a Web Service-abiding API
+ interface, implementing the ESB pattern amounts to providing certain service
+ management capabilities, such as a means of controlled exposure of said
+ APIs using an exposure gateway.
+ 
+\begin_inset Newline newline
+\end_inset
+
+The primary aim of service management is, indeed, to facilitate service
+ discovery and exposure via a Service Registry- in this particular scenario,
+ it's function being partly substituted by the gateway- and an HTTP-accessible
+ querying API.
+ Reliance on human-maintained interface documentation e.g.
+ Swagger or human-to-human interaction has proven a brittle strategy that
+ erodes reusability, which, it is to be noted, is regarded as one of the
+ main advantages of SOA.
+ More complete service management solutions deal with additional aspects,
+ namely service negotiation i.e.
+ the ability to set up a communication contract/connection with services,
+ implementation of a security model with patterns for access control, e.g.
+ with user roles/permission schemes, traffic control, encryption/redaction
+ etc.
+ Supplemental features can comprise configurable web portals that describe
+ the available APIs, enable potential users to issue keys automatically
+ (self-subscribe) in order to use the APIs, and provision analytics for
+ both users and providers of the APIs.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Many service management capabilities are, however, commonly relegated to
+ a separate runtime, existing as a service known only to the gateway, called
+ a Service Registry.
+ Furthermore, in more complex integration scenarios, such as when unusual
+ protocols or data formats are utilized, when compositions of multiple requests
+ are called for, or perhaps in cases where transactionality needs to be
+ implemented, the introduction of an integration engine existing as a separate
+ runtime is, again, required.
+\end_layout
+
+\begin_layout Standard
+De facto, therefore, the term 
+\begin_inset Quotes eld
+\end_inset
+
+ESB
+\begin_inset Quotes erd
+\end_inset
+
+ has come to refer to integration engine solutions adopting the architectural
+ approach of a hub, often federated, whose main purpose is to facilitate
+ a message-based communication model (termed Enterprise Message System,
+ EMS) to be used within a particular SOA system's context.
+ Such integration engines, marketed as ESBs, commonly provide auxillary
+ capabilities, which have proven to be essential additions for constructing
+ more complex systems making use of said pattern.
+ They commonly contain logic for the encapsulation of legacy formats, protocols
+ (or informal specs) and APIs of the integrated applications into an EMS
+ compatible format, incorporate a service registry, and sport numerous other
+ features for message routing, mediation, transformation, enrichment, validation
+ etc.
+\begin_inset Newline newline
+\end_inset
+
+(TODO ESB)
 \end_layout
 
 \begin_layout Standard
@@ -1030,8 +1091,7 @@ A service consumer invokes a service provider through the network and has
 Utilizing this approach, if the conventions are observed dilligently, the
  need for an EAI hub and it's accompanying module-specific connectors, database
  drivers and protocol adapters is theoretically obviated.
- Provision still has to be taken service discovery and negotiation,  (TODO
- ESB)
+ Provision still has to be taken service discovery and negotiation), 
 \end_layout
 
 \begin_layout Standard
@@ -1493,36 +1553,11 @@ integration engines of today allow for the implementation of different patterns
 \end_layout
 
 \begin_layout Standard
-an essential addition to the ESB pattern were the service registry capabilities
- of modern integration runtimes, as relying on interface documentation e.g.
- swagger or human2human interaction erodes reusability, which was the initial
- promise of hubnspoke and SOA in general.
- 
+
 \end_layout
 
 \begin_layout Standard
 TODO where does oauth fit?
-\end_layout
-
-\begin_layout Standard
-service management aspects:
-\end_layout
-
-\begin_layout Standard
--service discovery (registry)
-\end_layout
-
-\begin_layout Standard
--service negotiation: ability to set up a communication contract/connection
- with services
-\end_layout
-
-\begin_layout Standard
-service exposure gateways sometimes take up the role of service registries
- and also often implement other API management capabilities, such as encryption/
-redaction, traffic control, a security model with patterns for access control,
- e.g.
- with user roles/permission schemes etc.
 \end_layout
 
 \begin_layout Standard
@@ -1798,6 +1833,18 @@ able.
 \end_layout
 
 \begin_layout Standard
+(
+\begin_inset Quotes eld
+\end_inset
+
+The message queue paradigm is a sibling of the publisher/subscriber pattern
+\begin_inset Quotes erd
+\end_inset
+
+ CITE wp Message Queue)
+\end_layout
+
+\begin_layout Standard
 Apache Camel is a framework for building MOM middleware.
  More generally, it aspires to enable integrations designed around the Enterpris
 e Integration Pattern (EIP) vocabulary.
@@ -1881,6 +1928,22 @@ https://en.wikipedia.org/wiki/Message_passing#Distributed_objects
 \end_deeper
 \begin_layout Part
 The Enterprise Integration Patterns (EIP) vocabulary
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Quotes eld
+\end_inset
+
+The commonalities between messaging systems (in terms of capabilities and
+ architecture) have been captured in a platform-independent fashion as enterpris
+e integration patterns (a.k.a.
+ messaging patterns).
+ [3] 
+\begin_inset Quotes eld
+\end_inset
+
+ CITE wp Enterprise Messaging System)
 \end_layout
 
 \begin_layout Standard
