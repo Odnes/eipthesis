@@ -477,8 +477,8 @@ Shared Business Functions
 Needless duplication can exist in code serving business functions as well
  as in data.
  Were supported, invocation of shared business functions implemented as
- services (A service is a well-defined function that is universally available
- and responds to requests from “service consumers
+ services (A service is a contract-defined function that is universally
+ available, and responds to requests from “service consumers
 \begin_inset Quotes erd
 \end_inset
 
@@ -978,7 +978,13 @@ Web Services
 
 , or business function-specific components that are implemented without
  knowledge or regard for the multitude of systems by which they may be invoked.
- 
+\end_layout
+
+\begin_layout Quote
+(TODO FOOTER) The effort towards this end has borne results through the
+ W3C Web Services specification, though nowadays the emergence of alternatives
+ and the REST architectural style in particular has created a rift in the
+ SOA ecosystem, whose bridging is often handled by integration middleware.
 \end_layout
 
 \begin_layout Standard
@@ -995,7 +1001,10 @@ Based on this, SOA can be defined as an architectural style that enables
 The Enterprise Service Bus (ESB) is the architectural feature of SOA systems
  enabling communication in a special variant of the more general client-server
  model, wherein any which service may behave as server or client.
- It is equivalent to the 
+ Universal availability and statelessness, both criteria met by proper services,
+ but not by traditional server-client component couples, are prerequisites
+ for the establishment of such as system.
+ (CITE archpatbook p.25) The ESB is equivalent to the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1075,23 +1084,121 @@ ESB
 \begin_inset Newline newline
 \end_inset
 
-(TODO ESB)
+A summary of the archetypal SOA model's features in axes of comparison common
+ with those of the aforementioned architectural styles could thus be:
 \end_layout
 
-\begin_layout Standard
-A service consumer invokes a service provider through the network and has
- to wait until the completion of the operation on the provider's side.
+\begin_layout Itemize
+Unicast communication: communication is established between service pairs.
+\end_layout
+
+\begin_layout Itemize
+Synchronous communication: The client-service sends a request and awaits
+ for a response to be received.
+\end_layout
+
+\begin_layout Itemize
+Reusability/Interoperability: Services within a particular SOA context are
+ defined by standardized service contracts, which include the interface,
+ the schema, the communication protocol and various QoS policies.
+ Each service can have multiple contracts, aimed at supporting different
+ consumers.
+ While these requirements result in tight coupling of services to the particular
+ SOA context, reusability and interoperability among contract-abiding services
+ is high, and further increased through the introduction of a service registry
+ to facilitate discovery and exposure.
+\end_layout
+
+\begin_layout Itemize
+Business-centeredness: While many components within a SOA context may be
+ developed in such a way as to constitute candidate services, only a subset
+ of those have their service description exported and, and perhaps published
+ to a service registry, if there is one.
+ Exposure in a controlled way is ensured via the provision of a fitness-for-purp
+ose, or 
+\begin_inset Quotes eld
+\end_inset
+
+litmus test
 \begin_inset Quotes erd
 \end_inset
 
- CITE, TODO archpatbook p.28
+, that determines whether a given service implementation meets certain business
+ alignment, composability, reusability and technical feasibility criteria.(CITE
+ deg.egov.bg) This is facilitated greatly by the existence of accompanying
+ service contracts, that allow the evaluation of the service's technical
+ characteristics to remain separate from considerations concerning it's
+ internal design.
 \end_layout
 
 \begin_layout Standard
-Utilizing this approach, if the conventions are observed dilligently, the
- need for an EAI hub and it's accompanying module-specific connectors, database
- drivers and protocol adapters is theoretically obviated.
- Provision still has to be taken service discovery and negotiation), 
+As mentioned previously, SOA systems are designed to communicate synchronously.
+ A service consumer invokes a service provider through the network and has
+ to wait until the completion of the operation on the provider's side, upon
+ which a response is returned.
+ CITE, TODO archpatbook p.28 Ordinarily TODO archpatbook p210 Service Messaging
+\begin_inset Newline newline
+\end_inset
+
+Loose coupling is achieved internally through the use of a service registry,
+ an Enterprise Messaging System and a service gateway, usually provided
+ via a message-oriented integration engine (
+\begin_inset Quotes eld
+\end_inset
+
+ESB
+\begin_inset Quotes erd
+\end_inset
+
+ is a common misnomer for such engines).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Interfacing with external systems remains hard, as they would have to be
+ wrapped as services abiding to the particular ESB infrastructure.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+The actual implementation of such a publisher–subscriber-based communication
+ mechanism requires architectural extensions in order to provide such a
+ complex message tracking and forwarding mechanism.
+ A mature ESB product should normally be able to provide such functionality.
+ The application of this pattern helps to further decouple
+\begin_inset Quotes erd
+\end_inset
+
+ wp Event-driven Messaging
+\begin_inset Newline newline
+\end_inset
+
+todo SOA 2.0 archpatbook p28
+\begin_inset Newline newline
+\end_inset
+
+(
+\begin_inset Quotes eld
+\end_inset
+
+The benefits of atomic service transactions are as follows: Helps to propagate
+ the rollback mechanism across message-based business services Effective
+ implementation of the stateless principle
+\begin_inset Quotes erd
+\end_inset
+
+ archpatbook p215)
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1106,69 +1213,6 @@ Having a central mechanism by which all messages are exchanged facilitates
 
  but why use messages/ asynchronous EDA features in soa in the first place?
  perhaps keep them separate for now, or make the distinction clear.)
-\end_layout
-
-\begin_layout Standard
-(TODO eipbook p51 a Composed Message Processor is the combination of a Splitter,
- a Router and an aggregator.
- A router is a Camel Route, a thing that takes in an event notification
- (from() and decides what service-server to invoke dynamically.
- a router is therefore at once an EDA decoupler (an event handler), and
- a chainer for SOA compliant message-interfaced services (with url() for
- web services, being wrapped automatically by camel into message interfaces,
- or with 
-\begin_inset Quotes eld
-\end_inset
-
-processor
-\begin_inset Quotes erd
-\end_inset
-
- (CITE camelia p133) wrappers: esb-style connectors, a away to wrap multiple
- generic java components into message-interfaced SOA-services.
-\end_layout
-
-\begin_layout Standard
-so camel routes expose event handler routing logic, see camelia p131
-\end_layout
-
-\begin_layout Standard
-a camel route is fire-and-forget if eg the timer event causes no message
- to finally exit the route, the event handler run is just ineffectual)
-\end_layout
-
-\begin_layout Standard
-(CITE archpatbook 25: SOA is the client/server architecture in which the
- server is a service: universally available, stateless and context-free,
- while traditionally in the client/server architecture the participants
- can be tightly coupled and maintain state.)
-\end_layout
-
-\begin_layout Standard
-The effort towards this end has borne results through the W3C Web Services
- specification, though nowadays the emergence of alternatives and the REST
- architectural style in particular has created a rift in the SOA ecosystem,
- which is nevertheless efficiently bridged by another core feature of SOA,
- the Enterprise Service Bus.
-\begin_inset Newline newline
-\end_inset
-
--TODO LITMUS
-\end_layout
-
-\begin_layout Standard
-and the establishment of the practice of environment definition via Web
- Service Litmus tests.
- (TODO litmus is about 
-\end_layout
-
-\begin_layout Standard
-http://deg.egov.bg/LP/soa.rup_soma/tasks/soa_service_qualification_E0D920A6.html
-\end_layout
-
-\begin_layout Standard
-constraining the potential services to a subset that is reusable in the
- environment in which it is initially developed),
 \end_layout
 
 \begin_layout Standard
@@ -1196,15 +1240,6 @@ ces.
  flexibility and extensibility to the resulting system, and reduces friction
  in the operations side, which, as mentioned previously, is an important
  factor when considering the adoption of integration solutions.
-\end_layout
-
-\begin_layout Standard
-Each SOA system defines it's own environment, by which every service implementat
-ion must abide.
- This is ensured through the provision of a “Litmus Test”, that determines
- whether a given service implementation is correct in it's particular SOA
- system's context.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1386,6 +1421,7 @@ on atomicity (complete in it's entirety or having no effect) can be ensured
 \begin_layout Standard
 -testing: merely a matter of ensuring each chained interaction is performed
  successfully within contract's policy boundaries.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2016,6 +2052,35 @@ Camel isn’t an enterprise service bus (ESB
 \end_inset
 
  ( CITE camelia p102)
+\begin_inset Newline newline
+\end_inset
+
+(TODO eipbook p51 a Composed Message Processor is the combination of a Splitter,
+ a Router and an aggregator.
+ A router is a Camel Route, a thing that takes in an event notification
+ (from() and decides what service-server to invoke dynamically.
+ a router is therefore at once an EDA decoupler (an event handler), and
+ a chainer for SOA compliant message-interfaced services (with url() for
+ web services, being wrapped automatically by camel into message interfaces,
+ or with 
+\begin_inset Quotes eld
+\end_inset
+
+processor
+\begin_inset Quotes erd
+\end_inset
+
+ (CITE camelia p133) wrappers: esb-style connectors, a away to wrap multiple
+ generic java components into message-interfaced SOA-services.
+\end_layout
+
+\begin_layout Standard
+so camel routes expose event handler routing logic, see camelia p131
+\end_layout
+
+\begin_layout Standard
+a camel route is fire-and-forget if eg the timer event causes no message
+ to finally exit the route, the event handler run is just ineffectual)
 \end_layout
 
 \begin_layout Section
