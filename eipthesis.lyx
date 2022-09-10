@@ -1020,17 +1020,17 @@ tion among independent software services running within networks of disparate
 \begin_inset Newline newline
 \end_inset
 
-In more modern Enterprise systems, which provide a Web Service-abiding API
- interface, implementing the ESB pattern amounts to providing certain service
- management capabilities, such as a means of controlled exposure of said
- APIs using an exposure gateway.
+When working with more modern Enterprise systems, which provide a Web Service-ab
+iding API interface, implementing the ESB pattern amounts to providing certain
+ service management capabilities, such as a means of controlled exposure
+ of said APIs, using an exposure gateway service.
  
 \begin_inset Newline newline
 \end_inset
 
-The primary aim of service management is, indeed, to facilitate service
- discovery and exposure via a Service Registry- in this particular scenario,
- it's function being partly substituted by the gateway- and an HTTP-accessible
+The primary aim of service management is to facilitate service discovery
+ and exposure via a Service Registry- in this particular scenario, it's
+ function being partly substituted by the gateway- and an HTTP-accessible
  querying API.
  Reliance on human-maintained interface documentation e.g.
  Swagger or human-to-human interaction has proven a brittle strategy that
@@ -1042,10 +1042,10 @@ The primary aim of service management is, indeed, to facilitate service
  implementation of a security model with patterns for access control, e.g.
  with user roles/permission schemes, traffic control, encryption/redaction
  etc.
- Supplemental features can comprise configurable web portals that describe
+ Supplemental features can comprise configurable web portals that may describe
  the available APIs, enable potential users to issue keys automatically
- (self-subscribe) in order to use the APIs, and provision analytics for
- both users and providers of the APIs.
+ (self-subscribe) in order to use the APIs, provision analytics for both
+ users and providers of the APIs, etc.
  
 \begin_inset Newline newline
 \end_inset
@@ -1089,12 +1089,14 @@ A summary of the archetypal SOA model's features in axes of comparison common
 \end_layout
 
 \begin_layout Itemize
-Unicast communication: communication is established between service pairs.
+Unicast communication: Communication is established in service provider-consumer
+ pairs.
 \end_layout
 
 \begin_layout Itemize
-Synchronous communication: The client-service sends a request and awaits
- for a response to be received.
+Synchronous communication: A service consumer invokes a service provider
+ through the network and has to wait until the completion of the operation
+ on the provider's side, upon which a response is returned.
 \end_layout
 
 \begin_layout Itemize
@@ -1132,11 +1134,53 @@ litmus test
 \end_layout
 
 \begin_layout Standard
-As mentioned previously, SOA systems are designed to communicate synchronously.
- A service consumer invokes a service provider through the network and has
- to wait until the completion of the operation on the provider's side, upon
- which a response is returned.
- CITE, TODO archpatbook p.28 Ordinarily TODO archpatbook p210 Service Messaging
+In simpler scenarios, SOA systems are designed around a synchronous ESB,
+ a property derived from the synchronous nature of their constituent services.
+ A common approach is that of the service-oriented API gateway pattern,
+ touched upon briefly in a previous section.
+ It refers to business-coupled deployments consisting of components wrapped
+ as Web Services, which are configured as to delegate service management
+ to the system's gateway service.
+ This service is charged with receiving requests from it's external API,
+ accessible to clients outside the SOA system, aggregating the various services
+ required to fulfill them, and returning the response in a synchronous manner.
+ 
+\end_layout
+
+\begin_layout Standard
+For the more complex integration scenarios, however, industry practice has
+ converged around utilizing asynchronous ESBs with an event-driven messaging
+ pattern of communication.
+ (TODO mentioned before) The implementations of this pattern, referred to
+ as Enterprise Messaging Systems (EMSs), rely on the introduction of a 
+\begin_inset Quotes eld
+\end_inset
+
+middleware
+\begin_inset Quotes erd
+\end_inset
+
+ integration engine.
+ 
+\end_layout
+
+\begin_layout Quote
+TODO FOOTER It has become common practice for productized SOA integration
+ engines to misappropriate the term 
+\begin_inset Quotes eld
+\end_inset
+
+ESB
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+ EMS CITE, TODO archpatbook p.28 Ordinarily TODO archpatbook p210 Service
+ Messaging
 \begin_inset Newline newline
 \end_inset
 
