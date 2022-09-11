@@ -1102,13 +1102,20 @@ Synchronous communication: A service consumer invokes a service provider
 \begin_layout Itemize
 Reusability/Interoperability: Services within a particular SOA context are
  defined by standardized service contracts, which include the interface,
- the schema, the communication protocol and various QoS policies.
+ the schema, the communication protocol and various Quality-of-Service (QoS)
+ policies.
  Each service can have multiple contracts, aimed at supporting different
  consumers.
  While these requirements result in tight coupling of services to the particular
  SOA context, reusability and interoperability among contract-abiding services
  is high, and further increased through the introduction of a service registry
  to facilitate discovery and exposure.
+\end_layout
+
+\begin_layout Quote
+(TODO FOOTER) Quality-of-Service, or QoS refers to the performance of a
+ network service in multiple areas that commonly include scalability, security,
+ reliability, lossyness, delay and more.
 \end_layout
 
 \begin_layout Itemize
@@ -1151,8 +1158,8 @@ In simpler scenarios, SOA systems are designed around a synchronous ESB,
 For the more complex integration scenarios, however, industry practice has
  converged around utilizing asynchronous ESBs with an event-driven messaging
  pattern of communication.
- (TODO mentioned before) The implementations of this pattern, referred to
- as Enterprise Messaging Systems (EMSs), rely on the introduction of a 
+ The implementations of this pattern, referred to as Enterprise Messaging
+ Systems (EMSs), rely on the introduction of a 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1179,23 +1186,86 @@ ESB
 \end_layout
 
 \begin_layout Standard
- EMS CITE, TODO archpatbook p.28 Ordinarily TODO archpatbook p210 Service
+(TODO fix redundancy around gateway vs integration engine ESBs)
+\end_layout
+
+\begin_layout Standard
+EMS CITE, TODO archpatbook p.28 Ordinarily TODO archpatbook p210 Service
  Messaging
 \begin_inset Newline newline
 \end_inset
 
-Loose coupling is achieved internally through the use of a service registry,
- an Enterprise Messaging System and a service gateway, usually provided
- via a message-oriented integration engine (
+
+\begin_inset Newline newline
+\end_inset
+
+This model of SOA, which borrows some elements of Event-Driven Architecture,
+ has been called next-generation SOA, or 
 \begin_inset Quotes eld
 \end_inset
 
-ESB
+SOA 2.0
 \begin_inset Quotes erd
 \end_inset
 
- is a common misnomer for such engines).
+.
+ To elucidate the cause of the wide popularity of this hybrid, a pros-and-cons
+ comparison of the two styles will be attempted.
+\begin_inset Newline newline
+\end_inset
+
+Traditional SOA can be advantageous for:
+\end_layout
+
+\begin_layout Itemize
+Service chaining: Operations that involve interaction between vertical hierarchi
+cal layers of functions packaged as services are common.
+ The request-response model of communication, supplemented by polling mechanisms
+ for interactions involving more than two services, ensures the interactions
+ are performed in the correct order.
+ The implementation of such chains is further simplified by the assured
+ existence of contracts that specify the Quality-of-Service aspects of the
+ modules involved.
+\end_layout
+
+\begin_layout Itemize
+Human-computer Interaction and other time-sensitive processes: The synchronous
+ and contract-bound nature of communication is expedient for the design
+ of real-time services, such as the decision-enablement and actuation capabiliti
+es that are expected from modern enteprise systems.
+\end_layout
+
+\begin_layout Itemize
+Transactionality: Interaction between service pairs can be said to implement
  
+\begin_inset Quotes eld
+\end_inset
+
+pull
+\begin_inset Quotes erd
+\end_inset
+
+ semantics.
+ Information can be aggregated as it is passed through the requisite responses,
+ through service chains of arbitrary depth, until the original service consumer
+ receives their response.
+ Through this mechanism, transaction atomicity, ie that all interactions
+ either occur successfully or no operation occurs, can be guarranteed.
+\end_layout
+
+\begin_layout Itemize
+Testing: Synchronicity makes contract specification possible, and contract-speci
+fied policy boundaries increase the tractability of operations involving
+ multiple services..
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -1209,14 +1279,17 @@ Interfacing with external systems remains hard, as they would have to be
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Quotes eld
 \end_inset
 
-The actual implementation of such a publisher–subscriber-based communication
- mechanism requires architectural extensions in order to provide such a
- complex message tracking and forwarding mechanism.
- A mature ESB product should normally be able to provide such functionality.
- The application of this pattern helps to further decouple
+The application of this pattern helps to further decouple the service consumers
+ from the service providers and increases the overall reliability of a service
+ composition.
+ 
 \begin_inset Quotes erd
 \end_inset
 
@@ -1435,37 +1508,7 @@ ESBs
 \end_layout
 
 \begin_layout Standard
-SOA is about:
-\end_layout
-
-\begin_layout Standard
--hierarchy, sequences, chaining: interaction between vertical hierarchical
- layers of functions packaged as services (synchronicity makes contract
- specification possible, and contracts are nice for that sort of thing)
-\end_layout
-
-\begin_layout Standard
-(Definition: A contract bounds the service with schemas, a clear message
- exchange pattern, and policies.
- Policies define the QoS attributes, such as scalability, sustainability,
- security and so on.)
-\end_layout
-
-\begin_layout Standard
--request-reply: send question wait for answer; suitable for human-computer
- interfaces; made possible for reasons above
-\end_layout
-
-\begin_layout Standard
--transactionality; because information is passed through the response, transacti
-on atomicity (complete in it's entirety or having no effect) can be ensured
- through tracking the sequence of changes
-\end_layout
-
-\begin_layout Standard
--testing: merely a matter of ensuring each chained interaction is performed
- successfully within contract's policy boundaries.
- 
+pros cons
 \end_layout
 
 \begin_layout Standard
@@ -1473,7 +1516,8 @@ EDA is good for
 \end_layout
 
 \begin_layout Standard
--operations where human workflow is involved, as it's async and contract-free
+-operations where human workflow, arbitrary-halting/blocking processes is
+ involved, as it's async and contract-free
 \end_layout
 
 \begin_layout Standard
