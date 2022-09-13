@@ -1214,6 +1214,14 @@ SOA 2.0
 \begin_inset Newline newline
 \end_inset
 
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Traditional SOA can be advantageous for:
 \end_layout
 
@@ -1249,8 +1257,9 @@ pull
  Information can be aggregated as it is passed through the requisite responses,
  through service chains of arbitrary depth, until the original service consumer
  receives their response.
- Through this mechanism, transaction atomicity, ie that all interactions
- either occur successfully or no operation occurs, can be guarranteed.
+ Through this mechanism, transaction atomicity, i.e.
+ that all interactions either occur successfully or no operation occurs,
+ can be guarranteed.
 \end_layout
 
 \begin_layout Itemize
@@ -1262,6 +1271,14 @@ fied policy boundaries increase the tractability of operations involving
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+On the con side of SOA, it could be noted that, despte the the high internal
+ interoperability of systems designed in this manner, interfacing with external
+ systems remains hard, as they would have to be wrapped as services abiding
+ to the particular ESB setup, and establish connections bound to service-contrac
+ts composed often under unaccommodating assumptions.
 \begin_inset Newline newline
 \end_inset
 
@@ -1269,20 +1286,89 @@ fied policy boundaries increase the tractability of operations involving
 \begin_inset Newline newline
 \end_inset
 
-Interfacing with external systems remains hard, as they would have to be
- wrapped as services abiding to the particular ESB infrastructure.
-\begin_inset Newline newline
-\end_inset
-
 
 \begin_inset Newline newline
 \end_inset
 
+Meanwhile, EDA exhibits it's own set of advantages in multiple places:
+\end_layout
 
+\begin_layout Itemize
+Business-to-business (B2B) integration: EDA implements 
+\begin_inset Quotes eld
+\end_inset
+
+push
+\begin_inset Quotes erd
+\end_inset
+
+ semantics.
+ An event emitter's active involvement in communication ends once it publishes
+ an event notification.
+ Control of an operation's flow is shifted away from the event source, being
+ distributed/delegated to event handlers.
+ An enterprise partner can integrate with a preexisting EDA system with
+ relative ease, by encapsulating their system's components as event emitters
+ that conform to the system's particular event semantics.
+ In case a partner already utilizes their own EDA system, a semantic matching
+ solution can alternatively serve to directly bridge the two systems.
+\end_layout
+
+\begin_layout Itemize
+Business workflow and other arbitrarily-halting processes: Many business
+ processes involve external/human input in their workflow.
+ A Warehouse Management System (WMS), for example, has to be updated with
+ the status of the physical warehouse by warehouse employees, before moving
+ forward with the processing of an inventory receipt.
+ As EDA is asynchronous and contract-free by design, it enables such operations
+ to be readily embeddable within an Enterprise Software-driven workflow.
+\end_layout
+
+\begin_layout Itemize
+Ease of deployment: The EDA pattern is characterized by loose coupling which
+ allows independent deployment and unhindered horizontal scalability, as
+ there are no dependencies among the participating components.
+ For solutions that require maximum ease of deployment, event broker topology
+ is a better option than event mediator topology.
+ This is due to the fact that in the event mediator topology, relatively
+ tight event mediator - event processor coupling can exist .
+\end_layout
+
+\begin_layout Itemize
+Performance: Asynchronicity makes data parallelism via multi-core processing
+ possible
+\end_layout
+
+\begin_layout Itemize
+Scalability: The above two points together, are essential elements for systems
+ envisioned to be scalable.
+\end_layout
+
+\begin_layout Standard
+On the con side, EDA system testing is not easy due to the asynchronous
+ nature of the processing, and the concommitant lack of service contracts.
 \begin_inset Newline newline
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+have them possibly trigger a service and voila! you get a decoupled architecture
+, fit for B2B meddling and hybridizable with SOAs within (say, triggered
+ service acts as a SOA client, sends callback/event notification when completed
+ to event broker).
+ Though there's still the semantic coupling issue and APIs rule the world
+ now.
+ but apis are not SOA-conforming services either (e.g.
+ ignore Service statelessness principle).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Quotes eld
 \end_inset
 
@@ -1392,7 +1478,7 @@ ures composed of programs developed by different teams at different times,
 \end_layout
 
 \begin_layout Standard
-Domain-Specific-Langueges and Aspect-Oriented Programming can be used to
+Domain-Specific-Languages and Aspect-Oriented Programming can be used to
  manage the complexity produced by the increased need for isolation and
  encapsulation that Domain-Driven design necessitates.
 \end_layout
@@ -1513,51 +1599,6 @@ pros cons
 
 \begin_layout Standard
 EDA is good for
-\end_layout
-
-\begin_layout Standard
--operations where human workflow, arbitrary-halting/blocking processes is
- involved, as it's async and contract-free
-\end_layout
-
-\begin_layout Standard
--B2B: shifts much of the responsibility of control-flow away from the event
- source, distributes/delegates it to event handlers.
- have them possibly trigger a service and voila! you get a decoupled architectur
-e, fit for B2B meddling and hybridizable with SOAs within (say, triggered
- service acts as a SOA client, sends callback/event notification when completed
- to event broker).
- Though there's still the semantic coupling issue and APIs rule the world
- now.
- but apis are not SOA-conforming services either (e.g.
- ignore Service statelessness principle).
-\end_layout
-
-\begin_layout Standard
--Testing of the systems with EDA is not easy due to the asynchronous nature
- of the processing (and lack of concommitant contracts).
-\end_layout
-
-\begin_layout Standard
--
-\begin_inset Quotes erd
-\end_inset
-
-Ease of deployment: The EDA pattern is characterized by loose coupling which
- allows independent deployment and unhindered horizontal scalability, as
- there are no dependencies among the participating components.
- For solutions that require maximum ease of deployment, event broker topology
- is a better option than event mediator topology.
- This is due to the fact that in event mediator topology, there exists a
- relatively tight coupling between the event mediator and event processor.
-\end_layout
-
-\begin_layout Standard
--performance: asynchronicity makes data parallelism-process cloning possible
-\end_layout
-
-\begin_layout Standard
--scalability: due to both of the above
 \end_layout
 
 \begin_layout Standard
