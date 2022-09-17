@@ -920,8 +920,8 @@ It is also a point worth making separately, that provisions for reliability
 
 \begin_layout Standard
 Finally, the asynchronicity of EDA systems makes them more complex and harder
- to test, owing to the introduction of event messaging infrastructure such
- as the hub and event channel implementations, and the non-deterministic
+ to test, owing to the introduction of event communication infrastructure
+ such as the hub and event channel implementations, and the non-deterministic
  nature of parallel computation.
  (CITE archpat p.24, eipbook p.18)
 \end_layout
@@ -993,8 +993,7 @@ Based on this, SOA can be defined as an architectural style that enables
  If the conventions are observed dilligently, the need for an EAI hub and
  it's accompanying module-specific connectors, database drivers and protocol
  adapters is theoretically obviated.
- In common practice, however, and still in accordance with the loose definition
- given above, a federated hub solution is adopted.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -1057,7 +1056,9 @@ Many service management capabilities are, however, commonly relegated to
  protocols or data formats are utilized, when compositions of multiple requests
  are called for, or perhaps in cases where transactionality needs to be
  implemented, the introduction of an integration engine existing as a separate
- runtime is, again, required.
+ runtime is, again, expedient.
+ This hub-like arrangement, while topologically different, is still in accordanc
+e with the loose definition of ESB given above.
 \end_layout
 
 \begin_layout Standard
@@ -1073,9 +1074,9 @@ ESB
  approach of a hub, often federated, whose main purpose is to facilitate
  a message-based communication model (termed Enterprise Message System,
  EMS) to be used within a particular SOA system's context.
- Such integration engines, marketed as ESBs, commonly provide auxillary
- capabilities, which have proven to be essential additions for constructing
- more complex systems making use of said pattern.
+ Such integration engines commonly provide auxillary capabilities, which
+ have proven to be essential additions for constructing more complex systems
+ in the service-oriented style.
  They commonly contain logic for the encapsulation of legacy formats, protocols
  (or informal specs) and APIs of the integrated applications into an EMS
  compatible format, incorporate a service registry, and sport numerous other
@@ -1085,7 +1086,8 @@ ESB
 \end_inset
 
 A summary of the archetypal SOA model's features in axes of comparison common
- with those of the aforementioned architectural styles could thus be:
+ with those of the aforementioned point-to-point and event-driven architectures
+ could thus be:
 \end_layout
 
 \begin_layout Itemize
@@ -1155,34 +1157,28 @@ In simpler scenarios, SOA systems are designed around a synchronous ESB,
 \end_layout
 
 \begin_layout Standard
-For the more complex integration scenarios, however, industry practice has
- converged around utilizing asynchronous ESBs with an event-driven messaging
- pattern of communication.
- The implementations of this pattern, referred to as Enterprise Messaging
- Systems (EMSs), rely on the introduction of a 
+While taking an antidiametrical approach to communication with regards to
+ EDA (pull vs push - soliciting a response as opposed to publishing an event
+ notification), thus evading many of it's shortfalls, SOA, in practice,
+ has come to serve as an essential complement in many EDA-stuctured enterprise
+ systems, with services commonly being wrapped as components triggered by
+ event handlers.
+ For most applications, communication then has to be framed within an Enterprise
+ Messaging System that enables information flow and routing through event-driven
+ infrastructure, and into synchronous services.
+ This fact, combined with the aforementioned benefits of dedicated SOA integrati
+on engines, has brought about a state of affairs where most productized
+ ESB implementations have come to rely on distributed middleware dubbed
+ 
 \begin_inset Quotes eld
 \end_inset
 
-middleware
+ESBs
 \begin_inset Quotes erd
 \end_inset
 
- integration engine.
- 
-\end_layout
-
-\begin_layout Quote
-TODO FOOTER It has become common practice for productized SOA integration
- engines to misappropriate the term 
-\begin_inset Quotes eld
-\end_inset
-
-ESB
-\begin_inset Quotes erd
-\end_inset
-
-.
- 
+, introducing a federated hub and as a common feature of present-day SOA
+ systems.
 \end_layout
 
 \begin_layout Standard
@@ -1195,11 +1191,7 @@ EMS CITE, TODO archpatbook p.28 Ordinarily TODO archpatbook p210 Service
 \begin_inset Newline newline
 \end_inset
 
-
-\begin_inset Newline newline
-\end_inset
-
-This model of SOA, which borrows some elements of Event-Driven Architecture,
+This model of SOA, which borrows elements from Event-Driven Architecture,
  has been called next-generation SOA, or 
 \begin_inset Quotes eld
 \end_inset
@@ -1274,7 +1266,7 @@ fied policy boundaries increase the tractability of operations involving
 \end_layout
 
 \begin_layout Standard
-On the con side of SOA, it could be noted that, despte the the high internal
+On the con side of SOA, it could be noted that, despite the the high internal
  interoperability of systems designed in this manner, interfacing with external
  systems remains hard, as they would have to be wrapped as services abiding
  to the particular ESB setup, and establish connections bound to service-contrac
@@ -1316,7 +1308,7 @@ push
 
 \begin_layout Itemize
 Business workflow and other arbitrarily-halting processes: Many business
- processes involve external/human input in their workflow.
+ processes involve human input in their workflow.
  A Warehouse Management System (WMS), for example, has to be updated with
  the status of the physical warehouse by warehouse employees, before moving
  forward with the processing of an inventory receipt.
@@ -1350,14 +1342,26 @@ On the con side, EDA system testing is not easy due to the asynchronous
 \begin_inset Newline newline
 \end_inset
 
+The introduction of a message-oriented middleware at the core of a SOA-inspired
+ system increases the base complexity of the design, but can, in theory,
+ result in a SOA-EDA hybrid bestowed with advantages from both approaches
+ while eliminating their respective drawbacks.
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
 \begin_layout Standard
-have them possibly trigger a service and voila! you get a decoupled architecture
-, fit for B2B meddling and hybridizable with SOAs within (say, triggered
- service acts as a SOA client, sends callback/event notification when completed
- to event broker).
+It is that SOA 2.0, while relatively complex in it's base design, draws advantage
+s from both while eliminating avoiding their core downsides shortfalls drawbacks
+TODO hybrid
+\end_layout
+
+\begin_layout Standard
+you get a decoupled architecture, fit for B2B meddling and hybridizable
+ with SOAs within (say, triggered service acts as a SOA client, sends callback/e
+vent notification when completed to event broker).
  Though there's still the semantic coupling issue and APIs rule the world
  now.
  but apis are not SOA-conforming services either (e.g.
@@ -1561,32 +1565,10 @@ services communicate via messages
  services facilitates the choice and the replication of one or more application
  components/services for scaling.
  divide-and-conquer
-\end_layout
-
-\begin_layout Standard
-TODO describe SOA 
 \begin_inset Newline newline
 \end_inset
 
-While taking an antidiametrical approach to communication with regards to
- EDA (pull vs push - soliciting a response as opposed to publishing an event
- notification), thus evading many of it's shortfalls, in practice it has
- come to serve as an essential complement in many EDA-stuctured enterprise
- systems, with SOA services commonly being wrapped as components triggered
- by event handlers.
- This fact, combined with the convenience (TODO duties of integration engines
- and convenience of them being centralized), has brought about a state of
- affairs where most productized ESB implementations have come to rely on
- distributed integration engines (often themselves confusingly being marketed
- as 
-\begin_inset Quotes eld
-\end_inset
 
-ESBs
-\begin_inset Quotes erd
-\end_inset
-
-), introducing a federated hub as a common feature of present-day SOA systems.
 \end_layout
 
 \begin_layout Standard
