@@ -110,90 +110,143 @@ Supervisor: Christos Gkogkos
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Address
 \align center
 Graduation Thesis
 \end_layout
 
-\begin_layout Address
+\begin_layout Standard
 \align center
 University of Ioannina
 \begin_inset Newline newline
 \end_inset
 
 Department of Informatics and Telecommunications
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Enterprise Integration Patterns
+\end_layout
+
+\begin_layout Standard
+Building message-oriented middleware with Apache Camel
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Author: Odysseas Neslechanidis
+\end_layout
+
+\begin_layout Standard
+Supervisor: Christos Gkogkos
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Graduation Thesis
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+University of Ioannina
+\end_layout
+
+\begin_layout Standard
+Department of Informatics and Telecommunications
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
 \begin_inset Newpage pagebreak
 \end_inset
 
 
 \end_layout
 
-\begin_layout Abstract
-The term "Enterprise Integration Patterns (EIPs)" refers to a vocabulary
- of solutions to common problems in the integration of enteprise systems.
- Of such vocabularies pattern languages may be constituted to allow complex
- business flows of diverse form to be described and handled in a uniform
- way.
- 
+\begin_layout Address
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty} 
 \end_layout
 
-\begin_layout Abstract
-Apache Camel is a framework that implements EIPs around a common interface
- based on Java Message Objects.
- Camel also provides an IDE-friendly declarative Domain Specific Language
- (DSL) oriented around this interface, which enables integration flows between
- disparate systems ("Camel routes") to be described neatly as Java Messages
- passed around between chained camel methods.
-\end_layout
-
-\begin_layout Abstract
-The specifics of the underlying communication protocols (FTP, http, ActiveMessag
-eQueue etc) are abstracted away and the flow of information is cleanly described
-, leaving such considerations as availability, load balancing, validation,
- security as the primary factors influencing the middleware's architectural
- complexity.
-\end_layout
-
-\begin_layout Abstract
-In this thesis production deployments of Java Spring middleware utilizing
- Apache Camel will be studied.
- The most commonly used EIPs' Camel implementations will be inspected, and
- a comparison with more established integration tooling will be made when
- convenient, to ascertain the benefits of the Message-Oriented Middleware
- (MOM)-backed Camel DSL approach.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\begin_inset Separator plain
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset Newpage pagebreak
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
 
 \series bold
-This thesis was approved by a three-person examination committee.
-\end_layout
 
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset Newline newline
+\end_inset
+
+This thesis was approved by a three-person examination committee.
+\begin_inset Newline newline
 \end_inset
 
 
@@ -203,23 +256,20 @@ This thesis was approved by a three-person examination committee.
 Examination Commitee
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
 \begin_layout Enumerate
 Christos Gkogkos
 \end_layout
 
 \begin_layout Enumerate
-John Doe
+.
 \end_layout
 
 \begin_layout Enumerate
-John Smith
+.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -251,8 +301,56 @@ Neslechanidis Odysseas
 All Rights Reserved ©
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
 
+
+\end_layout
+
+\begin_layout Abstract
+The term "Enterprise Integration Patterns (EIPs)" refers to a vocabulary
+ of solutions to common problems in the integration of enterprise systems.
+ Of such vocabularies pattern languages may be constituted to allow complex
+ business flows of diverse form to be described and handled in a uniform
+ way.
+ 
+\end_layout
+
+\begin_layout Abstract
+Apache Camel is a framework that implements EIPs around a common interface
+ based on Java Message Objects.
+ Camel also provides an IDE-friendly declarative Domain Specific Language
+ (DSL) oriented around this interface, which enables integration flows between
+ disparate systems ("Camel routes") to be described neatly as Java Messages
+ passed around between chained camel methods.
+\end_layout
+
+\begin_layout Abstract
+The specifics of the underlying communication protocols (FTP, http, ActiveMessag
+eQueue etc) are abstracted away and the flow of information is cleanly described
+, leaving such considerations as availability, load balancing, validation,
+ security as the primary factors influencing the middleware's architectural
+ complexity.
+\end_layout
+
+\begin_layout Abstract
+In this thesis production deployments of Java Spring middleware utilizing
+ Apache Camel will be studied.
+ The most commonly used EIPs' Camel implementations will be inspected, and
+ a comparison with more established integration tooling will be made when
+ convenient, to ascertain the benefits of the Message-Oriented Middleware
+ (MOM)-backed Camel DSL approach.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Keywords: Enterprise Integration Patterns, Apache Camel, Message-Oriented
+ Middleware
 \end_layout
 
 \begin_layout Address
@@ -268,6 +366,108 @@ LatexCommand tableofcontents
 
 
 \begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Abbreviations
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+API Application Programming Interface
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EAI: Enterprise Application Integration 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EAS: Enteprise Application Software
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EDA Event-Driven Architecture
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EIP Enterprise Integration Patterns
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EMS Enterprise Messaging System
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ESB Enterprise Service Bus
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MEP Message Exchange Pattern
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MOM Message-Oriented Middleware
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+QoS Quality of Service
+\end_layout
+
+\begin_layout Address
+\align center
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
 \end_inset
 
 
@@ -295,9 +495,16 @@ Enterprise Application Software (EAS) is the term for computer programs
 g billing and taxes, observing regulations, and much more.
  While comprehensive enterprise software suites offering differing degrees
  of customizability have come to exist, owing to the organisational similarity
- of enterprises above a certain scale, switching costs (CITE ), preservation
- of optionality in partnering with software vendors (CITE EIPbook p32),
- as well as other adjoining business considerations, have hindered their
+ of enterprises above a certain scale, switching costs, preservation of
+ optionality in partnering with software vendors
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+literal "false"
+
+\end_inset
+
+, as well as other adjoining business considerations, have hindered their
  more widespread adoption.
  Added to that, the employment of Domain-driven design, in recognition of
  the maintainability and extensibility benefits domain-expert input in the
@@ -368,7 +575,14 @@ Organizations which design systems are constrained to produce designs which
 , it appears that the consolidation of enterprise software tools serving
  business processes often necessitates a consolidation of the business units
  and IT departments involved in those same processes.
- (CITE EIPbook p32)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -412,7 +626,14 @@ Finally, the operations aspect of utilizing middleware solutions presents
  To companies or organizations of sufficient scale as to already necessitate
  a formalized employee training regime, the overhead for the maintenance
  of such human capital might be lower.
- (CITE EIPbook p32)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -477,23 +698,32 @@ Shared Business Functions
 Needless duplication can exist in code serving business functions as well
  as in data.
  Were supported, invocation of shared business functions implemented as
- services (A service is a contract-defined function that is universally
- available, and responds to requests from “service consumers
+ services
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A service is a contract-defined function that is universally available,
+ and responds to requests from “service consumers
 \begin_inset Quotes erd
 \end_inset
 
-) can help avoid the native implementation of redundant functionality.
+ .
+\end_layout
+
+\end_inset
+
+can help avoid the native implementation of redundant functionality.
 \end_layout
 
 \begin_layout Standard
 Were feasible, the need for data replication can also be circumvented via
  this approach by serving shared data as a service.
  In that vein, some criteria to be considered include the amount of control
- that is had over the systems (calling a shared function is usually more
- intrusive than loading data into the database) and the rate of change of
- the relevant data (service invocation is costlier than data access, therefore
- is less efficient for relatively frequently accessed, relatively static
- data).
+ to be had over the systems (calling a shared function is usually more intrusive
+ than loading data into the database) and the rate of change of the relevant
+ data (service invocation is costlier than data access, therefore is less
+ efficient for relatively frequently accessed, relatively static data).
 \end_layout
 
 \begin_layout Subsubsection
@@ -541,7 +771,7 @@ In many cases, business functions may be available from outside suppliers
  or business partners.
  Business to Business (B2B) integration software provides the architecture
  needed to digitize information and route it through an organization’s trading
- ecosystem (usually online platforms) using the Electronic Data Exchange
+ ecosystem (usually online platforms) using the Electronic Data Interchange
  (EDI) format appropriate for the application.
 \begin_inset Newline newline
 \end_inset
@@ -553,9 +783,9 @@ In many cases, business functions may be available from outside suppliers
 In the following chapter, the various technical approaches to Enterprise
  Application Integration will be discussed, beginning by retracing the historica
 l contingencies defining the evolution of the EAI field, and culminating
- with a direction of focus towards the widely successful SOA approach and
- the message-oriented middleware used to facilitate it, a particular implementat
-ion of which will be the topic of the rest of this thesis.
+ with a direction of focus towards the widely successful event-driven SOA
+ approach and the message-oriented middleware used to facilitate it, a particula
+r implementation of which will be the topic of the rest of this thesis.
 \end_layout
 
 \begin_layout Section
@@ -586,7 +816,7 @@ Islands of automation
 \begin_layout Standard
 Such fragmentation of automation systems turned out to significantly increase
  the cost of operations within organisations, and contribute to a higher
- barrier of transactional cost for cooperation across different enterprises.
+ barrier of transaction cost for cooperation across different enterprises.
  A major part of business operations requires coordination between multiple
  departments/organisations, each with their own system of automation.
  In this state of affairs, manual intervention is required to keep information
@@ -597,7 +827,7 @@ Such fragmentation of automation systems turned out to significantly increase
 \end_inset
 
  The field of Enterprise Application Integration (EAI) is a field of study
- aiming to refine a framework for rectifying these inefficiencies.
+ aiming to refinre a framework for rectifying these inefficiencies.
  The shifting nature of the business landscape and of enterprises that operate
  within it, together with the continued innovation in, and expansion of,
  the EAS space, has resulted in it being a complicated problem to tackle.
@@ -616,8 +846,14 @@ As previously noted, the role of middleware is to to facilitate communication
  or connectivity between applications that were developed without such provision
 s, often through channels beyond those available from the operating system
  serving as the platform, or across distributed networks.
- (CITE IBM, wikipedia).
- 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-7,key-9"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -642,7 +878,7 @@ n systems directly in a point-to-point paradigm.
 \end_layout
 
 \begin_layout Standard
-As similar point-to-point solutions begun to emerge, it nevertheless became
+As similar point-to-point solutions begun to emerge, it nonetheless became
  apparent that the net cost of development and maintenance of such solutions
  stood high, and steeply increased with scale.
  This came as a result of the fact that in the point-to-point approach,
@@ -674,7 +910,7 @@ Moreover, the synchronous nature of the communication ties up resources
  are simple.
  It is in cases when there are many entities, which need to interact in
  multiple ways and in particular sequences, e.g.
- when the interactions are stateful, that the software's requisite topological
+ when the interactions are stateful, that the system's requisite topological
  complexity can become onerous.
  
 \end_layout
@@ -749,6 +985,38 @@ subscribed
 \end_inset
 
  for receiving this event.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename assets/broker.png
+	scale 50
+	BoundingBox 0bp 0bp 801bp 517bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+EDA, Broker topology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -772,8 +1040,8 @@ load balancer
 \begin_inset Quotes erd
 \end_inset
 
-, by allowing events to be directed towards exactly one consumer, and to
- be kept to be resent in case there is no consumer available (
+, by allowing event notifications to be directed towards exactly one consumer,
+ and to be kept to be resent in case there is no consumer available (
 \begin_inset Quotes eld
 \end_inset
 
@@ -782,6 +1050,46 @@ event queue
 \end_inset
 
 ).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename assets/mediator.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+EDA, Mediator topology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -797,8 +1105,8 @@ bscriber.
 \end_layout
 
 \begin_layout Itemize
-Asynchronous communication: The publisher does not wait for the subscriber
- to process an event before sending the next one.
+Asynchronous communication: The publisher does not wait for a subscriber
+ to process an event before sending a new event notification.
  Also called 
 \begin_inset Quotes eld
 \end_inset
@@ -814,10 +1122,17 @@ fire-and-forget
 Loose coupling: Event publishers are not aware of how many, if any, subscribers
  to the event there are, nor are they informed of how any particular event's
  processing proceeds.
- Publishers may yet be built to facilitate a stateful sequence of events,
+ Publishers may still be built to facilitate a stateful sequence of events,
  though it is often preferable for such sequences to be mediated centrally,
  by the hub, rather than by the participating applications.
- (CITE wp Event-driven architecture)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-10"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -835,8 +1150,15 @@ topics
 \begin_inset Quotes erd
 \end_inset
 
-, which can correspond to either particular events or categories thereof.(CITE
- archpat p245).
+, which can correspond to either particular events or categories thereof.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4"
+literal "false"
+
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -850,29 +1172,61 @@ semantic coupling
 \end_inset
 
 .
- Events groups/hierarchies are only meaningful within the context of a system
- adopting the particular ontology within which they are represented.
+ Event groups or hierarchies are only meaningful within the context of a
+ system adopting the particular ontology within which they are represented.
  This makes communication between systems implemented with different ontologies
  impossible, unless an intermediate semantic matching technique is employed.
  Research is currently active in this area.
- (CITE Hasan_DEBS_2012) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-11"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Enterprise-driven architecture is properly constructed with subscribers
- that are both stateless and context-free.
+Event-driven architecture is properly constituted of subscribers that are
+ both stateless and context-free.
  Each event notification ought to contain just enough details to enable
- the event handlers to guide the business flow in the intended direction
- e.g.
+ the event handlers
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+alt.
+ subscribers
+\end_layout
+
+\end_inset
+
+ to guide the business flow in the intended direction e.g.
  by selecting among running one of several stateless, functionally autonomous
- modules, that may or may not be event emitters themselves, or halting.
+ modules, that may or may not be event emitters
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+alt.
+ publishers
+\end_layout
+
+\end_inset
+
+ themselves, or halting.
  
 \end_layout
 
 \begin_layout Standard
 Event notifications should not provide any additional context.
- Also, they should not require any kind of dependencies on the in-memory
- session state of the connected applications.
+ Also, the behavior they trigger should not depend in any way on the in-memory
+ session state of the receiving applications.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -881,30 +1235,33 @@ All things considered, the Event-driven Architecture paradigm, confer as
  scale, is nevertheless ill-suited to certain specifications commonly required
  of enterprise systems.
  
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-First of all, the ability to chain interactions between modules in vertical
- hierarchies, is only possible through defining routing rules at the event
- mediator.
+\begin_layout Standard
+First of all, the ability to chain hierarchical interactions between modules,
+ is only possible through defining routing rules at the event mediator.
  While the convenience aspect of this method due to the centralization of
  the more complex parts of the system is not to be discounted, the degree
  of control over such interactions, in particular with regards to Quality
  of Service considerations such as time-sensitivity, reliability etc is
  rather low.
- Also, event mediation adoption comes at the price of relatively tight coupling
+ 
+\end_layout
+
+\begin_layout Standard
+Also, event mediation adoption comes at the price of relatively tight coupling
  between the prospective event handlers and the mediation-capable hub.
  
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 Ultimately, event mediation can be an appropriate solution for a number
- of edge-cases in the context of loosely-coupled IT infrastructure mirroring
+ of special cases in the context of loosely-coupled IT infrastructure mirroring
  diffuse business process environments, but is far from a satisfactory way
  to handle vertical interactions among functionally autonomous modules.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 For the reasons referenced above, event-driven systems, while highly performant,
  are not suitable ways to integrate applications with time-sensitive interaction
 s, e.g.
@@ -912,6 +1269,10 @@ s, e.g.
 \begin_inset Newline newline
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 It is also a point worth making separately, that provisions for reliability
  such as delivery acknowledgement, transaction atomicity, security etc are
  formally unsuited to EDA systems' design, and ad-hoc interventions towards
@@ -923,7 +1284,14 @@ Finally, the asynchronicity of EDA systems makes them more complex and harder
  to test, owing to the introduction of event communication infrastructure
  such as the hub and event channel implementations, and the non-deterministic
  nature of parallel computation.
- (CITE archpat p.24, eipbook p.18)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4,key-3"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -933,22 +1301,53 @@ Service Oriented architecture and the Enterprise Service Bus
 \begin_layout Standard
 A synchronous architecture meant to address the point-to-point paradigm's
  numerous drawbacks in terms of technical debt accretion, agility and complexity
-, all the while factoring in reliability provisions, is referred to as Service-O
-riented Architecture, SOA for short.
+, while factoring in reliability provisions, is referred to as Service-Oriented
+ Architecture, SOA for short.
 \end_layout
 
 \begin_layout Standard
-Service Oriented Architecture (SOA) is an evolution of predecessors such
- as component-based architecture and Object Oriented Analysis and Design
- of remote objects e.g.
+Service Oriented Architecture is an evolution of predecessors such as component-
+based architecture and Object Oriented Analysis and Design of remote objects
+ e.g.
  the CORBA standard.
  
 \end_layout
 
 \begin_layout Standard
-Component-based architecture, or component-based software engineering, emphasize
-s separation of concerns with respect to the various functions provided
- in a given software system.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename assets/component-based architecture.png
+	scale 50
+	BoundingBox -80bp 0bp 533bp 391bp
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Component-based, point-to-point architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Component-based architecture emphasizes separation of concerns with respect
+ to the various functions provided in a given software system.
  Components are commonly implemented around interfaces, that encapsulate
  the particulars of the components' implementation, and narrow the available
  surface-area for wiring together the various functionally autonomous modules.
@@ -960,6 +1359,10 @@ s separation of concerns with respect to the various functions provided
  (e.g.
  as web services or web resources).
  
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -967,6 +1370,18 @@ In the SOA evolution of this approach, reusability and use in the context
  of distributed systems is emphasised.
  To realize this architectural style's potential, the promulgation of Web
  Service standards becomes instrumental.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The effort towards this end has borne results through the W3C Web Services
+ specification, though nowadays the emergence of alternatives and the REST
+ architectural style in particular has created a rift in the SOA ecosystem,
+ whose bridging is often handled by integration middleware.
+\end_layout
+
+\end_inset
+
  In this way it is ensured that networked software components can be developed
  as generic 
 \begin_inset Quotes eld
@@ -977,19 +1392,14 @@ Web Services
 \end_inset
 
 , or business function-specific components that are implemented without
- knowledge or regard for the multitude of systems by which they may be invoked.
-\end_layout
-
-\begin_layout Quote
-(TODO FOOTER) The effort towards this end has borne results through the
- W3C Web Services specification, though nowadays the emergence of alternatives
- and the REST architectural style in particular has created a rift in the
- SOA ecosystem, whose bridging is often handled by integration middleware.
+ knowledge or regard for the multitude of systems in which they may become
+ involved.
 \end_layout
 
 \begin_layout Standard
-Based on this, SOA can be defined as an architectural style that enables
- a dynamic collection of services to communicate with one another.
+Based on this, SOA can be defined as an architectural style focused around
+ designing a system as a dynamic collection of services capable of communicating
+ with one another.
  If the conventions are observed dilligently, the need for an EAI hub and
  it's accompanying module-specific connectors, database drivers and protocol
  adapters is theoretically obviated.
@@ -997,13 +1407,28 @@ Based on this, SOA can be defined as an architectural style that enables
 \begin_inset Newline newline
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 The Enterprise Service Bus (ESB) is the architectural feature of SOA systems
  enabling communication in a special variant of the more general client-server
  model, wherein any which service may behave as server or client.
  Universal availability and statelessness, both criteria met by proper services,
  but not by traditional server-client component couples, are prerequisites
  for the establishment of such as system.
- (CITE archpatbook p.25) The ESB is equivalent to the 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The ESB is equivalent to the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1012,30 +1437,81 @@ bus
 \end_inset
 
  design concept found in computer hardware architecture, in this case used
- to refer to the software infrastructure used to implement a model for communica
-tion among independent software services running within networks of disparate
- and independent computers.
+ to refer to the technological infrastructure used to implement a model
+ for communication among independent, non-context aware software services
+ running within networks of disparate and independent computers.
  
 \begin_inset Newline newline
 \end_inset
 
-When working with more modern Enterprise systems, which provide a Web Service-ab
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename assets/generic soa.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Generic SOA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When working with more modern enterprise systems, which provide a Web Service-ab
 iding API interface, implementing the ESB pattern amounts to providing certain
  service management capabilities, such as a means of controlled exposure
  of said APIs, using an exposure gateway service.
  
-\begin_inset Newline newline
+\end_layout
+
+\begin_layout Standard
+The primary aim of service management is to facilitate service discovery
+ and exposure via a database called a Service Registry
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-13"
+literal "false"
+
 \end_inset
 
-The primary aim of service management is to facilitate service discovery
- and exposure via a Service Registry- in this particular scenario, it's
- function being partly substituted by the gateway- and an HTTP-accessible
- querying API.
+ - in this particular scenario, it's function being partly substituted by
+ the gateway - and an HTTP-accessible querying API.
  Reliance on human-maintained interface documentation e.g.
  Swagger or human-to-human interaction has proven a brittle strategy that
  erodes reusability, which, it is to be noted, is regarded as one of the
  main advantages of SOA.
- More complete service management solutions deal with additional aspects,
+ 
+\end_layout
+
+\begin_layout Standard
+More complete service management solutions deal with additional aspects,
  namely service negotiation i.e.
  the ability to set up a communication contract/connection with services,
  implementation of a security model with patterns for access control, e.g.
@@ -1046,23 +1522,24 @@ The primary aim of service management is to facilitate service discovery
  (self-subscribe) in order to use the APIs, provision analytics for both
  users and providers of the APIs, etc.
  
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-Many service management capabilities are, however, commonly relegated to
- a separate runtime, existing as a service known only to the gateway, called
- a Service Registry.
+\begin_layout Standard
+In systems requiring advanced service management capabilities, the related
+ functions are commonly relegated to a separate database runtime known only
+ to the gateway, introduced earlier as the Service Registry.
  Furthermore, in more complex integration scenarios, such as when unusual
  protocols or data formats are utilized, when compositions of multiple requests
  are called for, or perhaps in cases where transactionality needs to be
  implemented, the introduction of an integration engine existing as a separate
  runtime is, again, expedient.
- This hub-like arrangement, while topologically different, is still in accordanc
-e with the loose definition of ESB given above.
+ This hub-like arrangement is only one, albeit very common, of many possible
+ topologies that are in accordance with the loose definition of ESB given
+ above.
 \end_layout
 
 \begin_layout Standard
-De facto, therefore, the term 
+Even so, the term 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1070,12 +1547,12 @@ ESB
 \begin_inset Quotes erd
 \end_inset
 
- has come to refer to integration engine solutions adopting the architectural
- approach of a hub, often federated, whose main purpose is to facilitate
- a message-based communication model (termed Enterprise Message System,
- EMS) to be used within a particular SOA system's context.
+ has de facto come to refer to integration engine solutions adopting the
+ architectural approach of a hub, often federated, whose main purpose is
+ to facilitate a message-based communication model (termed Enterprise Message
+ System, EMS) to be used within a particular SOA system's context.
  Such integration engines commonly provide auxillary capabilities, which
- have proven to be essential additions for constructing more complex systems
+ were found to be essential additions for constructing more complex systems
  in the service-oriented style.
  They commonly contain logic for the encapsulation of legacy formats, protocols
  (or informal specs) and APIs of the integrated applications into an EMS
@@ -1085,13 +1562,17 @@ ESB
 \begin_inset Newline newline
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 A summary of the archetypal SOA model's features in axes of comparison common
  with those of the aforementioned point-to-point and event-driven architectures
  could thus be:
 \end_layout
 
 \begin_layout Itemize
-Unicast communication: Communication is established in service provider-consumer
+Unicast communication: Communication is established in provider-consumer
  pairs.
 \end_layout
 
@@ -1104,7 +1585,18 @@ Synchronous communication: A service consumer invokes a service provider
 \begin_layout Itemize
 Reusability/Interoperability: Services within a particular SOA context are
  defined by standardized service contracts, which include the interface,
- the schema, the communication protocol and various Quality-of-Service (QoS)
+ the schema, the communication protocol and various Quality of Service (QoS)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Quality of Service refers to the performance of a network service in multiple
+ areas that commonly include scalability, security, reliability, lossyness,
+ delay etc.
+\end_layout
+
+\end_inset
+
  policies.
  Each service can have multiple contracts, aimed at supporting different
  consumers.
@@ -1114,16 +1606,27 @@ Reusability/Interoperability: Services within a particular SOA context are
  to facilitate discovery and exposure.
 \end_layout
 
-\begin_layout Quote
-(TODO FOOTER) Quality-of-Service, or QoS refers to the performance of a
- network service in multiple areas that commonly include scalability, security,
- reliability, lossyness, delay and more.
+\begin_layout Itemize
+Domain-driven design: Loose internal coupling allows Domain-driven design
+ to be observed for a SOA system's constituent services.
+ It's central idea is the creation of a Ubiquitous Language with the assistance
+ of domain experts, that embeds domain terminology into the software components'
+ naming and structure.
+ This practice is claimed reduce friction in the operations side and increase
+ maintainability and creative cross-domain collaboration.
+\end_layout
+
+\begin_layout Itemize
+This approach is suitable for the design of middleware as it helps confer
+ exibility and extensibility to the resulting system, and reduces friction
+ in the operations side, which, as mentioned previously, is an important
+ factor when considering the adoption of integration solutions.
 \end_layout
 
 \begin_layout Itemize
 Business-centeredness: While many components within a SOA context may be
  developed in such a way as to constitute candidate services, only a subset
- of those have their service description exported and, and perhaps published
+ of those have their service description exported, and perhaps published
  to a service registry, if there is one.
  Exposure in a controlled way is ensured via the provision of a fitness-for-purp
 ose, or 
@@ -1135,11 +1638,17 @@ litmus test
 \end_inset
 
 , that determines whether a given service implementation meets certain business
- alignment, composability, reusability and technical feasibility criteria.(CITE
- deg.egov.bg) This is facilitated greatly by the existence of accompanying
- service contracts, that allow the evaluation of the service's technical
- characteristics to remain separate from considerations concerning it's
- internal design.
+ alignment, composability, reusability and technical feasibility criteria.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-14"
+literal "false"
+
+\end_inset
+
+ This is facilitated greatly by the existence of accompanying service contracts,
+ that allow the evaluation of the service's technical characteristics to
+ remain separate from considerations concerning it's internal design.
 \end_layout
 
 \begin_layout Standard
@@ -1154,22 +1663,38 @@ In simpler scenarios, SOA systems are designed around a synchronous ESB,
  accessible to clients outside the SOA system, aggregating the various services
  required to fulfill them, and returning the response in a synchronous manner.
  
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+SOA 2.0
 \end_layout
 
 \begin_layout Standard
 While taking an antidiametrical approach to communication with regards to
  EDA (pull vs push - soliciting a response as opposed to publishing an event
  notification), thus evading many of it's shortfalls, SOA, in practice,
- has come to serve as an essential complement in many EDA-stuctured enterprise
+ has come to serve as a useful complement in many EDA-stuctured enterprise
  systems, with services commonly being wrapped as components triggered by
  event handlers.
- For most applications, communication then has to be framed within an Enterprise
+ 
+\end_layout
+
+\begin_layout Standard
+For most applications, communication then has to be framed within an Enterprise
  Messaging System that enables information flow and routing through event-driven
  infrastructure, and into synchronous services.
- This fact, combined with the aforementioned benefits of dedicated SOA integrati
-on engines, has brought about a state of affairs where most productized
- ESB implementations have come to rely on distributed middleware dubbed
  
+\end_layout
+
+\begin_layout Standard
+The popularity of such hybrid systems, combined with the aforementioned
+ benefits of dedicated SOA integration engines, has brought about a state
+ of affairs where most productized ESB implementations have come to rely
+ on distributed, message-oriented middleware, dubbed 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1177,22 +1702,63 @@ ESBs
 \begin_inset Quotes erd
 \end_inset
 
-, introducing a federated hub and as a common feature of present-day SOA
- systems.
-\end_layout
+, introducing a federated hub and event-driven messaging infrastructure
+ as ubiquitous features of present-day SOA systems.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4"
+literal "false"
 
-\begin_layout Standard
-(TODO fix redundancy around gateway vs integration engine ESBs)
-\end_layout
+\end_inset
 
-\begin_layout Standard
-EMS CITE, TODO archpatbook p.28 Ordinarily TODO archpatbook p210 Service
- Messaging
+
 \begin_inset Newline newline
 \end_inset
 
-This model of SOA, which borrows elements from Event-Driven Architecture,
- has been called next-generation SOA, or 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement ph
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename assets/event-driven soa.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Event-driven SOA (SOA 2.0)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This model of SOA has been called next-generation SOA, or 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1229,7 +1795,7 @@ cal layers of functions packaged as services are common.
 \end_layout
 
 \begin_layout Itemize
-Human-computer Interaction and other time-sensitive processes: The synchronous
+Human-Computer Interaction and other time-sensitive processes: The synchronous
  and contract-bound nature of communication is expedient for the design
  of real-time services, such as the decision-enablement and actuation capabiliti
 es that are expected from modern enteprise systems.
@@ -1246,12 +1812,22 @@ pull
 \end_inset
 
  semantics.
- Information can be aggregated as it is passed through the requisite responses,
- through service chains of arbitrary depth, until the original service consumer
- receives their response.
- Through this mechanism, transaction atomicity, i.e.
- that all interactions either occur successfully or no operation occurs,
- can be guarranteed.
+ Information like response status codes can be propagated back down the
+ call stack, through service chains of arbitrary depth, until the original
+ service consumer receives their response.
+ Mechanisms relying on this property can be put in place to guarantee transactio
+n atomicity
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Either all interactions occur successfully or no interaction occurs.
+ 
+\end_layout
+
+\end_inset
+
+ .
 \end_layout
 
 \begin_layout Itemize
@@ -1271,18 +1847,14 @@ On the con side of SOA, it could be noted that, despite the the high internal
  systems remains hard, as they would have to be wrapped as services abiding
  to the particular ESB setup, and establish connections bound to service-contrac
 ts composed often under unaccommodating assumptions.
-\begin_inset Newline newline
+\begin_inset Newpage pagebreak
 \end_inset
 
 
 \begin_inset Newline newline
 \end_inset
 
-
-\begin_inset Newline newline
-\end_inset
-
-Meanwhile, EDA exhibits it's own set of advantages in multiple places:
+Meanwhile, EDA exhibits it's own set of advantages in multiple areas:
 \end_layout
 
 \begin_layout Itemize
@@ -1323,7 +1895,7 @@ Ease of deployment: The EDA pattern is characterized by loose coupling which
  For solutions that require maximum ease of deployment, event broker topology
  is a better option than event mediator topology.
  This is due to the fact that in the event mediator topology, relatively
- tight event mediator - event processor coupling can exist .
+ tight event mediator - event handler coupling can exist .
 \end_layout
 
 \begin_layout Itemize
@@ -1342,37 +1914,30 @@ On the con side, EDA system testing is not easy due to the asynchronous
 \begin_inset Newline newline
 \end_inset
 
-The introduction of a message-oriented middleware at the core of a SOA-inspired
- system increases the base complexity of the design, but can, in theory,
- result in a SOA-EDA hybrid bestowed with advantages from both approaches
- while eliminating their respective drawbacks.
-\begin_inset Newline newline
-\end_inset
-
 
 \end_layout
 
 \begin_layout Standard
-It is that SOA 2.0, while relatively complex in it's base design, draws advantage
-s from both while eliminating avoiding their core downsides shortfalls drawbacks
-TODO hybrid
-\end_layout
+The introduction of an event-driven, message-oriented middleware at the
+ core of a SOA-inspired system increases the base complexity of the design,
+ but can, in theory, result in a SOA-EDA hybrid bestowed with advantages
+ from both approaches while eliminating their respective drawbacks.
+ A resulting system would benefit from a performant, loosely coupled, event-driv
+en architecture, with a design amenable to Business-to-business connections
+ and hybridizable with SOAs encapsulated as event emission-capable services
+ triggered by event-handlers.
+ 
+\begin_inset Note Note
+status open
 
-\begin_layout Standard
-you get a decoupled architecture, fit for B2B meddling and hybridizable
- with SOAs within (say, triggered service acts as a SOA client, sends callback/e
-vent notification when completed to event broker).
- Though there's still the semantic coupling issue and APIs rule the world
+\begin_layout Plain Layout
+Though there's still the semantic coupling issue and APIs rule the world
  now.
  but apis are not SOA-conforming services either (e.g.
  ignore Service statelessness principle).
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -1387,7 +1952,7 @@ The application of this pattern helps to further decouple the service consumers
 \begin_inset Newline newline
 \end_inset
 
-todo SOA 2.0 archpatbook p28
+SOA 2.0 archpatbook p28
 \begin_inset Newline newline
 \end_inset
 
@@ -1405,11 +1970,7 @@ The benefits of atomic service transactions are as follows: Helps to propagate
 \begin_inset Newline newline
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-(TODO eipbook p73, opengroup.org 
+( eipbook p73, opengroup.org 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1422,271 +1983,53 @@ Having a central mechanism by which all messages are exchanged facilitates
  perhaps keep them separate for now, or make the distinction clear.)
 \end_layout
 
-\begin_layout Standard
-As mentioned previously, a distinctive feature of the SOA style is business
- centeredness, with components or interfaces aimed at fitting business functions
-, rules, or goals.
-\end_layout
-
-\begin_layout Standard
-Service-oriented architecture can be implemented with web services or Microservi
-ces.
- This is done to make the functional building-blocks accessible over standard
- Internet protocols that are independent of platforms and programming languages.
- 
-\end_layout
-
-\begin_layout Standard
-(TODO domain driven design and microservices after loose coupling, reusability
- emphasis, ESBs.
- archpatbook p.32) .
- It's central idea is the creation of a Ubiquitous Language with the assistance
- of domain experts, that embeds domain terminology into the software components'
- naming and structure.
- This approach is suitable for the design of middleware as it helps confer
- flexibility and extensibility to the resulting system, and reduces friction
- in the operations side, which, as mentioned previously, is an important
- factor when considering the adoption of integration solutions.
-\end_layout
-
-\begin_layout Standard
-A further recommendation of the SOA style is that open standards be used,
- their use being instrumental in realizing interoperability with different
- consumer implementations, and location transparency.
-\end_layout
-
-\begin_layout Standard
-The related buzzword 
-\end_layout
-
-\begin_layout Standard
-https://en.wikipedia.org/wiki/Service-oriented_architecture#Defining%20concepts
-\end_layout
-
-\begin_layout Standard
-https://en.wikipedia.org/wiki/Enterprise_service_bus
-\end_layout
-
-\begin_layout Standard
-A further property service-orientation promotes is loose coupling between
- services.
- SaaS can be considered to have evolved from SOA.
-\end_layout
-
-\begin_layout Standard
-Loose coupling, in addition to enabling the development of distributed architect
-ures composed of programs developed by different teams at different times,
- allows for domain-driven design to be observed in its constituent parts,
- which is claimed to increase maintainability and creative cross-domain
- collaboration.
-\end_layout
-
-\begin_layout Standard
-Domain-Specific-Languages and Aspect-Oriented Programming can be used to
- manage the complexity produced by the increased need for isolation and
- encapsulation that Domain-Driven design necessitates.
-\end_layout
-
-\begin_layout Standard
-https://en.wikipedia.org/wiki/Domain-driven_design
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 Loose coupling is achieved through transactions, queues provided by message-orie
 nted middleware, and interoperability standards.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Transactions help ensure validity of exchanges, queues enable asynchronicity
  and load balancing in distributed systems, and interoperability standards
  provide a common target for the integration of legacy systems (often rendering
  them network-enabled in the process) and newly implemented services alike.
 \end_layout
 
-\begin_layout Standard
-(TODO benefits of SOA https://en.wikipedia.org/wiki/Service-oriented_architecture#
-Organizational benefits )
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 In the messaging approach, provisions for asynchronicity (message buffers,
- brokers) and arbitrary consumer scaling are made.
+ brokers) and arbitrary consumer scaling are taken.
 \end_layout
 
-\begin_layout Standard
-(TODO Pure Messaging Integration approach https://en.wikipedia.org/wiki/Apache_Act
-iveMQ#Usage )
+\begin_layout Plain Layout
+Domain-Specific-Languages and Aspect-Oriented Programming can be used to
+ manage the complexity produced by the increased need for isolation and
+ encapsulation that Domain-Driven design necessitates.
 \end_layout
 
-\begin_layout Standard
-Hybrid Web Service - Messaging SOAs using MOMs is common practice.
-\end_layout
-
-\begin_layout Standard
-(TODO benefits with Microservice-based SOA https://en.wikipedia.org/wiki/Service-o
-riented_architecture#Implementation approaches)
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 Microservices is a novel, implementation agnostic approach to SOA, that
  allows for domain-driven design to be observed (actually they are only
  loosely related and, in fact, operate at different scopes, as discussed
  here
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 https://www.ibm.com/cloud/learn/soa)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 https://en.wikipedia.org/wiki/Service-oriented_architecture#Microservices
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Standard
-A service is defined TODO stability and reusability (time investment vs
- reusability, agility; lowers global cost by shielding consumer from changes
- to the backend)
+\begin_layout Plain Layout
+(archpat p238 soa vs eda and b2b)
 \end_layout
 
-\begin_layout Standard
-services communicate via messages
-\end_layout
-
-\begin_layout Standard
--the partitioning of an application into a collection of dynamic application
- services facilitates the choice and the replication of one or more application
- components/services for scaling.
- divide-and-conquer
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-(TODO archpat p238 soa vs eda and b2b
-\end_layout
-
-\begin_layout Standard
-pros cons
-\end_layout
-
-\begin_layout Standard
-EDA is good for
-\end_layout
-
-\begin_layout Standard
-BOTH EDA and SOA ensure agility, are meant to shield handlers/consumers
- from changes in the producer backend.
- EDA through thorough loose-coupling with event mediator-processor coupling
- being the limiting factor, SOA conditional on honoring the contract-specified
- QoS policies (stability).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Quotes eld
-\end_inset
-
-So, the rule of thumb to be followed while designing architectures for organizat
-ions is use loose coupling whenever possible and use tightly coupled architectur
-al options only if required.
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-TODO archpatbook p199 SOA
-\end_layout
-
-\begin_layout Standard
-(TODO add to EDA pros: archpatbook p29
-\end_layout
-
-\begin_layout Standard
-)
-\end_layout
-
-\begin_layout Standard
-SOA is synchronous request-response as opposed to asynchronous fire-and-forget:
- pull information via request and demand their reception as opposed to push
- information and go home.
- SOA is puller-driven, client is a control-freak: selects exactly which
- services to invoke, waits for response, uses response 
-\end_layout
-
-\begin_layout Standard
-EDA is driven by each handler to whom the event notifications are unidirectional
-ly distributed/delegated: trigger a service or choice, or do nothing: the
- B2B partner (perhaps) gets to decide.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 there does exist async request-response, but is beyond the soa convention
 \end_layout
 
-\begin_layout Standard
-SOA: easier to chain service invocations hierarchically.
- this produces systems with chained service sequences that are not really
- meant to be accessible by B2B partners as they forfeit much control, having
- to abide by contract-specified policies that are business-coupled and conceived
- to support the synchronous paradigm.
- QoS attributes, such as scalability, sustainability, security and so on.).
- it's also good for testing, as it's a matter of meeting the contract.
-\end_layout
-
-\begin_layout Standard
-eda: the client is less involved: sends event, which trigger different services
- based on which handler catches them, the operation is asynchronous 
-\end_layout
-
-\begin_layout Standard
-event mediator (queue) better for b2b as it's inherently loosely coupled,
- clients need only act as emitters
-\end_layout
-
-\begin_layout Standard
-TODO For ESB, see archpatbook p25, 351, 252, eda vs soa.pdf
-\end_layout
-
-\begin_layout Standard
-the two above, combined in an integration runtime, with added logic for
- mediation/obscuring between the uniform exposure protocols and data formats,
- and the legacy formats and protocols (or informal specs) of the integrated
- applications, constitute an ESB.
-\end_layout
-
-\begin_layout Standard
-The ESB is the integration middleware for any service environment, where
- the message is the basic unit of interaction between services.
- An ESB is lightweight compared with previous middleware solutions, such
- as the EAI hub.
- The ESB is lightweight because it obviates the need of using custom-made
- connectors, drivers, and adapters for integrating processes/applications,
- data sources, and UIs.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 integration engines of today allow for the implementation of different patterns
  that are more lightweight and decentralized.
  no longer is runtime cloning of the entire integration engine required
@@ -1695,38 +2038,10 @@ integration engines of today allow for the implementation of different patterns
  how this is achieved:
 \end_layout
 
-\begin_layout Standard
--
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-TODO where does oauth fit?
-\end_layout
-
-\begin_layout Standard
-The gateways can be supplemented with web portals that describe the available
- APIs, enable potential users to issue keys automatically (self-subscribe)
- in order to use the APIs, and provision analytics for both users and providers
- of the APIs.
-\end_layout
-
-\begin_layout Standard
-TODO 
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
-Increasingly, more modern systems of record already provided an HTTP-based
- interface that only needed controlled exposure using the exposure gateway.
- The integration runtime was only required when more complex integration
- took place, such as more unusual protocols, data formats, compositions
- of multiple requests—or perhaps in cases where transactionality was needed.
-\end_layout
-
-\begin_layout Standard
 The introduction of an API management layer led to the obvious question:
  What now is the ESB? Many had come to see the integration runtime and the
  ESB pattern as one and the same.
@@ -1739,9 +2054,13 @@ The introduction of an API management layer led to the obvious question:
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
+\begin_inset Newline newline
+\end_inset
+
 back-end-for-front-end (BFF) pattern (present in mobile apps/ SPAs) was
  the first foray outside enterprise: APIs perfectly suited to the needs
  of a prospective frontend, with rationalized data models, ideal granularity
@@ -1752,7 +2071,7 @@ back-end-for-front-end (BFF) pattern (present in mobile apps/ SPAs) was
 e overhead this new stance would entail.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Modern API management solutions create APIs via configuration rather than
  coding, and the task of creating or changing an API usually takes only
  minutes.
@@ -1763,14 +2082,14 @@ Modern API management solutions create APIs via configuration rather than
 oriented APIs practical.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 APIs are always designed to be attractive to the intended consumer, and
  they change as the needs of the consumer change.
  Services, in contrast, are generally designed with global cost and stability
@@ -1779,13 +2098,13 @@ APIs are always designed to be attractive to the intended consumer, and
  but the service is the regular car designed for cost and mass production.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 , a mobile developer just wants it to be simple for her particular app.
  On the other side, the back-end team wants everyone to use the same standardize
 d service and data model.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 APIs are controlled (proxy) views of the data and capabilities of a domain,
  optimized for the needs of API consumers.
  As long as it’s dirt cheap to create and maintain proxy APIs, you can use
@@ -1795,7 +2114,7 @@ APIs are controlled (proxy) views of the data and capabilities of a domain,
  of your capabilities from the view your internal developers have
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -1809,21 +2128,21 @@ SOA emerged as a means of shielding service consumers from changes in the
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Services are the means by which providers codify the base capabilities of
  their domains.
  APIs are the way in which those capabilities (services) are repackaged,
  productized, and shared in an easy-to-use form
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes erd
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 from then on, public exposure of partner APIs has steadily become more common,
  providing the opportunity for collaboration among loosely related parties.
  The resultant market-like ecosystem has been dubbed the 
@@ -1841,7 +2160,7 @@ API Economy
 The API economy
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -1871,14 +2190,14 @@ hard need for a dedicated team with deep expertise in the particular SOA
  3d party developers are the enablers of today's API economy.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The API economy emerges when APIs become part of the business model.
  Public and partner APIs have been strategic enablers for sev- eral online
  business models.
@@ -1902,24 +2221,24 @@ ed APIs for decades.
  on ease of consumption rather than ease of creation.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 TODO MENTION paypal, stripe as examples of API productization, Uber as example
  of basing a business on partner APIs
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 API layers (mentioned in us-fsi-api-economy.pdf): APIs exposed to accelerate
  new service development built upon them
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The emergence of this last developmental trend arguably does credit to the
  promise of reusability the idea of web service orientation has borne since
  it's inception.
@@ -1927,11 +2246,11 @@ The emergence of this last developmental trend arguably does credit to the
  article)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 TODO SaaS perhaps deserves a mention here
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 TODO check esiarchapproach As a technology, EAI typically refers to non-intrusiv
 e application integration techniques aimed at creating loosely coupled enterpris
 e software systems.
@@ -1939,15 +2258,19 @@ e software systems.
  products are hallmarks of the EAI technology.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 )
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Section
+
+\begin_inset Newline newline
+\end_inset
+
 Messaging in practice: Message Oriented Middleware
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -1962,11 +2285,11 @@ able.
  (semantic coupling)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 (TODO EIPBook p72 on why messaging)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 (TODO read EIPbook forewords on SOA, asynchronous messaging of self reliant
  systems being the point of integrated systems as opposed to n-tier codependent
  distributed systems, conferring benefits of request throttling and load
@@ -1974,12 +2297,12 @@ able.
  a promising approach, and this has informed the direction of this thesis)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 (TODO SOA is enabled via messaging.
  Time to get deep into it)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 (
 \begin_inset Quotes eld
 \end_inset
@@ -1991,19 +2314,7 @@ The message queue paradigm is a sibling of the publisher/subscriber pattern
  CITE wp Message Queue)
 \end_layout
 
-\begin_layout Standard
-Apache Camel is a framework for building MOM middleware.
- More generally, it aspires to enable integrations designed around the Enterpris
-e Integration Pattern (EIP) vocabulary.
- In addition to native support for ActiveMQ and other message brokers via
- JMS, it provides features that enable most common SOA architectures, modern
- and legacy alike.
- Standard SOAP Web Services, RESTful http Web Services and more are natively
- supported, with Amazon Web Services, Graphql and other modern technologies
- supported as Extensions.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 Examples from Java OOP, JMS messaging, Camel.
 \end_layout
 
@@ -2019,18 +2330,18 @@ Intruduction to messaging, key problems it solves (separation of concerns,
  URI barcodes etc) Identifier vs Locator disambiguation
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Message passing implies URLs (Uniform Locator of Resources) Uniform Identifier:
  as in URI: 23-digit barcode form unique id of a thing whose location or
  mode of access is not defined plus Resource Locator: 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 -Locator as in http:// (mode of access) which implies the rest is an address.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 -Resource as in shared-nothing, volatile object: Evoke the same operation
  (e.g INSERT) twice, don't expect it to be the same function call because
  the message-passing abstraction hides (therefore isolates) underlying state
@@ -2038,7 +2349,7 @@ Message passing implies URLs (Uniform Locator of Resources) Uniform Identifier:
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Eg.
  a necessary rerouting of a request because a node is down does not concern
  the message sender.
@@ -2059,90 +2370,32 @@ Services as components of monoliths vs distributed systems.
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Pros: Shared--nothing, all the loose-coupling stuff 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Cons: overhead as arguments need to be copied and transmitted to the receiving
  object 
 \end_layout
 
 \begin_layout Itemize
 https://en.wikipedia.org/wiki/Message_passing#Distributed_objects
-\end_layout
-
-\end_deeper
-\begin_layout Part
-The Enterprise Integration Patterns (EIP) vocabulary
-\end_layout
-
-\begin_layout Standard
-(
-\begin_inset Quotes eld
+\begin_inset Newline newline
 \end_inset
 
-The commonalities between messaging systems (in terms of capabilities and
- architecture) have been captured in a platform-independent fashion as enterpris
-e integration patterns (a.k.a.
- messaging patterns).
- [3] 
-\begin_inset Quotes eld
+
+\begin_inset Newline newline
 \end_inset
 
- CITE wp Enterprise Messaging System)
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-TODO esiarchapproach p23 on essential EAI technologies
-\end_layout
-
-\begin_layout Standard
-TODO archpatbook p350 Intermediate routing pattern as an alternative to
- embedding routing logic in chained services
-\end_layout
-
-\begin_layout Subsection
-Messaging
-\end_layout
-
-\begin_layout Standard
-TODO archpatbook p125
-\end_layout
-
-\begin_layout Standard
-Message (and exchange), pipes and filters, router, translator, endpoint
-\end_layout
-
-\begin_layout Subsubsection
-Message channel
-\end_layout
-
-\begin_layout Standard
-point2point, publish-subscribe, channel adapter, message bus
-\end_layout
-
-\begin_layout Subsubsection
-Router
-\end_layout
-
-\begin_layout Standard
-filter, splitter, aggregator, broker
-\end_layout
-
-\begin_layout Subsubsection
-Message endpoint
-\end_layout
-
-\begin_layout Standard
-consumers: polling, event-driven, message dispatcher
-\end_layout
-
-\begin_layout Part
-Apache Camel: EIPs in action
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -2154,7 +2407,7 @@ In Camel, DSL means a fluent Java API that contains methods named for EIP
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -2185,50 +2438,20 @@ processor
  generic java components into message-interfaced SOA-services.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 so camel routes expose event handler routing logic, see camelia p131
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 a camel route is fire-and-forget if eg the timer event causes no message
  to finally exit the route, the event handler run is just ineffectual)
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Section
-Introduction
-\end_layout
 
-\begin_layout Standard
-Talk about Camel being a tool for working with EIPs, what it's built on,
- tooling eg IDEs and frameworks that support it, companies that invest on
- it and custom products eg JBoss
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Section
-Terminology
-\end_layout
-
-\begin_layout Standard
-A Component is a factory for creating Endpoint instances.
-\end_layout
-
-\begin_layout Standard
-Processors are necessarily implementations of the Camel Processor interface.
- Apart from that, services differ from processors in that they are meant
- to be used procedurally, called directly from within other methods, whereas
- processors are integrated in a program’s flow through message-based integration
-, which is what Camel is built for.
-\end_layout
-
-\begin_layout Standard
-This makes services the proper abstraction for program-wide configuration
- injection (e.g.
- PartnerManagementService) and a feasible one for utilities for which there
- is no expected need for integration with remote components (e.g.
- RequestHandlingService).
-\end_layout
-
-\begin_layout Itemize
 Server as persistence hub, interacting with client services via library
  calls with 
 \begin_inset Quotes eld
@@ -2255,9 +2478,21 @@ from:
 
 -driven abstract pollers with different implementations per instance.
  How can Camel help adapt towards a more scalable microservice variant?
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Multiple task scheduling components are available.
  They produce timer events that can be used to trigger recurring camel routes
  via consumer EIPs, or otherwise provide a means of time tracking for local
@@ -2266,13 +2501,13 @@ Multiple task scheduling components are available.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The scheduler component utilizes the host jdk's timer and is intended for
  locally tracked tasks that have no need for accuracy, as no provision is
  made against downtime.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The quartz component uses a database to store timer events and supports
  distributed timers, and is therefore fault tolerant and suitable for scheduling
  distributed tasks.
@@ -2282,11 +2517,11 @@ The quartz component uses a database to store timer events and supports
 declarative DSLs/xml
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 (TODO https://martinfowler.com/dsl.html )
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Examples from declarative vs procedural DSLs (e.g.
  shell vs guile scripts), Spring traditional remoting vs Camel, timer/from
  components introduced here, as an example of how Camel departs from older
@@ -2323,8 +2558,593 @@ Machine readable markup vs Camel's DSL hack.
 Apache Camel field study
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Examining a 3PL logistic company's middleware stack
+\end_layout
+
+\begin_layout Part
+The Enterprise Integration Patterns (EIP) vocabulary
+\end_layout
+
+\begin_layout Plain Layout
+TODO esiarchapproach p23 on essential EAI technologies
+\end_layout
+
+\begin_layout Plain Layout
+TODO archpatbook p350 Intermediate routing pattern as an alternative to
+ embedding routing logic in chained services
+\end_layout
+
+\begin_layout Subsection
+Messaging
+\end_layout
+
+\begin_layout Plain Layout
+TODO archpatbook p125
+\end_layout
+
+\begin_layout Plain Layout
+Message (and exchange), pipes and filters, router, translator, endpoint
+\end_layout
+
+\begin_layout Subsubsection
+Message channel
+\end_layout
+
+\begin_layout Plain Layout
+point2point, publish-subscribe, channel adapter, message bus
+\end_layout
+
+\begin_layout Subsubsection
+Router
+\end_layout
+
+\begin_layout Plain Layout
+filter, splitter, aggregator, broker
+\end_layout
+
+\begin_layout Subsubsection
+Message endpoint
+\end_layout
+
+\begin_layout Plain Layout
+consumers: polling, event-driven, message dispatcher
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Apache Camel: a framework for constructing Message-Oriented Middleware
+\end_layout
+
+\begin_layout Standard
+The convergence around hybrid SOA architectures and Enteprise Messaging
+ Systems as the default type of communication model for enteprise integration
+ brought into focus the need for a common, platform-independent language
+ to describe the common capabilities and architectural features of such
+ systems.
+ The resulting vocabulary is what is referred to as 
+\begin_inset Quotes eld
+\end_inset
+
+Enterprise Integration Patterns
+\begin_inset Quotes erd
+\end_inset
+
+ (EIPs).
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-15"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apache Camel is a framework for building message-oriented middleware.
+ More generally, it aspires to enable integrations designed around the Enterpris
+e Integration Pattern (EIP) vocabulary.
+ In addition to native support via JMS for ActiveMQ and other message brokers
+ and infrastructure in the EDA paradigm, it provides features that enable
+ most common SOA architectures, modern and legacy alike.
+ Standard SOAP Web Services, RESTful http Web Services and more are natively
+ supported, with Amazon Web Services, Graphql and other modern service-oriented
+ technologies supported as extensions.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Basic Concepts
+\end_layout
+
+\begin_layout Standard
+Arguably the most important aspect of Camel is message routing, which is
+ utilized to enable SOA-style service composition within the context of
+ an event-driven integration system.
+\end_layout
+
+\begin_layout Standard
+A Camel route begins from a consumer endpoint, which corresponds either
+ to an event handler passively receiving inbound messages published on a
+ particular event topic, or to a polling function synchronously monitoring
+ a particular source by fetching messages at scheduled intervals.
+\end_layout
+
+\begin_layout Standard
+Components are batteries-included Camel factories for creating Endpoint
+ instances.
+ They contain the protocol-specific logic for obtaining information from
+ outside sources and packaging it as inbound messages.
+\end_layout
+
+\begin_layout Standard
+The inbound messages' carrier through the service chain representing a Camel
+ route is called a message exchange.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename assets/camel exchange.png
+	scale 70
+	BoundingBox -60bp 0bp 361bp 340bp
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Camel Exchange
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are two types of Message Exchange Pattern (MEP).
+ InOnly corresponds to operating as an event handler.
+ The incoming Message is an event notification, being used in one-way communicat
+ion where flow control is passed to the receiving module.
+ InOut is a pattern used to emulate a SOA-style request-response interaction,
+ and is useful for chaining local services with Web Services or other remote
+ components.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename assets/mepcamel.png
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Camel Route
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The Camel Processor is the interface for incorporating custom logic, such
+ as conventional system components or services, into a Camel route's exchange
+ channel.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, by Camel's offering of a Domain Specific language, which is implemented
+ simply as a Java API that contains methods named after EIP terms, an integrated
+ system's Camel Routes are rendered into a prime leverage point for inspection
+ and control of the logical flow of integration.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Example of a Camel Route
+\end_layout
+
+\begin_layout Standard
+We maintain the middleware stack of a logistics company.
+ One of our integration solution's tasks is contacting the various couriers'
+ APIs and issuing shipment vouchers for the goods that need to be delivered,
+ then updating the company's ERP with this knowledge through an http callback.
+ Open requests for issuing such vouchers are stored in a database.
+ This is the Camel route in full:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ from("timer://$Voucher?period=500000&repeatCount=-1")             .log(LoggingLe
+vel.INFO,logger,"Starting polling
+\end_layout
+
+\begin_layout Plain Layout
+
+				for open voucher requests")            
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+.setHeader('courierCode').constant(configuration.courierCode)             
+\end_layout
+
+\begin_layout Plain Layout
+
+.to("sql:classpath:sql/openVoucher.sql")              
+\end_layout
+
+\begin_layout Plain Layout
+
+.log(configuration.name +'Voucher: Processing ${body.size}
+\end_layout
+
+\begin_layout Plain Layout
+
+				voucher requests')             
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+.setProperty('totalRequests').simple('${body.size}')             
+\end_layout
+
+\begin_layout Plain Layout
+
+.split(body(),voucherAggregation)
+\end_layout
+
+\begin_layout Plain Layout
+
+      .log(LoggingLevel.INFO,logger,'Posting for voucher
+\end_layout
+
+\begin_layout Plain Layout
+
+				for request: ${body}')               
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      .process("issueVoucherProcessor")                 
+\end_layout
+
+\begin_layout Plain Layout
+
+      .filter().simple('${body.voucherCallbackUrl} != null')              
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+            .process('voucherCallbackProcessor')                 
+\end_layout
+
+\begin_layout Plain Layout
+
+      .end()             
+\end_layout
+
+\begin_layout Plain Layout
+
+.end()             
+\end_layout
+
+\begin_layout Plain Layout
+
+.log(LoggingLevel.INFO, logger, 'Successfully Updated 
+\end_layout
+
+\begin_layout Plain Layout
+
+${property.successCount}/$ {property.totalRequests} requests')
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Camel route below is a polling consumer firing periodically every 500000
+ seconds, The timer component is used just for the purpose of triggering
+ the start of an exchange, yielding an inbound message with an empty body:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ from("timer://$Voucher?period=500000&repeatCount=-1")             .log(LoggingLe
+vel.INFO,logger,"Starting polling 
+\end_layout
+
+\begin_layout Plain Layout
+
+				for open voucher requests")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The empty message is wrapped in an exchange, which is propagated to the
+ .to() Camel EIP.
+ The .to() EIP is an endpoint that, unlike .from(), which acts only as a message
+ consumer, is also capable of producing messages.
+ In this case, it executes an sql script against a database whose address
+ and credentials are stored in the system's configuration, and places the
+ returned records in the exchange's outbound message's body:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+.setHeader('courierCode').constant(configuration.courierCode)             
+\end_layout
+
+\begin_layout Plain Layout
+
+.to("sql:classpath:sql/openVoucher.sql")      
+\end_layout
+
+\end_inset
+
+The courierCode header value is injected into the sql query so as to draw
+ open voucher records only for the specific courier.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, the open voucher records are split, so that they may be consumed one
+ by one by the issueVoucherProcessor.
+ When the name of a Camel processor object is given as an argument to a
+ .process() EIP, the processor's process() method is invoked.
+ In our scenario, that method should be sending a POST request to a courier's
+ API in order to receive the code of a new shipment voucher:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+.log(configuration.name +'Voucher: Processing ${body.size}
+\end_layout
+
+\begin_layout Plain Layout
+
+					voucher requests')             
+\end_layout
+
+\begin_layout Plain Layout
+
+.setProperty('totalRequests').simple('${body.size}')             
+\end_layout
+
+\begin_layout Plain Layout
+
+.split(body(),voucherAggregation)
+\end_layout
+
+\begin_layout Plain Layout
+
+      .log(LoggingLevel.INFO,logger,'Posting for voucher
+\end_layout
+
+\begin_layout Plain Layout
+
+				for request: ${body}')                 
+\end_layout
+
+\begin_layout Plain Layout
+
+      .process("issueVoucherProcessor")                 
+\end_layout
+
+\begin_layout Plain Layout
+
+      .filter().simple('${body.voucherCallbackUrl} != null')              
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+            .process('voucherCallbackProcessor')                 
+\end_layout
+
+\begin_layout Plain Layout
+
+      .end()             
+\end_layout
+
+\begin_layout Plain Layout
+
+.end()             
+\end_layout
+
+\begin_layout Plain Layout
+
+.log(LoggingLevel.INFO, logger, Successfully Updated
+\end_layout
+
+\begin_layout Plain Layout
+
+${property.successCount}/${property.totalRequests} requests')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A few more things are happening here.
+ A callback is sent to the company's ERP via the voucherCallbackProcessor,
+ to inform that a voucher has been issued.
+ The relevant service is invoked only for those vouchers among the issued,
+ who originally provided a callback url.
+\begin_inset Newline newline
+\end_inset
+
+Finally, voucherAggregation is a function implementing the Aggregator EIP
+ through the respective Camel interface.
+ It's function is to run on each iteration of the .split() pattern.
+ In this particular instance, it merely increments to the successCount property
+ for each voucher successfully issued.
 \end_layout
 
 \begin_layout Standard
@@ -2334,12 +3154,205 @@ Examining a 3PL logistic company's middleware stack
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintAll"
-bibfiles "references"
-options "plain"
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+David A Chappell: Enterprise Service Bus.
+ O'Reilly Media (2004)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Martin Fowler: Patterns of Enterprise Application Architecture.
+ Addison-Wesley Professional (2002)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-9"
+literal "false"
+
+\end_inset
+
+Alexandros Gazis, Eleftheria Katsiri: Middleware 101, What to know now and
+ in the future.
+ In: ACM Queue, vol.
+ 20 issue 1 (2022)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-11"
+
+\end_inset
+
+Souleiman Hasan, Sean O’Riain, Edward Curry: Approximate Semantic Matching
+ of Heterogeneous Events.
+ ACM International Conference on Distributed and Event‐based Systems, Berlin,
+ Germany (2012)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+Gregor Hohpe, Bobby Woolf: Enteprise Integration Patterns, pp.
+ 18, 32.
+ Addison-Wesley Professional (2003)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Claus Ibsen, Jonathan Anstey: Camel in Action.
+ Manning Publications (2008)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+Pontus Johnson: Enterprise Software System Integration, An Architectural
+ Perspective.
+ Ph.D.
+ thesis.
+ Industrial Information and Control Systems KTH, Royal Institute of Technology,
+ Stockholm, Sweden (2002)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-10"
+
+\end_inset
+
+Brenda M.
+ Michelson: Event-Driven Architecture Overview.
+ Patricia Seybold Group (2006)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-14"
+
+\end_inset
+
+Cécile Péraire, Mike Edwards, Angelo Fernandes, Enrico Mancin, Kathy Carroll:
+ The IBM Rational Unified Process for System z, Service Specification.
+ IBM Corporation (2007).
+ URL 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://deg.egov.bg/LP/soa.rup_soma/tasks/soa_service_qualification_E0D920A6.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+Harihara Subramanian Pethuru Raj, Anupama Raman: Architectural Patterns,
+ pp.
+ 24, 25, 28, 210, 245.
+ Packt Publishing (2017)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-8"
+
+\end_inset
+
+Bobby Woolf: Event-Driven Architecture and Service-Oriented Architecture.
+ IBM Software Services for WebSphere, IBM Corporation (2006)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-15"
+
+\end_inset
+
+Olaf Zimmermann, Cesare Pautasso, Gregor Hohpe, Bobby Woolf: A Decade of
+ Enterprise Integration Patterns: A Conversation with the Authors, pp.
+ 13–19.
+ IEEE Software, vol.
+ 33 issue 1 (2016) 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+IBM Cloud Education: What is Middleware? (2022).
+ URL 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.ibm.com/cloud/learn/middleware
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-13"
+
+\end_inset
+
+Redhat Technology Topics: What is a Service Registry? (2021).
+ URL 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.redhat.com/en/topics/integration/what-is-a-service-registry
+\end_layout
 
 \end_inset
 
