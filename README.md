@@ -1,2 +1,1 @@
-A boring old thesis, currently in draft state.
-No guarantees of pdf freshness, mind you!
+My undergraduate [thesis](./Neslechanidis_DIT_2022.pdf)
