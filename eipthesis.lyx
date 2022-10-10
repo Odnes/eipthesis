@@ -1617,13 +1617,6 @@ Domain-driven design: Loose internal coupling allows Domain-driven design
 \end_layout
 
 \begin_layout Itemize
-This approach is suitable for the design of middleware as it helps confer
- exibility and extensibility to the resulting system, and reduces friction
- in the operations side, which, as mentioned previously, is an important
- factor when considering the adoption of integration solutions.
-\end_layout
-
-\begin_layout Itemize
 Business-centeredness: While many components within a SOA context may be
  developed in such a way as to constitute candidate services, only a subset
  of those have their service description exported, and perhaps published
